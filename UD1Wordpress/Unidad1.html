@@ -177,7 +177,24 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </a></div>
         </div>
       </details>
-    
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#instalación-en-la-nube" class="md-toc-link"><p>Instalación en la nube</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#conceptos-importantes" class="md-toc-link">
+            <p>Conceptos importantes</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#bibliografia" class="md-toc-link">
+            <p>Bibliografia</p>
+
+          </a></div>
 </div>
 <br>
 <p><a href="./Unidad1.pdf">Descargar estos apuntes</a></p>
@@ -301,6 +318,16 @@ No se recomienda utilizar estos datos en un entorno de real.</p>
 </ul>
 <h2 id="creación-de-usuarios-y-grupos-de-usuarios">Creación de usuarios y grupos de usuarios </h2>
 <p>Una vez instalado el gestor de contenidos, es necesario crear usuarios y grupos de usuarios para gestionar el acceso al sitio web. Los usuarios y grupos de usuarios permiten controlar quién puede acceder al sitio web y qué permisos tienen los usuarios para editar y publicar contenidos en el sitio web.</p>
+<p>Para crear un usuario en WordPress, es necesario ir a Usuarios &gt; Añadir nuevo y crear un nuevo usuario con un nombre de usuario, una contraseña y un correo electrónico. Una vez creado el usuario, se puede asignar un rol al usuario para definir los permisos que tiene el usuario en el sitio web.</p>
+<p>Wordpress establece los siguientes roles de usuario:</p>
+<ul>
+<li><strong>Administrador</strong>: El administrador tiene acceso a todas las funciones del sitio web, incluyendo la creación y edición de contenidos, la instalación y configuración de plugins y temas, y la gestión de usuarios y grupos de usuarios.</li>
+<li><strong>Editor</strong>: El editor tiene acceso a las funciones de edición de contenidos del sitio web, incluyendo la creación y edición de páginas y entradas, la gestión de comentarios, y la publicación de contenidos en el sitio web.</li>
+<li><strong>Autor</strong>: El autor tiene acceso a las funciones de creación de contenidos del sitio web, incluyendo la creación y edición de páginas y entradas, y la publicación de contenidos en el sitio web.</li>
+<li><strong>Colaborador</strong>: El colaborador tiene acceso a las funciones de creación de contenidos del sitio web, incluyendo la creación y edición de páginas y entradas, pero no puede publicar contenidos en el sitio web.</li>
+<li><strong>Suscriptor</strong>: El suscriptor tiene acceso a las funciones de lectura del sitio web, pero no puede crear ni editar contenidos en el sitio web.</li>
+</ul>
+<p><img src="image.png" alt="alt text"></p>
 <h2 id="configuraciones-iniciales-de-wordpress">Configuraciones iniciales de WordPress </h2>
 <p>Una vez instalado WordPress, es necesario realizar una serie de configuraciones iniciales para personalizar el sitio web y adaptarlo a las necesidades y preferencias de los usuarios. Algunas de las configuraciones iniciales más comunes de WordPress son:</p>
 <ul>
@@ -356,6 +383,7 @@ uno activo.</p>
 <p>TODO: Añadir imagen</p>
 <h2 id="personalización-del-entorno-crear-contenido-web">Personalización del entorno: Crear contenido web </h2>
 <h3 id="páginas">Páginas </h3>
+<p>Las páginas son contenido de carácter estático, es decir, que no cambia con el tiempo. Las páginas son muy utilizadas en los sitios web para mostrar información que no cambia con frecuencia, como la página de inicio, la página de contacto, la página de servicios, etc. Las páginas se organizan en una jerarquía de páginas, lo que permite a los usuarios navegar por el sitio web de forma estructurada y ordenada.</p>
 <p>Lo primero será crear una <strong>página de inicio</strong>. Para ello, en el panel de administración de WordPress, vamos a Páginas &gt; Añadir nueva. Aquí, vamos a crear una página de inicio con el título “Inicio” y el contenido que queramos. Una vez creada la página de inicio, vamos a Ajustes &gt; Lectura y seleccionamos la página de inicio que acabamos de crear como página de inicio del sitio web.</p>
 <div class="admonition info">
 <p class="admonition-title">Importante</p>
@@ -364,9 +392,19 @@ uno activo.</p>
 <p>Una vez creada la página de inicio, es necesario crear el resto de páginas del sitio web, como la página de contacto, la página de servicios, etc. Para crear una página en WordPress, es necesario ir a Páginas &gt; Añadir nueva y crear una nueva página con el título y el contenido que queramos.</p>
 <p>TODO: Añadir imagen</p>
 <h3 id="entradas-y-categorías">Entradas y categorías </h3>
-<p>Las <strong>entradas</strong> son los contenidos que se publican en el <strong>blog del sitio web</strong>, y se organizan en <strong>categorías</strong> para facilitar la navegación de los visitantes. Para crear una entrada en WordPress, es necesario ir a Entradas &gt; Añadir nueva y crear una nueva entrada con el título y el contenido que queramos. Además, se puede poner una imagen destacada para la entrada. Recomendamos que las imágenes tengan las mismas dimensiones para que la web se vea más ordenada.</p>
+<p>Las <strong>entradas</strong> o <strong>post</strong> son los contenidos de carácter dinámico, tipo noticias o temas nuevos, que se publican en el <strong>blog del sitio web</strong>, y se organizan en <strong>categorías</strong> para facilitar la navegación de los visitantes. Para crear una entrada en WordPress, es necesario ir a Entradas &gt; Añadir nueva y crear una nueva entrada con el título y el contenido que queramos. Además, se puede poner una imagen destacada para la entrada. Recomendamos que las imágenes tengan las mismas dimensiones para que la web se vea más ordenada.</p>
 <p>Una vez grabadas y terminadas la página o la entrada que estemos editando, podemos ver cómo queda pulsando en el botón <strong>Vista previa</strong> que aparece en la parte superior derecha de la pantalla. Cuando veamos que está todo correcto, pulsamos en el botón <strong>Publicar</strong> para que la página o entrada se haga visible en la web.</p>
-<p>TODO: Añadir imagen</p>
+<p>Un contenido puede encontrase en una serie de estados posibles:</p>
+<ul>
+<li><strong>Borrador</strong>: El contenido no se ha publicado y se guarda como borrador.</li>
+<li><strong>Programado</strong>: El contenido se publicará en una fecha y hora determinada.</li>
+<li><strong>Publicado</strong>: El contenido se ha publicado y es visible en el sitio web.</li>
+<li><strong>Privado</strong>: El contenido es privado y solo es visible para los usuarios con permisos de acceso.</li>
+<li><strong>Papelera</strong>: El contenido se ha eliminado y se ha movido a la papelera.</li>
+<li><strong>Revisión</strong>: El contenido se ha guardado como revisión y no es visible en el sitio web.</li>
+<li><strong>Protegido con contraseña</strong>: El contenido está protegido con una contraseña y solo es visible para los usuarios que introduzcan la contraseña.<br>
+TODO: Añadir imagen</li>
+</ul>
 <h2 id="configuración-de-módulos-y-menús">Configuración de módulos y menús </h2>
 <p>Los gestores de contenidos disponen de módulos y menús que permiten añadir funcionalidades adicionales al sitio web. Los módulos y menús permiten añadir características como formularios de contacto, galerías de imágenes, foros de discusión, y otros elementos interactivos al sitio. Los módulos y menús se pueden configurar y personalizar para adaptarlos a las necesidades y preferencias de los usuarios.</p>
 <p>Los <strong>menús</strong> nos permiten organizar los enlaces a nuestras páginas.<br>
@@ -404,6 +442,57 @@ control total tanto a propietarios de tienda como a desarrolladores.<br>
 <a href="https://es.wordpress.org/plugins/woocommerce/">https://es.wordpress.org/plugins/woocommerce/</a></p>
 <p><strong>NextGEN Gallery</strong>: NextGEN Gallery ha sido el plugin de la galería de WordPress estándar de la industria desde 2007 y continúa recibiendo más de 1.5 millones de nuevas descargas por año. Es fácil para galerías de fotos simples, pero lo suficientemente potente para los fotógrafos, artistas visuales y profesionales de la imagen más exigentes.<br>
 <a href="https://es.wordpress.org/plugins/nextgen-gallery/">https://es.wordpress.org/plugins/nextgen-gallery/</a></p>
+<h1 id="instalación-en-la-nube">Instalación en la nube </h1>
+<h2 id="conceptos-importantes">Conceptos importantes </h2>
+<p><strong>URL</strong><br>
+Una URL (Uniform Resource Locator) es una manera de identificar y localizar cada recurso de una web. Por ejemplo, cuando escribimos en un navegador una dirección como <a href="http://www.miweb.com/paginas/pagina.html">http://www.miweb.com/paginas/pagina.html</a>, estamos introduciendo una URL para localizar un recurso (en este caso, una página HTML).<br>
+Una URL se compone de:<br>
+• El protocolo, que indica las reglas que se van a seguir para comunicarse cliente y servidor. Veremos más adelante algunos ejemplos de protocolos, pero para lo que nos importa, en una URL el protocolo va al principio, hasta los dos puntos y el delimitador //. En nuestro ejemplo, el protocolo sería http://<br>
+• El nombre de dominio, que identifica al servidor y la empresa/web a la que vamos a conectar. Va justo detrás del protocolo, hasta la siguiente barra. Normalmente termina en .com, .es, .net, etc. En nuestro ejemplo sería <a href="http://www.miweb.com">www.miweb.com</a><br>
+• La ruta hacia el recurso, que comprende todas las carpetas y subcarpetas (si las hay) y el nombre de archivo que queremos obtener. En nuestro ejemplo, la ruta sería /paginas/pagina.html<br>
+El navegador obtiene la URL que ha escrito el usuario, transforma el nombre de dominio en una dirección IP (según su servidor DNS asignado) y envía al servidor indicado la petición.</p>
+<p><strong>Dominio</strong></p>
+<p>El primer paso a dar será comprar el dominio, aunque normalmente, la primera vez se contratan el dominio y el hosting simultáneamente.<br>
+El nombre de dominio es un nombre único en Internet, de modo que cuando se escribe en el navegador nos enseñará la página web correspondiente y no otra. Los nombres de dominio van asociados a una terminación concreta como .com, .es,<br>
+.org, .net, …<br>
+Normalmente, se ofrece un contrato anual por un nombre de dominio, aunque se suelen encontrar ofertas por más años o, incluso, el dominio gratis si se contrata a la vez algún servicio de hosting.<br>
+Para evitar la duplicidad de dominios, son asignados por la ICANN (Internet Corporation for Assigned Names and Numbers), una organización internacional sin ánimo de lucro, responsable de asignar espacio de direcciones numéricas del Protocolo de Internet (IP) y de la gestión del sistema de nombres de primer nivel genéricos (gTLD) y de códigos de países (ccTLD).<br>
+En el proceso de registro de un nombre de dominio, deberemos acudir a través de Internet a un proveedor de servicios de Internet. Éste comprobará si el nombre de dominio está disponible (no registrado por nadie más) y nos planteará su oferta para formalizar el contrato.<br>
+En el caso de que un dominio esté ocupado o en uso, existe la posibilidad de “transferir el dominio”. Esto puede ser porque lo tengamos registrado nosotros en otro servidor y deseamos cambiarlo o porque sea propiedad de otro usuario y le solicitemos que nos lo ceda. Esto último entraría dentro de lo que se conoce como compraventa de dominios.</p>
+<div class="admonition note">
+<p class="admonition-title">Comprueba la disponibiliad de un dominio</p>
+</div>
+<p><strong>Sitio web o Espacio web (Hosting)</strong></p>
+<p>Los proveedores de espacio web suelen dar servicio a muchos clientes (miles), de modo que se suelen encargar del registro de sus dominios y del hosting correspondiente a cada uno.<br>
+Existe la opción de que el dominio lo administre un proveedor y “redireccione” a los navegadores a otro proveedor donde está el hosting.<br>
+El espacio web consiste en realidad en espacio de disco duro ofrecido para almacenar las páginas y datos de cada cliente. Si el proveedor es medianamente importante deberá contar con varios ordenadores con potencia y capacidad de almacenamiento suficientes. Así se reparte la carga de tráfico de red y de espacio de almacenamiento reservado.<br>
+Existen otros conceptos relacionados, como servidor compartido o servidor dedicado, IP fija, etc.<br>
+Al igual que en el caso de los dominios, se suelen hacer contratos anuales, aunque habrá ofertas por un número mayor de años o incrementos por pagar cada mes sin compromiso de permanencia.</p>
+<p>Servicios del proveedor<br>
+Cuando se contrata un hosting es fundamental elegir un paquete adecuado de servicios por el que pagar. Lo normal es que nos ofrezcan grupos de servicios y características diferentes de cada uno, según vamos pasando de una oferta para un individuo hacia una oferta para una empresa con grandes necesidades.<br>
+A continuación, enumeramos algunos servicios y aspectos importantes a tener en cuenta a la hora de elegir un hosting:<br>
+• Más dominios: si se nos ofrece contratar sucesivos dominios sin incremento de precio.<br>
+• Subdominios: es la posibilidad de subdividir nuestro dominio en secciones, por ejemplo, <a href="http://tienda.midominio.com">tienda.midominio.com</a>, <a href="http://fundacion.didominio.com">fundacion.didominio.com</a>, …<br>
+• Tráfico mensual: es el límite de MB o GB de transferencia de información que permitirán a nuestro dominio cada mes.<br>
+• Espacio web: espacio de disco duro que nos ofrecen (MB, GB, ilimitado).<br>
+• Correo electrónico:<br>
+◦ cuántas cuentas de correo nos ofrecen<br>
+◦ si es de tipo POP, IMAP o webmail<br>
+◦ características como crear listas de correo, alias, reenvío, etc.<br>
+• FTP o SFTP:<br>
+◦ si nos ofrece servicio FTP para la transferencia de ficheros entre nuestro equipo y el servidor, o si se ofrece WebFTP.<br>
+◦ Número de cuentas FTP que se podrán crear.<br>
+• Bases de datos:<br>
+◦ si nos ofrecen la posibilidad de crear y gestionar bases de datos y de qué tipo (MySQL, Server SQL, …)<br>
+◦ número de bases de datos y capacidad máxima de cada una.<br>
+• Programación: los lenguajes de programación que soporte el servidor, como PHP, ASP, Perl, Python,…<br>
+• Soporte técnico: si nos ofrecen atención telefónica, consultas vía correo electrónico, atención online, FAQ, manuales, tutoriales,…<br>
+• Otros servicios: tecnologías multimedia (streaming de video, flash,…), estadísticas, logs, acceso seguro, comercio electrónico, …</p>
+<div class="admonition note">
+<p class="admonition-title">Realiza una actividad de búsqueda y comparación de proveedores de hosting</p>
+</div>
+<h1 id="bibliografia">Bibliografia </h1>
+<p><a href="https://fliphtml5.com/tzjwz/lbkb/aplicaciones-web-2013-grado-medio-mcgraw-hill/">https://fliphtml5.com/tzjwz/lbkb/aplicaciones-web-2013-grado-medio-mcgraw-hill/</a></p>
 
       </div>
       
