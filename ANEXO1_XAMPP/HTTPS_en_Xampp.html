@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Instalación del XAMPP y creación de la base de datos</title>
+      <title>Configuración de HTTPS en XAMPP</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -84,68 +84,73 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="instalación-del-xampp-y-creación-de-la-base-de-datos">Instalación del XAMPP y creación de la base de datos </h1>
+<h1 id="configuración-de-https-en-xampp">Configuración de HTTPS en XAMPP </h1>
 
 <div class="md-toc">
 <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#instalación-del-xampp-y-creación-de-la-base-de-datos-1" class="md-toc-link">
-            <p>Instalación del XAMPP y creación de la base de datos</p>
+          <a href="#configuración-de-https-en-xampp-windows" class="md-toc-link">
+            <p>Configuración de HTTPS en Xampp (Windows)</p>
 
           </a></div>
 </div>
 <br>
-<p><a href="./Xampp_MariaDB.pdf">Descargar estos apuntes</a></p>
+<p><a href="./HTTPS_en_Xampp.pdf">Descargar estos apuntes</a></p>
 <div style="page-break-after:always;"></div>
-<h1 id="instalación-del-xampp-y-creación-de-la-base-de-datos-1">Instalación del XAMPP y creación de la base de datos </h1>
-<p>Para instalar una aplicación web en un equipo local, es necesario instalar un servidor web local con soporte para <strong>PHP</strong> y <strong>MySQL</strong>. Uno de los servidores web locales más utilizados es <strong>XAMPP</strong>, que permite instalar un servidor web con soporte para PHP y MySQL en un equipo local.</p>
-<p><a href="https://www.apachefriends.org/es/index.html">Descargar XAMPP</a></p>
-<p>Comprobar los requisitos en la web de la aplicación web que vayamos a instalar (NextCloud, Moodle, Wordpress). Hay que recordar que además del software hay otros requisitos que hay que comprobar antes de empezar con la instalación; por ejemplo, el espacio de disco duro o la memoria necesaria. Por ejemplo, en la instalación de Xampp nos puede ocurrir que la versión de la BBDD no cumple los requisitos y debemos actualizarla. Puede ser necesario también cambiar parámetros de configuración del servidor web Apache para que funcione correctamente. Normalmente en el fichero php.ini se pueden cambiar estos parámetros.</p>
-<div class="admonition note">
-<p class="admonition-title">Actualizar a MariaBD a la última versión</p>
-<ol>
-<li>Descarga la última versión de MariaDB en formato zip.</li>
-<li>Renombra xampp/mysql a xampp/mysql-old</li>
-<li>Descomprime la nueva versión en xampp/mysql</li>
-<li>Copia xampp/mysql_old/bin/my.ini a xampp/mysql/bin/my.ini</li>
-<li>Copia carpeta xampp/mysql_old/backup a xampp/mysql/backup</li>
-<li>Copia SOLO las carpetas (no archivos) de xampp/mysql_old/backup a xampp/mysql/data</li>
-</ol>
+<h3 id="configuración-de-https-en-xampp-windows">Configuración de HTTPS en Xampp (Windows) </h3>
+<p><strong>Objetivo</strong>: Garantizar que las comunicaciones entre los usuarios y el servidor sean seguras mediante el uso de HTTPS.</p>
+<p><strong>Pasos a seguir</strong></p>
+<ul>
+<li>
+<p>Instalación de OpenSSL en Windows:</p>
+<ul>
+<li>OpenSSL es una herramienta que permite generar certificados SSL necesarios para habilitar HTTPS.</li>
+<li>Descargar OpenSSL desde el sitio web oficial (OpenSSL for Windows).</li>
+<li>Instalar OpenSSL en tu sistema Windows, seleccionando el directorio de instalación adecuado (normalmente C:\OpenSSL-Win32).</li>
+</ul>
+</li>
+<li>
+<p>Generación de un certificado SSL autofirmado:</p>
+<ul>
+<li>
+<p>Abre la línea de comandos en modo administrador.</p>
+</li>
+<li>
+<p>Navega al directorio de OpenSSL (cd C:\OpenSSL-Win32\bin).</p>
+</li>
+<li>
+<p>Ejecuta el siguiente comando para generar una clave privada:</p>
+<pre data-role="codeBlock" data-info="csharp" class="language-csharp csharp"><code>    openssl genrsa <span class="token operator">-</span><span class="token keyword keyword-out">out</span> nextcloud<span class="token punctuation">.</span>key <span class="token number">2048</span>
+</code></pre></li>
+<li>
+<p>Luego, crea un certificado autofirmado con el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="vbnet" class="language-vbnet vbnet"><code>	openssl req <span class="token operator">-</span><span class="token keyword keyword-new">new</span> <span class="token operator">-</span>x509 <span class="token operator">-</span><span class="token keyword keyword-key">key</span> nextcloud.<span class="token keyword keyword-key">key</span> <span class="token operator">-</span><span class="token keyword keyword-out">out</span> nextcloud.crt <span class="token operator">-</span>days <span class="token number">365</span>
+</code></pre><div class="admonition warning">
+<p class="admonition-title">Atención: Durante este proceso se te pedirá que completes información como país, estado, organización, etc. Usa valores ficticios si es necesario, pero asegúrate de poner “localhost” o la IP del servidor en el Common Name.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Cambiar parámetros en el fichero php.ini</p>
-<p>Desde este fichero podemos cambiar parámetros como:<br>
-post_max_size = 500M<br>
-upload_max_filesize = 500M<br>
-max_input_vars = 10000<br>
-O descomentar las siguientes líneas para activar las extensiones necesarias:<br>
-extension=gd<br>
-extension=gmp<br>
-extension=intl<br>
-extension=imap<br>
-extension=soap<br>
-extension=sodium<br>
-extension=tidy<br>
-extension=zip<br>
-O copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
-</div>
-<p>Una vez instalado XAMPP, y actualizada la versión de MariaDB (<em>en caso de ser necesario para Moodle, por ejemplo</em>), es necesario crear una base de datos en MySQL para almacenar los contenidos del gestor de contenidos. Para crear una base de datos en MySQL, es necesario acceder a la interfaz de administración de MySQL y crear una nueva base de datos con un nombre y una contraseña.</p>
-<p>Para ello accedemos a la interfaz de administración de MySQL a través de un navegador web, introduciendo la URL <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> en la barra de direcciones del navegador. Una vez en la interfaz de administración de MySQL, hacemos clic en la pestaña "Base de datos" y creamos una nueva base de datos con un nombre y una contraseña.</p>
-<p>Crearemos un usuario en la base de datos con todos los privilegios sobre la base de datos creada.</p>
-<p>Para ello, podemos hacerlo accediendo a la pestaña "Usuarios" y creamos un nuevo usuario con un nombre y una contraseña. A continuación, asignamos todos los privilegios al usuario sobre la base de datos creada.</p>
-<p>También podemos <strong>crear el usuario desde SQL</strong>, ejecutando el siguiente comando, cambiando los valores de <em>miusuario</em> y <em>mipassword</em> por los que queramos:</p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-USER">USER</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword keyword-BY">BY</span> <span class="token string">'mipassword'</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-GRANT">GRANT</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-PRIVILEGES">PRIVILEGES</span> <span class="token keyword keyword-ON">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword keyword-TO">TO</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span><span class="token punctuation">;</span>
-</code></pre><p>Al pulsar continuar, se creará el usuario con todos los privilegios sobre la base de datos y nos debe aparecer un mensaje indicando que se ha ejecutado correctamente.</p>
-<div class="admonition note">
-<p class="admonition-title">Creamos una usuario alumno con contraseña alumno con todos los privilegios.</p>
-</div>
-<p>Ahora <strong>creamos la base de datos</strong> con el nombre que queramos. Desde la pestaña "Base de datos" creamos una nueva base de datos con el nombre que queramos, por ejemplo <em>bd_primerwordpress</em></p>
-<div class="admonition info">
-<p class="admonition-title">Para poder instalar sin problemas un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable max_execution_time en php.ini. Por defecto su valor es de 30 segundos, pero recomendamos indicar 150.</p>
-</div>
-<p>En la carpeta C:\xampp\htdocs, creamos una carpeta con el nombre del proyecto, por ejemplo, <em>primerwordpress</em>. Podemos tener tantas carpetas como proyectos queramos tener en nuestro servidor local.</p>
-<p>Para crear la base de datos vacía y un usuario que tenga acceso con unos determinados privilegios hay diversas formas de hacerlo. En Xampp, por ejemplo, se puede hacer desde la consola del MySQL o bien con la herramienta phpMyAdmin, que es una aplicación web para administrar la base de datos y que se instala con la mayoría de paquetes.</p>
-<p>También se puede utilizar <strong>MySQL Workbench</strong>, una herramienta gráfica muy utilizada en la administración de bases de datos. Podéis encontrar más información en la página oficial de MySQL Workbench.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Configuración de Apache en XAMPP para usar HTTPS:</p>
+<ul>
+<li>Ve al directorio de configuración de Apache en XAMPP (C:\xampp\apache\conf\extra).</li>
+<li>Abre el archivo httpd-ssl.conf y busca las líneas SSLCertificateFile y SSLCertificateKeyFile. Cámbialas para que apunten a los archivos que has creado:<pre data-role="codeBlock" data-info="arduino" class="language-arduino arduino"><code>SSLCertificateFile <span class="token string">"C:/OpenSSL-Win32/bin/nextcloud.crt"</span>
+SSLCertificateKeyFile <span class="token string">"C:/OpenSSL-Win32/bin/nextcloud.key"</span>
+</code></pre></li>
+<li>Habilita el módulo SSL en Apache editando el archivo httpd.conf y asegurándote de que las siguientes líneas no estén comentadas (sin # delante):<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>LoadModule ssl_module modules/mod_ssl.so
+Include conf/extra/httpd-ssl.conf
+</code></pre></li>
+<li>Reinicia el servidor Apache desde el panel de control de XAMPP para aplicar los cambios.</li>
+</ul>
+</li>
+<li>
+<p>Verificación:</p>
+<ul>
+<li>Abre un navegador y accede a Nextcloud a través de <a href="https://localhost/nextcloud">https://localhost/nextcloud</a>.</li>
+<li>Si el navegador muestra una advertencia de seguridad, puedes ignorarla en este caso, ya que el certificado es autofirmado. En un entorno de producción, usarías un certificado SSL válido emitido por una autoridad certificadora.</li>
+</ul>
+</li>
+</ul>
 
       </div>
       

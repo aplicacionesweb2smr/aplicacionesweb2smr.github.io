@@ -129,34 +129,9 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#informes-y-auditoría-en-nextcloud" class="md-toc-link">
             <p>Informes y Auditoría en Nextcloud</p>
 
-          </a></div><details style="padding:0;;padding-left:24px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#seguridad-en-nextcloud" class="md-toc-link"><p>Seguridad en Nextcloud</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#configuración-de-https-en-nextcloud-windows" class="md-toc-link">
-            <p>Configuración de HTTPS en Nextcloud (Windows)</p>
-
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#configuración-de-la-autenticación-de-dos-factores-2fa" class="md-toc-link">
-            <p>Configuración de la Autenticación de Dos Factores (2FA)</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#cifrado-de-archivos-en-nextcloud" class="md-toc-link">
-            <p>Cifrado de Archivos en Nextcloud</p>
-
-          </a></div>
-        </div>
-      </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#proyecto-final-de-instalación-y-gestión" class="md-toc-link">
-            <p>Proyecto Final de Instalación y Gestión</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#evaluación-y-discusión-final" class="md-toc-link">
-            <p>Evaluación y Discusión Final</p>
+          <a href="#seguridad-en-nextcloud" class="md-toc-link">
+            <p>Seguridad en Nextcloud</p>
 
           </a></div>
         </div>
@@ -272,7 +247,9 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <li>Configuración en el navegador: Acceder a localhost/nextcloud desde el navegador para completar la instalación a través de la interfaz gráfica.</li>
 </ol>
 <p>A veces en la versión de XAMPP podemos encontrar una base de datos más antigua que la que requiere Nextcloud, en este caso, se debe actualizar MySQL a la última versión compatible con Nextcloud.</p>
-<p>Para realizar una instalación más guiada de Xampp podéis seguir el Anexo proporcionado.</p>
+<div class="admonition info">
+<p class="admonition-title">Para realizar una instalación más guiada de Xampp podéis seguir el Anexo proporcionado.</p>
+</div>
 <h2 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h2>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
 <ul>
@@ -300,8 +277,8 @@ Los distintos permisos de usuario en Nextcloud son:</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Práctica de Gestión de Usuarios y Permisos en Nextcloud</p>
-</div>
 <p>Crea una estructura de usuarios en Nextcloud, asignando roles de administrador, usuario estándar e invitado. Configura los permisos para cada uno y prueba la creación de carpetas con permisos específicos.</p>
+</div>
 <h2 id="gestión-de-archivos-y-directorios">Gestión de Archivos y Directorios </h2>
 <p>Las operaciones básicas en la gestión de archivos son:</p>
 <ul>
@@ -364,154 +341,28 @@ Asegúrate de que la información adicional y los metadatos sean accesibles y ú
 <p>Genera un informe de actividad de usuarios dentro de Nextcloud y revisa el historial de acceso y modificaciones de archivos.</p>
 </div>
 <h2 id="seguridad-en-nextcloud">Seguridad en Nextcloud </h2>
-<p>Vamos a ver como aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante HTTPS, autenticación de dos factores (2FA) y el cifrado de archivos. A continuación, se detallarán los pasos específicos.</p>
-<h3 id="configuración-de-https-en-nextcloud-windows">Configuración de HTTPS en Nextcloud (Windows) </h3>
-<p><strong>Objetivo</strong>: Garantizar que las comunicaciones entre los usuarios y el servidor sean seguras mediante el uso de HTTPS.</p>
-<p><strong>Pasos a seguir</strong></p>
-<ul>
-<li>
-<p>Instalación de OpenSSL en Windows:</p>
-<ul>
-<li>OpenSSL es una herramienta que permite generar certificados SSL necesarios para habilitar HTTPS.</li>
-<li>Descargar OpenSSL desde el sitio web oficial (OpenSSL for Windows).</li>
-<li>Instalar OpenSSL en tu sistema Windows, seleccionando el directorio de instalación adecuado (normalmente C:\OpenSSL-Win32).</li>
-</ul>
-</li>
-<li>
-<p>Generación de un certificado SSL autofirmado:</p>
-<ul>
-<li>
-<p>Abre la línea de comandos en modo administrador.</p>
-</li>
-<li>
-<p>Navega al directorio de OpenSSL (cd C:\OpenSSL-Win32\bin).</p>
-</li>
-<li>
-<p>Ejecuta el siguiente comando para generar una clave privada:</p>
-<pre data-role="codeBlock" data-info="csharp" class="language-csharp csharp"><code>    openssl genrsa <span class="token operator">-</span><span class="token keyword keyword-out">out</span> nextcloud<span class="token punctuation">.</span>key <span class="token number">2048</span>
-</code></pre></li>
-<li>
-<p>Luego, crea un certificado autofirmado con el siguiente comando:</p>
-<pre data-role="codeBlock" data-info="vbnet" class="language-vbnet vbnet"><code>	openssl req <span class="token operator">-</span><span class="token keyword keyword-new">new</span> <span class="token operator">-</span>x509 <span class="token operator">-</span><span class="token keyword keyword-key">key</span> nextcloud.<span class="token keyword keyword-key">key</span> <span class="token operator">-</span><span class="token keyword keyword-out">out</span> nextcloud.crt <span class="token operator">-</span>days <span class="token number">365</span>
-</code></pre><div class="admonition warning">
-<p class="admonition-title">Atención: Durante este proceso se te pedirá que completes información como país, estado, organización, etc. Usa valores ficticios si es necesario, pero asegúrate de poner “localhost” o la IP del servidor en el Common Name.</p>
+<p>Vamos a ver como aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante <strong>HTTPS</strong>, <strong>autenticación de dos factores (2FA)</strong> y el <strong>cifrado de archivos</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Podéis encontrar en un Anexo cómo configurar HTTPS en Xampp</p>
 </div>
-</li>
-</ul>
-</li>
-<li>
-<p>Configuración de Apache en XAMPP para usar HTTPS:</p>
-<ul>
-<li>Ve al directorio de configuración de Apache en XAMPP (C:\xampp\apache\conf\extra).</li>
-<li>Abre el archivo httpd-ssl.conf y busca las líneas SSLCertificateFile y SSLCertificateKeyFile. Cámbialas para que apunten a los archivos que has creado:<pre data-role="codeBlock" data-info="arduino" class="language-arduino arduino"><code>SSLCertificateFile <span class="token string">"C:/OpenSSL-Win32/bin/nextcloud.crt"</span>
-SSLCertificateKeyFile <span class="token string">"C:/OpenSSL-Win32/bin/nextcloud.key"</span>
-</code></pre></li>
-<li>Habilita el módulo SSL en Apache editando el archivo httpd.conf y asegurándote de que las siguientes líneas no estén comentadas (sin # delante):<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>LoadModule ssl_module modules/mod_ssl.so
-Include conf/extra/httpd-ssl.conf
-</code></pre></li>
-<li>Reinicia el servidor Apache desde el panel de control de XAMPP para aplicar los cambios.</li>
-</ul>
-</li>
-<li>
-<p>Verificación:</p>
-<ul>
-<li>Abre un navegador y accede a Nextcloud a través de <a href="https://localhost/nextcloud">https://localhost/nextcloud</a>.</li>
-<li>Si el navegador muestra una advertencia de seguridad, puedes ignorarla en este caso, ya que el certificado es autofirmado. En un entorno de producción, usarías un certificado SSL válido emitido por una autoridad certificadora.</li>
-</ul>
-</li>
-</ul>
-<h3 id="configuración-de-la-autenticación-de-dos-factores-2fa">Configuración de la Autenticación de Dos Factores (2FA) </h3>
-<p><strong>Objetivo</strong>: Añadir una capa adicional de seguridad al requerir un segundo factor (normalmente un código generado en una aplicación móvil) para acceder a la cuenta.</p>
-<p>Pasos a seguir:</p>
-<ul>
-<li>Activar la aplicación de 2FA en Nextcloud:
-<ul>
-<li>Inicia sesión en Nextcloud como administrador.</li>
-<li>Ve a Aplicaciones desde el menú superior derecho.</li>
-<li>Busca la aplicación Two-Factor TOTP Provider (que utiliza códigos temporales generados por apps como Google Authenticator o Authy) y actívala.</li>
-</ul>
-</li>
-<li>Configuración de la autenticación de dos factores:
-<ul>
-<li>Una vez activada la app, accede a Configuración en el menú del administrador y selecciona Seguridad.</li>
-<li>Habilita la opción Autenticación de dos factores para los usuarios.</li>
-</ul>
-</li>
-<li>Configuración en la cuenta de usuario:
-<ul>
-<li>Cada usuario deberá configurar su 2FA individualmente. Una vez activada, cuando el usuario inicie sesión, se le pedirá que escanee un código QR con una aplicación de autenticación (como Google Authenticator).</li>
-<li>Después de escanear el código QR, la aplicación generará un código de seis dígitos que debe introducirse al iniciar sesión en Nextcloud.</li>
-</ul>
-</li>
-<li>Verificación:
-<ul>
-<li>Prueba iniciar sesión en Nextcloud con un usuario que haya activado 2FA. Después de ingresar la contraseña, se solicitará el código de autenticación generado en la app móvil.</li>
-</ul>
-</li>
-</ul>
-<h3 id="cifrado-de-archivos-en-nextcloud">Cifrado de Archivos en Nextcloud </h3>
-<p><strong>Objetivo</strong>: Proteger los archivos almacenados en el servidor mediante cifrado. Esto asegura que, incluso si los archivos son robados o accedidos de manera indebida, no podrán ser leídos sin la clave de descifrado correcta.</p>
-<p>Pasos a seguir:</p>
-<ul>
-<li>Activar la aplicación de cifrado en Nextcloud:
-<ul>
-<li>Inicia sesión como administrador.</li>
-<li>Ve a Aplicaciones y busca la aplicación Default encryption module.</li>
-<li>Activa esta aplicación, que proporciona un cifrado a nivel de servidor para todos los archivos almacenados en Nextcloud.</li>
-</ul>
-</li>
-<li>Habilitar el cifrado para los archivos:
-<ul>
-<li>Una vez activado el módulo, ve a Configuración &gt; Administración &gt; Seguridad.</li>
-<li>En la sección de Cifrado, habilita la opción para cifrar todos los archivos nuevos que se suban al servidor.</li>
-</ul>
-</li>
-<li>Comprobación del cifrado:
-<ul>
-<li>Sube un archivo cualquiera a Nextcloud.</li>
-<li>Dirígete al servidor y trata de abrir el archivo desde el sistema de archivos directamente (sin pasar por la interfaz de Nextcloud). Verás que el archivo está cifrado y no se puede leer sin el acceso adecuado a Nextcloud.</li>
-</ul>
-</li>
-<li>Verificación:
-<ul>
-<li>Intenta descargar el archivo desde la interfaz web de Nextcloud y verifica que el archivo sea legible. De esta manera, se asegura que solo los usuarios autorizados dentro del sistema pueden acceder al contenido real de los archivos.</li>
-</ul>
-</li>
-</ul>
+<p><strong>Configuración de la Autenticación de Dos Factores (2FA)</strong></p>
+<p>Se puede añadir en NextCloud una capa adicional de seguridad al requerir un segundo factor (normalmente un código generado en una aplicación móvil) para acceder a la cuenta.</p>
+<p>Para ello de debe iniciar sesión como administrador e ir a Aplicaciones desde el menú superior derecho. Buscar la aplicación <strong>Two-Factor TOTP Provider</strong> y activarla. Habilitar la opción <strong>Autenticación de dos factores</strong> para los usuarios.</p>
+<p>Una vex activada cada usuario deberá configurar su 2FA individualmente. Una vez activada, cuando el usuario inicie sesión, se le pedirá que escanee un código QR con una aplicación de autenticación (como Google Authenticator) desde un dispositivo móvil.</p>
+<p><strong>Cifrado de Archivos en Nextcloud</strong></p>
+<p>Se puede proteger los archivos almacenados en el servidor mediante <strong>cifrado</strong>. Esto asegura que, incluso si los archivos son robados o accedidos de manera indebida, no podrán ser leídos sin la clave de descifrado correcta.</p>
+<p>Con el usuario administrador, ir a Aplicaciones y activar la aplicación <strong>Default encryption module</strong>. Habilitar la opción para cifrar todos los archivos nuevos que se suban al servidor<br>
+Una vez activado el módulo, ve a <strong>Configuración &gt; Administración &gt; Seguridad</strong>. En la sección de <strong>Cifrado</strong>, habilita la opción para cifrar todos los archivos nuevos que se suban al servidor.</p>
+<p>Para comprobar si funciona sube un archivo cualquiera a Nextcloud. Dirígete al servidor y trata de abrir el archivo desde el sistema de archivos directamente (sin pasar por la interfaz de Nextcloud). Verás que el archivo está cifrado y no se puede leer sin el acceso adecuado a Nextcloud.</p>
+<p>Intenta descargar el archivo desde la interfaz web de Nextcloud y verifica que el archivo sea legible. De esta manera, se asegura que solo los usuarios autorizados dentro del sistema pueden acceder al contenido real de los archivos.</p>
 <div class="admonition note">
 <p class="admonition-title">Práctica de Seguridad HTTPS</p>
 <ol>
 <li>HTTPS:<br>
 Completa la configuración de HTTPS en tu servidor local de Nextcloud. Asegúrate de que el acceso a la plataforma sea a través de <a href="https://localhost/nextcloud">https://localhost/nextcloud</a>.<br>
 Verifica la seguridad accediendo al sitio con el protocolo HTTPS activado.</li>
-<li>Autenticación de Dos Factores (2FA):<br>
-Configura 2FA para tu cuenta de administrador y para una cuenta de usuario estándar. Inicia sesión utilizando este sistema de autenticación adicional.<br>
-Intenta acceder sin el segundo factor para comprobar que el sistema rechaza el acceso sin el código adecuado.</li>
-<li>Cifrado de archivos:<br>
-Activa el cifrado de archivos y sube un archivo al servidor. Comprueba su estado cifrado en el sistema de archivos y verifica que solo es accesible desde la interfaz de Nextcloud.</li>
 </ol>
 </div>
-<p>TODO: Revisar unidad y proyecto</p>
-<h2 id="proyecto-final-de-instalación-y-gestión">Proyecto Final de Instalación y Gestión </h2>
-<p>Descripción del proyecto:<br>
-El objetivo de este proyecto es que los estudiantes demuestren sus habilidades instalando, configurando y gestionando una instalación de Nextcloud en Windows. El proyecto estará enfocado en la seguridad, la administración de usuarios y la compartición de archivos.</p>
-<p>Instrucciones del proyecto:<br>
-Instalar Nextcloud en Windows utilizando XAMPP y configurar el entorno adecuadamente.<br>
-Crear y gestionar usuarios: Deben crear al menos tres tipos de usuarios con diferentes permisos (administrador, usuario estándar e invitado).<br>
-Configurar la seguridad: Habilitar HTTPS, implementar autenticación de dos factores y activar el cifrado de archivos.<br>
-Compartir archivos y carpetas: Crear estructuras de carpetas, asignar permisos y compartir archivos entre usuarios y mediante enlaces públicos.<br>
-Generar informes de actividad: Hacer un seguimiento de las acciones realizadas por los usuarios.<br>
-Tarea práctica:<br>
-Cada estudiante (o grupo) debe completar el proyecto, documentar el proceso y presentar un informe de las configuraciones realizadas, los problemas encontrados y las soluciones aplicadas.</p>
-<h2 id="evaluación-y-discusión-final">Evaluación y Discusión Final </h2>
-<p>Evaluación del proyecto:<br>
-Presentación del proyecto: Cada estudiante o grupo presentará su proyecto, explicando las configuraciones realizadas y los pasos seguidos durante la instalación y configuración de Nextcloud.<br>
-Revisión de la documentación: Se evaluará la calidad de la documentación proporcionada, asegurándose de que los pasos estén bien detallados.<br>
-Funcionamiento del sistema: El sistema debe ser accesible y funcional, cumpliendo con los criterios de seguridad, gestión de usuarios y compartición de archivos establecidos en las sesiones anteriores.<br>
-Análisis de logs e informes de auditoría: Se revisará si los estudiantes han generado y comprendido los informes de actividad y auditoría.<br>
-Discusión grupal:<br>
-Experiencias y desafíos: Los estudiantes discutirán las dificultades encontradas durante la instalación y configuración, así como las soluciones aplicadas.<br>
-Importancia de la seguridad en sistemas de gestión de archivos: Reflexión sobre la importancia de las medidas de seguridad implementadas y cómo estas pueden aplicarse en entornos empresariales reales.</p>
 <h1 id="bibliografía">Bibliografía </h1>
 <p><a href="https://ioc.xtec.cat/materials/FP/Recursos/fp_smx_m08_/web/fp_smx_m08_htmlindex/index.html">Aplicacions web - Institut Obert de Catalunya</a></p>
 
