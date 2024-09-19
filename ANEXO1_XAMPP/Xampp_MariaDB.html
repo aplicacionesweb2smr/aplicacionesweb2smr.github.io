@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Unidad 2 Aplicaciones web de escritorio</title>
+      <title>Instalación del XAMPP y creación de la base de datos</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -84,124 +84,68 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="unidad-2-aplicaciones-web-de-escritorio">Unidad 2 Aplicaciones web de escritorio </h1>
+<h1 id="instalación-del-xampp-y-creación-de-la-base-de-datos">Instalación del XAMPP y creación de la base de datos </h1>
 
 <div class="md-toc">
 <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#resultados-de-aprendizaje-y-criterios-de-evaluación" class="md-toc-link">
-            <p>Resultados de Aprendizaje y Criterios de Evaluación</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#contenidos" class="md-toc-link">
-            <p>Contenidos</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#conceptos-básicos" class="md-toc-link">
-            <p>Conceptos básicos</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#correo-web" class="md-toc-link">
-            <p>Correo web</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#calendarios-en-línea" class="md-toc-link">
-            <p>Calendarios en línea</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#bibliografía" class="md-toc-link">
-            <p>Bibliografía</p>
+          <a href="#instalación-del-xampp-y-creación-de-la-base-de-datos-1" class="md-toc-link">
+            <p>Instalación del XAMPP y creación de la base de datos</p>
 
           </a></div>
 </div>
 <br>
-<p><a href="./RA5_Aplicaciones_de_escritorio.pdf">Descargar estos apuntes</a></p>
+<p><a href="./Xampp_MariaBD.pdf">Descargar estos apuntes</a></p>
 <div style="page-break-after:always;"></div>
-<h1 id="resultados-de-aprendizaje-y-criterios-de-evaluación">Resultados de Aprendizaje y Criterios de Evaluación </h1>
-<p><strong>RA5. Instala aplicaciones web de escritorio, describiendo sus características y entornos de uso.</strong><br>
-Criterios de evaluación:<br>
-a) Se han descrito diferentes aplicaciones web de escritorio.<br>
-b) Se han instalado aplicaciones para proveer de acceso web al servicio de correo electrónico.<br>
-c) Se han configurado las aplicaciones para integrarlas con un servidor de correo.<br>
-d) Se han gestionado las cuentas de usuario.<br>
-e) Se ha verificado el acceso al correo electrónico.<br>
-f) Se han instalado aplicaciones de calendario web.<br>
-g) Se han reconocido las prestaciones específicas de las aplicaciones instaladas (citas, tareas, entre otras).</p>
-<h1 id="contenidos">Contenidos </h1>
-<p>Aplicaciones web de escritorio:<br>
-– Conceptos básicos.<br>
-– Aplicaciones de correo web.<br>
-– Aplicaciones de calendario web.<br>
-– Instalación.<br>
-– Gestión de usuarios.<br>
-– Utilización de las aplicaciones instaladas.</p>
-<h1 id="conceptos-básicos">Conceptos básicos </h1>
-<p>En la unidad anterior ya vimos la diferencia entre aplicaciones de escritorio y aplicaciones web. Las aplicaciones de escritorio son programas que se instalan en el ordenador del usuario y que se ejecutan en él. Las aplicaciones web, en cambio, son programas que se ejecutan en un servidor web y que se acceden a través de un navegador web.</p>
-<h1 id="correo-web">Correo web </h1>
-<p>Inicialmente los programas que permitían utilizar correo electrónico se tenían que instalar localmente en cada máquina de los diferentes usuarios. Es el caso de los programas Microsoft Outlook o Mozilla ThunderBird. Estas aplicaciones necesitan una instalación y una configuración especial para bajar el correo electrónico desde el servidor de correo al ordenador local. Esta es la gran diferencia entre el correo electrónico tradicional y el correo web.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Se conoce por <strong>correo web</strong> los servicios de correo electrónico que tienen como plataforma principal un espacio web.</p>
+<h1 id="instalación-del-xampp-y-creación-de-la-base-de-datos-1">Instalación del XAMPP y creación de la base de datos </h1>
+<p>Para instalar una aplicación web en un equipo local, es necesario instalar un servidor web local con soporte para <strong>PHP</strong> y <strong>MySQL</strong>. Uno de los servidores web locales más utilizados es <strong>XAMPP</strong>, que permite instalar un servidor web con soporte para PHP y MySQL en un equipo local.</p>
+<p><a href="https://www.apachefriends.org/es/index.html">Descargar XAMPP</a></p>
+<p>Comprobar los requisitos en la web de la aplicación web que vayamos a instalar (NextCloud, Moodle, Wordpress). Hay que recordar que además del software hay otros requisitos que hay que comprobar antes de empezar con la instalación; por ejemplo, el espacio de disco duro o la memoria necesaria. Por ejemplo, en la instalación de Xampp nos puede ocurrir que la versión de la BBDD no cumple los requisitos y debemos actualizarla. Puede ser necesario también cambiar parámetros de configuración del servidor web Apache para que funcione correctamente. Normalmente en el fichero php.ini se pueden cambiar estos parámetros.</p>
+<div class="admonition note">
+<p class="admonition-title">Actualizar a MariaBD a la última versión</p>
+<ol>
+<li>Descarga la última versión de MariaDB en formato zip.</li>
+<li>Renombra xampp/mysql a xampp/mysql-old</li>
+<li>Descomprime la nueva versión en xampp/mysql</li>
+<li>Copia xampp/mysql_old/bin/my.ini a xampp/mysql/bin/my.ini</li>
+<li>Copia carpeta xampp/mysql_old/backup a xampp/mysql/backup</li>
+<li>Copia SOLO las carpetas (no archivos) de xampp/mysql_old/backup a xampp/mysql/data</li>
+</ol>
 </div>
-<p>Además del inherente beneficio de poder consultar el correo en cualquier lugar donde tengamos una conexión a Internet y un dispositivo con un navegador, los servicios actuales de correo web suelen tener las siguientes características:</p>
-<ul>
-<li>Dan una gran capacidad de almacenamiento que permite no borrar nunca un mensaje.</li>
-<li>Tienen filtros contra el correo basura, el spam.</li>
-<li>Son fáciles de usar, incluso en dispositivos móviles.</li>
-<li>Van incorporando nuevas funcionalidades ya que se van actualizando periódicamente.</li>
-<li>Permiten la creación de carpetas para organizar los mensajes.</li>
-<li>Permiten la creación de reglas para automatizar la gestión de los mensajes.</li>
-<li>Permiten la creación de etiquetas para clasificar los mensajes.</li>
-<li>Permiten la planificación del envío de mensajes a la fecha y hora que se desee.</li>
-</ul>
-<p>Los servicios de correo web más conocidos son Gmail, de Google, y Outlook, de Microsoft.</p>
-<p>Por último, es importante destacar que la integración con los dispositivos móviles marcó una importante innovación ya que las aplicaciones específicas que se lanzaron para teléfonos inteligentes (smartphones) y tabletas (tablets) se convirtieron en una importante extensión del correo electrónico en su versión para escritorio.</p>
-<p><strong>Los clientes de correo electrónico</strong></p>
-<p>El uso masivo de Internet y la tendencia general a utilizar, cada vez más, aplicaciones web, hace que los servicios de correo electrónico web se hayan convertido en una herramienta de uso diario.</p>
-<p>El envío de correos electrónicos se da gracias a los servidores de correo electrónico que permiten el intercambio ya sea entre usuarios, servidores, clientes y servidores. Este tipo de servidor almacena y reenvía los mensajes mediante los protocolos SMPT, POP e IMAP.</p>
-<p>El <strong>protocolo SMTP (Simple Mail Transfer Protocol)</strong> es el protocolo que se utiliza para que dos servidores de correo intercambien mensajes.</p>
-<p>El <strong>protocolo POP (Post Office Protocol)</strong> se utiliza para obtener los mensajes guardados en el servidor y pasarlos al usuario. Por otro lado, aunque el <strong>protocolo IMAP</strong> es similar al POP, el funcionamiento y las funcionalidades que ofrece son diferentes. Cuando se utiliza un servidor de correo IMAP, los mensajes de correo electrónico se mantienen en el servidor donde los usuarios pueden leerlos y borrarlos.</p>
-<p>Conectado al servidor POP o IMAP encontraremos un cliente de correo electrónico, es decir, un programa de ordenador utilizado para leer y enviar correos electrónicos. A diferencia de los clientes web de correo electrónico que permiten enviar y recibir mensajes mediante una página web, los clientes de correo son programas que se instalan en nuestro ordenador y que nos permiten gestionar el correo y los contactos, además de la agenda.</p>
-<p>Por otro lado, si bien con el correo electrónico web los correos quedan almacenados en el proveedor web del correo electrónico, en el caso del cliente de correo electrónico tradicional, este busca los mensajes que llegan al servidor de nuestro proveedor de Internet y los descarga cuando se lo pedimos. La conexión con el servidor por parte del cliente de correo electrónico se puede realizar mediante dos protocolos diferentes, el POP3 o el IMAP.</p>
-<p>En el caso del protocolo <strong>IMAP</strong>, <strong>los mensajes quedan almacenados en el servidor</strong> y pueden ser consultados también desde otros ordenadores o programas de correo, incluido webmail. En el protocolo POP3 (Post Office Protocol versión 3), los mensajes que se reciben en el servidor de correo electrónico son descargados en el ordenador donde está instalado el cliente de correo electrónico y borrados del servidor.</p>
-<p>Hay clientes de correo gratuito y de pago. El más utilizado dentro de los de pago es Outlook de Microsoft, que se puede instalar mediante la suite de Microsoft Office. En el ámbito de software libre, uno de los más conocidos es <strong>Mozilla Thunderbird</strong>, que funciona tanto en Windows, como en Linux y en Mac.</p>
-<h3 id="thunderbird-instalación-y-configuración-de-un-cliente-de-correo-electrónico">Thunderbird: instalación y configuración de un cliente de correo electrónico </h3>
-<p>Mozilla Thunderbird es un cliente de correo gratuito de ejecución rápida y multiplataforma que consume menos recursos que otros, basado en el código desarrollado dentro del proyecto Mozilla.</p>
-<p>Antes de configurar el cliente de correo electrónico Thunderbird, tendremos que <strong>definir sus parámetros principales</strong> (la cuenta de correo electrónico que vincularemos y con qué protocolos, POP3 o IMAP). En nuestro caso, trabajaremos con una cuenta de correo electrónico web creada en el proveedor <strong>Gmail</strong> y trabajaremos sobre el protocolo <strong>POP3</strong>. Por tanto, antes de arrancar la configuración del Thunderbird, tendremos que definir estos parámetros en la cuenta de Gmail con la que trabajaremos. Para hacerlo, <strong>tendremos que acceder a la cuenta de correo electrónico de Gmail y dirigirnos a la opción Configuración</strong>.</p>
-<p>Una vez dentro del apartado Configuración de la cuenta de correo electrónico Gmail, tendremos que dirigirnos a la <strong>pestaña Reenvío y POP/IMAP</strong> y, una vez dentro, nos dirigiremos a la pestaña <strong>Descarga POP</strong> para activar este protocolo, ya sea para todos los mensajes, ya sea para empezar a recibir los mensajes que lleguen a partir del momento en que el cliente de correo electrónico esté configurado.</p>
-<p><img src="images/reenvio_pop_imap.png" alt="Reenvioy  POP/IMAP"></p>
-<p>Una vez guardados los cambios relacionados con la configuración del correo electrónico web de Gmail para sincronizarlo con el cliente de correo electrónico, tendremos que realizar un último paso. Se trata de <strong>bajar el nivel de seguridad que establece Google para el acceso o vinculaciones con las aplicaciones externas</strong>. En este caso, tendremos que dirigirnos al apartado de seguridad de Google (<a href="https://www.google.com/settings/security/lesssecureapps">https://www.google.com/settings/security/lesssecureapps</a>) y <strong>activar el acceso para aplicaciones menos seguras</strong>, tal como muestra la figura.</p>
-<p><img src="images/app_inseguras.png" alt="Acceso aplicaciones menos seguras"></p>
-<p>Una vez hayamos definido los parámetros esenciales de la cuenta de correo electrónico de Gmail para que trabaje con una aplicación externa como es Thunderbird, ya podremos instalar y configurar el cliente de correo electrónico Thunderbird en nuestro ordenador.</p>
-<p>Para descargarlo lo haremos desde la página de <a href="https://www.thunderbird.net/es-ES/thunderbird/all/">Thunderbird</a>.</p>
-<p>Una vez descargado y habiendo ejecutado su instalación, se abrirá la ventana principal para utilizarlo. Antes de hacerlo, tendremos que configurar una cuenta de correo electrónico, es decir, tendremos que definir los parámetros correspondientes al servidor de correo electrónico con el que trabajamos y los protocolos correspondientes (POP3 o IMAP).</p>
-<p>Una vez <strong>Thunderbird</strong> ya esté instalado, al abrir la aplicación accederemos a la ventana principal de la aplicación donde tendremos que dirigirnos al apartado <strong>Crear una cuenta nueva</strong> y clicar sobre la opción <strong>Correo electrónico</strong>.</p>
-<p>Cabe decir que, más que un correo electrónico, lo que haremos será definir un cliente de correo electrónico vinculado a una cuenta ya existente (ya sea web o definida en un servidor de correo electrónico). En nuestro caso, clicaremos sobre el botón <strong>Saltar este paso y utiliza la dirección de correo electrónico que ya tengo</strong>.</p>
-<p>Se nos abrirá una ventana donde podremos definir la cuenta de correo electrónico que queremos vincular con nuestro cliente de correo electrónico y, a la vez, con qué protocolo de correo trabajaremos. En este caso, introduciremos el <strong>correo electrónico de Gmail</strong> y la <strong>contraseña</strong> y <strong>POP3</strong> como protocolo. Además, tendremos que definir las direcciones web del servidor de correo electrónico desde donde descargaremos los correos al software Thunderbird y el servidor al que se conectará el cliente de correo para enviar los correos electrónicos (SMTP).</p>
-<p>Una vez Thunderbird haya certificado la correcta conectividad con el servidor de correo electrónico tanto para recibir correos electrónicos como para enviarlos, el correo electrónico aparecerá configurado dentro del cliente de correo y ya podremos <strong>comprobar el correcto funcionamiento del correo que acabamos de configurar en Thunderbird accediendo a él y enviando un correo electrónico de prueba</strong>.</p>
-<p>Si hemos configurado correctamente el cliente de correo electrónico, el correo se habrá enviado correctamente y también se podrán recibir. Además, podremos comprobar que los correos que se envían desde el cliente de correo electrónico Thunderbird se guardan en la bandeja de salida del correo electrónico web de Gmail.</p>
-<p><strong>Documentación técnica</strong></p>
-<p>A la hora de configurar un servicio, ya sea en Google como en otro proveedor, <strong>es recomendable consultar</strong> y, en la mayoría de los casos, seguir la <strong>documentación técnica</strong> donde quedan contempladas todas las posibles consultas que pueden surgir durante un proceso de instalación o configuración.</p>
-<p>Si tomamos como ejemplo la instalación y configuración de un cliente de correo electrónico a partir de una cuenta de correo electrónico web de Google, Gmail, nos encontramos que Google proporciona información bastante detallada contemplando todas las opciones a las que podemos tener que hacer frente. Por ejemplo, si nos dirigimos al apartado Configuración del correo electrónico web de Google y, a continuación, a la pestaña Reenvío y POP/IMAP donde podremos configurar el protocolo para la recepción de correos electrónicos por parte del cliente de correo electrónico.</p>
-<p>Una vez dentro del apartado podremos acceder a un enlace que, bajo el nombre de <strong>Instrucciones de configuración</strong>, podremos acceder a la documentación técnica de Google en relación con la configuración de un cliente de correo electrónico.</p>
-<p><img src="images/instrucciones_config.png" alt="Instrucciones de para la configuración"></p>
-<p>La documentación técnica busca dejar cubiertas todas las posibles cuestiones que pueden surgir a lo largo de un proceso de configuración y, a la vez, proporcionar el mayor abanico de pautas e información con el lenguaje más sencillo y comprensible posible.</p>
-<h1 id="calendarios-en-línea">Calendarios en línea </h1>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Los <strong>calendarios en línea</strong> son aplicaciones web que se utilizan para gestionar agendas de actividades. Es decir, son programas que permiten almacenar y organizar información sobre citas, reuniones y eventos en un entorno web.</p>
+<div class="admonition note">
+<p class="admonition-title">Cambiar parámetros en el fichero php.ini</p>
+<p>Desde este fichero podemos cambiar parámetros como:<br>
+post_max_size = 500M<br>
+upload_max_filesize = 500M<br>
+max_input_vars = 10000<br>
+O descomentar las siguientes líneas para activar las extensiones necesarias:<br>
+extension=gd<br>
+extension=gmp<br>
+extension=intl<br>
+extension=imap<br>
+extension=soap<br>
+extension=sodium<br>
+extension=tidy<br>
+extension=zip<br>
+O copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
 </div>
-<p>La principal ventaja de los calendarios en línea respecto a las tradicionales agendas en papel es que estos permiten compartir la información con otros usuarios y, la mayoría, tienen funciones para notificar los eventos de una manera automática, ya sea por correo electrónico o con un mensaje al dispositivo móvil.</p>
-<p>Los calendarios en línea también reciben el nombre de calendarios web. El más conocido en la actualidad es Google Calendar, que forma parte del conjunto de aplicaciones web ofrecidas gratuitamente por Google.</p>
-<p><strong>Características del Google Calendar</strong></p>
-<p><strong>Google Calendar</strong> es una aplicación web de Google consistente en un gestor de contactos y de tiempo que, entre otros servicios, nos ofrece la posibilidad de <strong>crear calendarios</strong> y <strong>compartirlos</strong> con aquellos usuarios que deseamos mediante su dirección de correo electrónico.</p>
-<p>Google Calendar también** dispone de una aplicación para dispositivos móviles** con la cual recibir notificaciones de eventos y/o crear de nuevos. Estos quedarán sincronizados automáticamente con el resto de usuarios y dispositivos que tengan acceso al calendario.</p>
-<p>Cabe decir que también hay la posibilidad de sincronizar el Calendar con otras aplicaciones de escritorio, como por ejemplo el cliente de correo electrónico Microsoft Outlook.</p>
-<p>Por último, también hay la <strong>posibilidad de acceder fuera de línea</strong>, pudiendo trabajar con una versión de los calendarios no conectada a Internet que se sincroniza cuando vuelve a estar en línea. Esta función es útil cuando se prevé que necesitaremos trabajar sin conexión, por ejemplo durante un viaje en avión de larga duración.</p>
-<p>Para acceder al Google Calendar lo podemos hacer tanto mediante la cuenta de correo electrónico de Google como mediante su página web de inicio <a href="http://calendar.google.com">http://calendar.google.com</a> y acceder con el usuario de Google y la contraseña, o bien acceder directamente desde la bandeja de correo electrónico, clicando en el icono de la aplicación web Calendar.</p>
-<p>Cada usuario que inicia sesión al Google Calendar tiene asociado, por defecto, un calendario con el nombre del identificador de su cuenta.</p>
-<p>Además de este calendario por defecto, el usuario puede crear tantos calendarios como desee, pudiendo compartirlos con otros usuarios y establecer permisos de lectura y escritura. Para crear un nuevo calendario, el usuario tendrá que clicar sobre la opción Crear nuevo calendario.</p>
-<h1 id="bibliografía">Bibliografía </h1>
-<p><a href="https://ioc.xtec.cat/materials/FP/Recursos/fp_smx_m08_/web/fp_smx_m08_htmlindex/index.html">Aplicacions web - Institut Obert de Catalunya</a></p>
+<p>Una vez instalado XAMPP, y actualizada la versión de MariaDB (<em>en caso de ser necesario para Moodle, por ejemplo</em>), es necesario crear una base de datos en MySQL para almacenar los contenidos del gestor de contenidos. Para crear una base de datos en MySQL, es necesario acceder a la interfaz de administración de MySQL y crear una nueva base de datos con un nombre y una contraseña.</p>
+<p>Para ello accedemos a la interfaz de administración de MySQL a través de un navegador web, introduciendo la URL <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> en la barra de direcciones del navegador. Una vez en la interfaz de administración de MySQL, hacemos clic en la pestaña "Base de datos" y creamos una nueva base de datos con un nombre y una contraseña.</p>
+<p>Crearemos un usuario en la base de datos con todos los privilegios sobre la base de datos creada.</p>
+<p>Para ello, podemos hacerlo accediendo a la pestaña "Usuarios" y creamos un nuevo usuario con un nombre y una contraseña. A continuación, asignamos todos los privilegios al usuario sobre la base de datos creada.</p>
+<p>También podemos <strong>crear el usuario desde SQL</strong>, ejecutando el siguiente comando, cambiando los valores de <em>miusuario</em> y <em>mipassword</em> por los que queramos:</p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-USER">USER</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword keyword-BY">BY</span> <span class="token string">'mipassword'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-GRANT">GRANT</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-PRIVILEGES">PRIVILEGES</span> <span class="token keyword keyword-ON">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword keyword-TO">TO</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span><span class="token punctuation">;</span>
+</code></pre><p>Al pulsar continuar, se creará el usuario con todos los privilegios sobre la base de datos y nos debe aparecer un mensaje indicando que se ha ejecutado correctamente.</p>
+<div class="admonition note">
+<p class="admonition-title">Creamos una usuario alumno con contraseña alumno con todos los privilegios.</p>
+</div>
+<p>Ahora <strong>creamos la base de datos</strong> con el nombre que queramos. Desde la pestaña "Base de datos" creamos una nueva base de datos con el nombre que queramos, por ejemplo <em>bd_primerwordpress</em></p>
+<div class="admonition info">
+<p class="admonition-title">Para poder instalar sin problemas un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable max_execution_time en php.ini. Por defecto su valor es de 30 segundos, pero recomendamos indicar 150.</p>
+</div>
+<p>En la carpeta C:\xampp\htdocs, creamos una carpeta con el nombre del proyecto, por ejemplo, <em>primerwordpress</em>. Podemos tener tantas carpetas como proyectos queramos tener en nuestro servidor local.</p>
+<p>Para crear la base de datos vacía y un usuario que tenga acceso con unos determinados privilegios hay diversas formas de hacerlo. En Xampp, por ejemplo, se puede hacer desde la consola del MySQL o bien con la herramienta phpMyAdmin, que es una aplicación web para administrar la base de datos y que se instala con la mayoría de paquetes.</p>
+<p>También se puede utilizar <strong>MySQL Workbench</strong>, una herramienta gráfica muy utilizada en la administración de bases de datos. Podéis encontrar más información en la página oficial de MySQL Workbench.</p>
 
       </div>
       

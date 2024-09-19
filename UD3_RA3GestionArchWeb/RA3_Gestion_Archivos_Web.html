@@ -106,23 +106,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#características-y-funcionalidades-de-los-gestores-de-archivos-web" class="md-toc-link">
-            <p>Características y funcionalidades de los gestores de archivos web</p>
+          <a href="#proceso-de-instalación-de-nextcloud" class="md-toc-link">
+            <p>Proceso de instalación de NextCloud</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#clasificación-de-las-aplicaciones-gestoras-de-archivos-web" class="md-toc-link">
-            <p>Clasificación de las aplicaciones gestoras de archivos web</p>
-
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#proceso-de-instalación-de-nextcloud" class="md-toc-link"><p>Proceso de instalación de NextCloud</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#configuración-básica-de-nextcloud" class="md-toc-link">
             <p>Configuración Básica de Nextcloud</p>
 
@@ -207,10 +194,9 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <div style="page-break-after:always;"></div>
 <h1 id="introducción">Introducción </h1>
 <p>Desde la aparición de los primeros sistemas de archivos, los sistemas operativos han necesitado una herramienta que permitiera a los usuarios trabajar con el sistema de archivos y que mostrara el contenido del disco duro de una manera amigable y fácil de gestionar. Esta herramienta es el gestor de archivos, que se encarga de hacer de intermediario entre los datos del sistema y nosotros.</p>
-<p>Con la aparición de las redes de ordenadores se creó un protocolo capaz de transferir archivos basado en una arquitectura cliente-servidor, el FTP (del inglés File Transfer Protocol, Protocolo de transferencia de archivos). A pesar de ello, este mecanismo de transferencia (que todavía se utiliza hoy en día), resulta de cierta complicación para los usuarios que no tienen conocimientos técnicos en informática.</p>
+<p>Con la aparición de las redes de ordenadores se creó un protocolo capaz de transferir archivos basado en una arquitectura cliente-servidor, el <strong>FTP (del inglés File Transfer Protocol, Protocolo de transferencia de archivos)</strong>. A pesar de ello, este mecanismo de transferencia (que todavía se utiliza hoy en día), resulta de cierta complicación para los usuarios que no tienen conocimientos técnicos en informática.</p>
 <p>Cuando se produjo la gran expansión comercial de Internet, hacia mediados de los años noventa del siglo XX, la necesidad de disponer de los archivos pasó de ser una necesidad local a una necesidad global, es decir, de poder disponer de nuestros archivos a través de Internet desde cualquier parte del mundo.</p>
 <p>Este conjunto de hechos impulsó el nacimiento de aplicaciones web que permitieran tener acceso a los archivos de manera remota y sencilla, los gestores de archivos web.</p>
-<p>A lo largo de esta unidad formativa conoceréis las diversas aplicaciones de gestores de archivos web que hay en el mercado, y la manera más usual de instalarlas y configurarlas en un servidor. Veréis que no dejan de ser aplicaciones web y que se instalan de manera muy similar al resto de aplicaciones que habéis visto, y que veréis, en este módulo.</p>
 <p>Las funcionalidades básicas que tiene cualquier gestor de archivos son las siguientes:</p>
 <ul>
 <li>Crear carpetas y archivos: permiten la creación de directorios y ficheros en el servidor.</li>
@@ -223,65 +209,6 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <li>Funcionalidades propias de los gestores de archivos basados en web:</li>
 <li>Carga/descarga: esta función es la que permite copiar archivos del ordenador local, desde donde se ejecuta la aplicación web, al servidor web, donde está alojada la aplicación.</li>
 <li>Normalmente, la visualización de los archivos y las carpetas suele representarse siempre jerárquicamente en forma de árbol.</li>
-</ul>
-<p>Las grandes ventajas de las aplicaciones basadas en web son, entre otras, la versatilidad de las aplicaciones, la facilidad de uso, la riqueza visual de las interfaces, y el hecho de que no es necesario instalar software adicional en los ordenadores de los clientes. El único requisito habitual que se pide al cliente es que disponga de un navegador web para acceder al gestor a través de una conexión a Internet. En el mercado hay otros programas que permiten hacer transferencias de archivos, pero la gran mayoría requieren una instalación de software por parte del cliente, y muchos están orientados más a hacer la tarea de transferir los archivos que no a la tarea de administrarlos.</p>
-<p>Hemos hecho una nueva clasificación de las aplicaciones web, en función de si son aplicaciones documentales o no documentales:</p>
-<ul>
-<li><strong>No documentales</strong>: este grupo incluye aquellos gestores de archivos web cuya máxima finalidad es la de emular un gestor de archivos local, como podría ser el Explorador de Windows.</li>
-<li><strong>Documentales</strong>: los gestores de archivos web de este grupo no solamente se limitan a la administración de archivos, sino que les dan una semántica, permiten relacionarlos entre sí, y hacer un seguimiento de todo el ciclo de vida del documento.</li>
-</ul>
-<p>Ejemplos de gestores de archivos web documentales son NextCloud, Dropbox, OpenKM, Alfresco, Nuxeo, o Knowledge Tree, entre otros.</p>
-<h1 id="instalación-de-gestores-de-archivos-web-nextcloud">Instalación de gestores de archivos web: NextCloud </h1>
-<p>La gestión de la información es un aspecto de creciente importancia a medida que se extiende el uso de Internet. El volumen de datos de los usuarios aumenta, hasta el punto que puede convertirse en una necesidad poder acceder de una manera remota y compartida; en este sentido, hacerlo desde un navegador es cada vez más común.</p>
-<div class="admonition note">
-<p class="admonition-title">info</p>
-<p>Un gestor de archivos web es una aplicación web que permite consultar y manipular un sistema de archivos remoto.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">info</p>
-<p>En este contexto, la palabra web hace alusión al uso del protocolo de aplicación HTTP para la transferencia de páginas web. Así, pues, el término gestores de archivos web hace referencia a aplicaciones gestoras de archivos basadas en web accesibles a través de nuestros navegadores de Internet (por ejemplo, el Firefox o el Internet Explorer).</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">info</p>
-<p>File transfer protocol (FTP) es un protocolo de red con arquitectura cliente-servidor que se remonta al año 1973 y que fue diseñado para intercambiar y manipular archivos a través de una red de ordenadores que utilice el protocolo IP, como Internet. Inicialmente, el FTP se llamaba a través de una consola o terminal y toda la interfaz era en modo texto, pero más adelante se desarrollaron interfaces de tipo gráfico que lo soportan.</p>
-<p>Hoy en día, el FTP sigue siendo un protocolo muy utilizado para la transferencia de archivos, pero su uso ha disminuido en favor de otros protocolos más modernos y seguros, como el Secure File Transfer Protocol (SFTP) o el File Transfer Protocol Secure (FTPS).</p>
-</div>
-<p>Hoy en día existen diferentes aplicaciones para gestionar los archivos web. Hay que estudiar las diferentes posibilidades que hay en el mercado y utilizar aquel gestor que más se adapte a los requisitos solicitados por los usuarios.</p>
-<p>De igual manera, con el gestor de archivos podemos consultar los nombres de las carpetas de nuestro disco duro; en un lado de la interfaz (normalmente una ventana) se muestra el índice, y en el otro lado, el contenido de la carpeta que se está consultando (nuestros archivos).</p>
-<p>Aunque quizás no seamos conscientes, los gestores de archivos los encontramos simplificados a menudo dentro de otras aplicaciones, como por ejemplo en los casos en que queremos guardar algún documento que hemos editado y la aplicación nos muestra una ventana donde nos pide dónde queremos guardar el archivo.</p>
-<p>Este conjunto de características que hemos visto relativas a los gestores de archivos son aplicables también a los gestores de archivos web. Todos los gestores de archivos web permiten hacer de una manera u otra cargas de archivos al servidor (si no, se perdería el sentido de gestión remota), y para hacerlo, en última instancia del proceso, acaban llamando al gestor local (suele haber siempre un botón que dice navegar) para que el usuario pueda explorar el sistema de archivos y seleccionar los que quiere cargar al servidor.</p>
-<p>Los gestores de archivos web imitan a los gestores de archivos locales en el sentido que ofrecen funcionalidades muy similares accesibles a través de Internet para poder gestionar remotamente nuestros archivos. El hecho de permitir el acceso remoto supone el uso de una serie de tecnologías que están involucradas directa o indirectamente en la creación de este tipo de aplicaciones a través de la red, como por ejemplo los lenguajes XML, PHP y ASP, las técnicas de desarrollo web Ajax, los servidores de páginas web, las bases de datos, etc. que permiten aprovechar al máximo el canal de Internet para tener una comunicación rica con el usuario.</p>
-<p>Una de las grandes ventajas de trabajar con una interfaz web es que no es necesario instalar ninguna aplicación del lado del cliente.</p>
-<h2 id="características-y-funcionalidades-de-los-gestores-de-archivos-web">Características y funcionalidades de los gestores de archivos web </h2>
-<p>La mayoría de gestores de archivos web incorporan funcionalidades que en parte son herencia de los gestores de archivos locales y en parte provienen de las necesidades impuestas por la transmisión a través de la red. Las características más importantes son:</p>
-<ul>
-<li>Manipulación de archivos:
-<ul>
-<li>Crear carpetas y archivos: permiten la creación de directorios y ficheros en el servidor.</li>
-<li>Renombrar: permiten cambiar el nombre de los ficheros.</li>
-<li>Eliminar: se pueden eliminar ficheros del servidor.</li>
-<li>Copiar: se realiza una copia del fichero.</li>
-<li>Mover: las carpetas y los ficheros se pueden mover de una ubicación a otra.</li>
-<li>Búsqueda de archivos: muchos ofrecen la posibilidad de buscar ficheros de acuerdo con atributos del fichero e incluso dentro del fichero.</li>
-<li>Edición de ficheros: dentro del propio gestor se abre una ventana con el contenido del fichero, normalmente de tipo texto, del cual se permite la edición sin abrir aplicaciones externas. Algunos incorporan resaltado de palabras según los lenguajes de programación.</li>
-</ul>
-</li>
-<li>Administración y seguridad:
-<ul>
-<li>Cambio de permisos de los ficheros y carpetas: permite un control de acceso por parte de los usuarios a ficheros y carpetas.</li>
-<li>Administración de los usuarios: permite la creación, modificación y borrado de cuentas de usuario.</li>
-<li>Carga/descarga: esta función es la que permite copiar archivos del ordenador local al servidor de la aplicación web.</li>
-<li>Selección múltiple de archivos: algunos permiten hacer cargas múltiples de archivos en el servidor.</li>
-</ul>
-</li>
-</ul>
-<p>Características adicionales:</p>
-<ul>
-<li>Preferencias de usuario.</li>
-<li>Papelera de reciclaje.</li>
-<li>Compresión de archivos antes de la descarga.</li>
-<li>Cambiar el idioma de la interfaz.</li>
-<li>Sistema de autenticación de usuarios (Serial, LDAP, Basic HTTP auth...).</li>
 </ul>
 <p>Algunos gestores de archivos web, además de las funcionalidades básicas, incorporan funcionalidades avanzadas como:</p>
 <ul>
@@ -307,18 +234,35 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <li>Gestión de proyectos: la relación entre la documentación y los proyectos (sea cual sea el perfil profesional) se gestiona con facilidad.</li>
 </ul>
 <p>Una vez conocidas las características de los gestores de archivos web ya se puede dar el siguiente paso: evaluar la idoneidad de utilizarlo en un entorno concreto. De cara a tomar la decisión correcta, conviene alinear las necesidades del cliente, las posibilidades del sistema y las características de la aplicación web.</p>
-<h2 id="clasificación-de-las-aplicaciones-gestoras-de-archivos-web">Clasificación de las aplicaciones gestoras de archivos web </h2>
-<p>Podemos clasificar las aplicaciones gestoras de archivos web en dos grandes grupos:</p>
+<p>Las grandes ventajas de las aplicaciones basadas en web son, entre otras, la versatilidad de las aplicaciones, la facilidad de uso, la riqueza visual de las interfaces, y el hecho de que no es necesario instalar software adicional en los ordenadores de los clientes. El único requisito habitual que se pide al cliente es que disponga de un navegador web para acceder al gestor a través de una conexión a Internet. En el mercado hay otros programas que permiten hacer transferencias de archivos, pero la gran mayoría requieren una instalación de software por parte del cliente, y muchos están orientados más a hacer la tarea de transferir los archivos que no a la tarea de administrarlos.</p>
+<p>Hemos hecho una nueva clasificación de las gestores de archivos, en función de si son aplicaciones documentales o no documentales:</p>
 <ul>
-<li><strong>No documentales</strong>: este grupo se caracteriza porque su única función es mostrar los archivos, en forma de listas o de iconos, y permitir una manipulación básica de los ficheros.</li>
-<li><strong>Documentales</strong>: si bien este grupo a veces se incluye como componente de los gestores de contenidos empresariales, se trata de gestores de archivos en el sentido que permiten hacer cargas/descargas de ficheros al servidor y llevar a cabo las tareas básicas de manipulación de archivos como las de copiar, mover, eliminar a la papelera de reciclaje, cargar ficheros al servidor, etc. La característica principal es que permiten controlar todo el ciclo de vida de elaboración de un documento electrónico, desde la creación hasta la publicación web o compartición con otros usuarios. Son ejemplos de este grupo: OpenKM, Alfresco (módulo DM), Nuxeo, o Knowledge Tree, entre otros.</li>
+<li><strong>No documentales</strong>: este grupo incluye aquellos gestores de archivos web cuya máxima finalidad es la de emular un gestor de archivos local, como podría ser el Explorador de Windows.</li>
+<li><strong>Documentales</strong>: los gestores de archivos web de este grupo no solamente se limitan a la administración de archivos, sino que les dan una semántica, permiten relacionarlos entre sí, y hacer un seguimiento de todo el ciclo de vida del documento.</li>
 </ul>
-<h1 id="proceso-de-instalación-de-nextcloud">Proceso de instalación de NextCloud </h1>
+<p>Ejemplos de gestores de archivos web documentales son <strong>NextCloud</strong>, Dropbox, OpenKM, Alfresco, Nuxeo, o Knowledge Tree, entre otros.</p>
+<h1 id="instalación-de-gestores-de-archivos-web-nextcloud">Instalación de gestores de archivos web: NextCloud </h1>
+<p>La gestión de la información es un aspecto de creciente importancia a medida que se extiende el uso de Internet. El volumen de datos de los usuarios aumenta, hasta el punto que puede convertirse en una necesidad poder acceder de una manera remota y compartida; en este sentido, hacerlo desde un navegador es cada vez más común.</p>
+<div class="admonition note">
+<p class="admonition-title">info</p>
+<p>Un <strong>gestor de archivos web</strong> es una aplicación web que permite consultar y manipular un sistema de archivos remoto.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">info</p>
+<p><strong>File transfer protocol (FTP)</strong> es un protocolo de red con arquitectura cliente-servidor que se remonta al año 1973 y que fue diseñado para intercambiar y manipular archivos a través de una red de ordenadores que utilice el protocolo IP, como Internet. Inicialmente, el FTP se llamaba a través de una consola o terminal y toda la interfaz era en modo texto, pero más adelante se desarrollaron interfaces de tipo gráfico que lo soportan.</p>
+<p>Hoy en día, el FTP sigue siendo un protocolo muy utilizado para la transferencia de archivos, pero su uso ha disminuido en favor de otros protocolos más modernos y seguros, como el <strong>Secure File Transfer Protocol (SFTP).</strong></p>
+</div>
+<p>Hoy en día existen diferentes aplicaciones para gestionar los archivos web. Hay que estudiar las diferentes posibilidades que hay en el mercado y utilizar aquel gestor que más se adapte a los requisitos solicitados por los usuarios.</p>
+<p>Aunque quizás no seamos conscientes, los gestores de archivos los encontramos simplificados a menudo dentro de otras aplicaciones, como por ejemplo en los casos en que queremos guardar algún documento que hemos editado y la aplicación nos muestra una ventana donde nos pide dónde queremos guardar el archivo.</p>
+<p>Este conjunto de características que hemos visto relativas a los gestores de archivos son aplicables también a los gestores de archivos web. Todos los gestores de archivos web permiten hacer de una manera u otra cargas de archivos al servidor (si no, se perdería el sentido de gestión remota), y para hacerlo, en última instancia del proceso, acaban llamando al gestor local (suele haber siempre un botón que dice navegar) para que el usuario pueda explorar el sistema de archivos y seleccionar los que quiere cargar al servidor.</p>
+<p>Los gestores de archivos web imitan a los gestores de archivos locales en el sentido que ofrecen funcionalidades muy similares accesibles a través de Internet para poder gestionar remotamente nuestros archivos.</p>
+<p>Una de las grandes ventajas de trabajar con una interfaz web es que no es necesario instalar ninguna aplicación del lado del cliente.</p>
+<h2 id="proceso-de-instalación-de-nextcloud">Proceso de instalación de NextCloud </h2>
 <p>Requisitos previos para la instalación de Nextcloud en Windows:</p>
 <ul>
-<li>Servidor web: En Windows, utilizaremos XAMPP, un paquete que incluye Apache, PHP y MySQL.</li>
-<li>Base de datos: MySQL, incluido en XAMPP, será la base de datos para almacenar la información de Nextcloud.</li>
-<li>PHP: El lenguaje de programación necesario para ejecutar Nextcloud, incluido en XAMPP.</li>
+<li><strong>Servidor web</strong>: En Windows, utilizaremos <strong>XAMPP</strong>, un paquete que incluye Apache, PHP y MySQL.</li>
+<li><strong>Base de datos</strong>: MySQL, incluido en XAMPP, será la base de datos para almacenar la información de Nextcloud.</li>
+<li><strong>PHP</strong>: El lenguaje de programación necesario para ejecutar Nextcloud, incluido en XAMPP.</li>
 </ul>
 <p>Pasos de instalación:</p>
 <ol>
@@ -327,6 +271,8 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <li>Descargar e instalar Nextcloud: Descargar Nextcloud desde su sitio web oficial (<a href="https://nextcloud.com/install/">https://nextcloud.com/install/</a>). Mover los archivos descargados a la carpeta htdocs en el directorio donde se instaló XAMPP.</li>
 <li>Configuración en el navegador: Acceder a localhost/nextcloud desde el navegador para completar la instalación a través de la interfaz gráfica.</li>
 </ol>
+<p>A veces en la versión de XAMPP podemos encontrar una base de datos más antigua que la que requiere Nextcloud, en este caso, se debe actualizar MySQL a la última versión compatible con Nextcloud.</p>
+<p>Para realizar una instalación más guiada de Xampp podéis seguir el Anexo proporcionado.</p>
 <h2 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h2>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
 <ul>
@@ -352,8 +298,10 @@ Los distintos permisos de usuario en Nextcloud son:</li>
 <li>Lectura y escritura: Permite que el usuario modifique o elimine archivos y carpetas.</li>
 <li>Administrador de carpetas compartidas: Puede modificar permisos para otros usuarios en carpetas específicas.</li>
 </ul>
-<p><strong>Tarea práctica</strong>:<br>
-Crea una estructura de usuarios en Nextcloud, asignando roles de administrador, usuario estándar e invitado. Configura los permisos para cada uno y prueba la creación de carpetas con permisos específicos.</p>
+<div class="admonition note">
+<p class="admonition-title">Práctica de Gestión de Usuarios y Permisos en Nextcloud</p>
+</div>
+<p>Crea una estructura de usuarios en Nextcloud, asignando roles de administrador, usuario estándar e invitado. Configura los permisos para cada uno y prueba la creación de carpetas con permisos específicos.</p>
 <h2 id="gestión-de-archivos-y-directorios">Gestión de Archivos y Directorios </h2>
 <p>Las operaciones básicas en la gestión de archivos son:</p>
 <ul>
@@ -377,12 +325,13 @@ Crea una estructura de usuarios en Nextcloud, asignando roles de administrador, 
 </li>
 </ul>
 <p>Es importante definir una estructura de directorios clara y coherente. Esto facilita el acceso y la organización de la información. Por ejemplo, se pueden crear carpetas por proyectos, departamentos o tipos de archivo (documentos, imágenes, videos).</p>
-<p><strong>Tarea práctica</strong><br>
-Crea una estructura de carpetas dentro de Nextcloud para organizar diferentes tipos de archivos (por ejemplo: “Documentos”, “Imágenes”, “Proyectos”). Prueba a mover, copiar y renombrar archivos dentro de esta estructura.</p>
-<p>Sube un archivo de metadatos (por ejemplo, un archivo JSON o TXT con descripciones) junto con un archivo principal.<br>
-Añade etiquetas y comentarios a los archivos subidos.</p>
-<p>Comprueba que los archivos se pueden buscar y acceder fácilmente utilizando los criterios de indexación.<br>
+<div class="admonition note">
+<p class="admonition-title">Práctica de Gestión de Archivos y Directorios</p>
+<p>Crea una estructura de carpetas dentro de Nextcloud para organizar diferentes tipos de archivos (por ejemplo: “Documentos”, “Imágenes”, “Proyectos”). Prueba a mover, copiar y renombrar archivos dentro de esta estructura.<br>
+Sube un archivo de metadatos (por ejemplo, un archivo JSON o TXT con descripciones) junto con un archivo principal. Añade etiquetas y comentarios a los archivos subidos.<br>
+Comprueba que los archivos se pueden buscar y acceder fácilmente utilizando los criterios de indexación.<br>
 Asegúrate de que la información adicional y los metadatos sean accesibles y útiles.</p>
+</div>
 <h2 id="creación-de-recursos-compartidos">Creación de Recursos Compartidos </h2>
 <p>Las opciones de compartición en Nextcloud son:</p>
 <ul>
@@ -395,8 +344,10 @@ Asegúrate de que la información adicional y los metadatos sean accesibles y ú
 <li>Lectura y escritura: Permite a los usuarios modificar o eliminar archivos compartidos.</li>
 <li>Protección con contraseña: Los enlaces compartidos se pueden proteger con una contraseña para mayor seguridad.</li>
 </ul>
-<p><strong>Tarea práctica:</strong><br>
-Comparte una carpeta con otro usuario en Nextcloud y configura diferentes niveles de permisos (solo lectura, lectura/escritura). También comparte un archivo mediante enlace público con protección por contraseña.</p>
+<div class="admonition note">
+<p class="admonition-title">Práctica de Gestión de Recursos compartidos</p>
+<p>Comparte una carpeta con otro usuario en Nextcloud y configura diferentes niveles de permisos (solo lectura, lectura/escritura). También comparte un archivo mediante enlace público con protección por contraseña.</p>
+</div>
 <h2 id="informes-y-auditoría-en-nextcloud">Informes y Auditoría en Nextcloud </h2>
 <p>La auditoría y seguimiento en Nextcloud incluyen:</p>
 <ul>
@@ -408,8 +359,10 @@ Comparte una carpeta con otro usuario en Nextcloud y configura diferentes nivele
 <li>Acceso y modificación de archivos: Se puede rastrear quién accedió o modificó un archivo específico.</li>
 <li>Eventos de seguridad: Registros de intentos de inicio de sesión fallidos y otras actividades de seguridad.</li>
 </ul>
-<p><strong>Tarea práctica:</strong><br>
-Genera un informe de actividad de usuarios dentro de Nextcloud y revisa el historial de acceso y modificaciones de archivos.</p>
+<div class="admonition note">
+<p class="admonition-title">Práctica de informes</p>
+<p>Genera un informe de actividad de usuarios dentro de Nextcloud y revisa el historial de acceso y modificaciones de archivos.</p>
+</div>
 <h2 id="seguridad-en-nextcloud">Seguridad en Nextcloud </h2>
 <p>Vamos a ver como aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante HTTPS, autenticación de dos factores (2FA) y el cifrado de archivos. A continuación, se detallarán los pasos específicos.</p>
 <h3 id="configuración-de-https-en-nextcloud-windows">Configuración de HTTPS en Nextcloud (Windows) </h3>
@@ -525,7 +478,8 @@ Include conf/extra/httpd-ssl.conf
 </ul>
 </li>
 </ul>
-<p><strong>Tarea práctica:</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Práctica de Seguridad HTTPS</p>
 <ol>
 <li>HTTPS:<br>
 Completa la configuración de HTTPS en tu servidor local de Nextcloud. Asegúrate de que el acceso a la plataforma sea a través de <a href="https://localhost/nextcloud">https://localhost/nextcloud</a>.<br>
@@ -536,6 +490,7 @@ Intenta acceder sin el segundo factor para comprobar que el sistema rechaza el a
 <li>Cifrado de archivos:<br>
 Activa el cifrado de archivos y sube un archivo al servidor. Comprueba su estado cifrado en el sistema de archivos y verifica que solo es accesible desde la interfaz de Nextcloud.</li>
 </ol>
+</div>
 <p>TODO: Revisar unidad y proyecto</p>
 <h2 id="proyecto-final-de-instalación-y-gestión">Proyecto Final de Instalación y Gestión </h2>
 <p>Descripción del proyecto:<br>
