@@ -218,12 +218,12 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <p>Ejemplos de gestores de archivos web documentales son <strong>NextCloud</strong>, Dropbox, OpenKM, Alfresco, Nuxeo, o Knowledge Tree, entre otros.</p>
 <h1 id="instalación-de-gestores-de-archivos-web-nextcloud">Instalación de gestores de archivos web: NextCloud </h1>
 <p>La gestión de la información es un aspecto de creciente importancia a medida que se extiende el uso de Internet. El volumen de datos de los usuarios aumenta, hasta el punto que puede convertirse en una necesidad poder acceder de una manera remota y compartida; en este sentido, hacerlo desde un navegador es cada vez más común.</p>
-<div class="admonition note">
-<p class="admonition-title">info</p>
+<div class="admonition info">
+<p class="admonition-title">gestor de archivos web</p>
 <p>Un <strong>gestor de archivos web</strong> es una aplicación web que permite consultar y manipular un sistema de archivos remoto.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">info</p>
+<div class="admonition info">
+<p class="admonition-title">info FTP y SFTP</p>
 <p><strong>File transfer protocol (FTP)</strong> es un protocolo de red con arquitectura cliente-servidor que se remonta al año 1973 y que fue diseñado para intercambiar y manipular archivos a través de una red de ordenadores que utilice el protocolo IP, como Internet. Inicialmente, el FTP se llamaba a través de una consola o terminal y toda la interfaz era en modo texto, pero más adelante se desarrollaron interfaces de tipo gráfico que lo soportan.</p>
 <p>Hoy en día, el FTP sigue siendo un protocolo muy utilizado para la transferencia de archivos, pero su uso ha disminuido en favor de otros protocolos más modernos y seguros, como el <strong>Secure File Transfer Protocol (SFTP).</strong></p>
 </div>
@@ -248,7 +248,7 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 </ol>
 <p>A veces en la versión de XAMPP podemos encontrar una base de datos más antigua que la que requiere Nextcloud, en este caso, se debe actualizar MySQL a la última versión compatible con Nextcloud.</p>
 <div class="admonition info">
-<p class="admonition-title">Para realizar una instalación más guiada de Xampp podéis seguir el Anexo proporcionado.</p>
+<p class="admonition-title">Tenéis un instalación más guiada de Xampp en el Anexo.</p>
 </div>
 <h2 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h2>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
@@ -275,10 +275,6 @@ Los distintos permisos de usuario en Nextcloud son:</li>
 <li>Lectura y escritura: Permite que el usuario modifique o elimine archivos y carpetas.</li>
 <li>Administrador de carpetas compartidas: Puede modificar permisos para otros usuarios en carpetas específicas.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Práctica de Gestión de Usuarios y Permisos en Nextcloud</p>
-<p>Crea una estructura de usuarios en Nextcloud, asignando roles de administrador, usuario estándar e invitado. Configura los permisos para cada uno y prueba la creación de carpetas con permisos específicos.</p>
-</div>
 <h2 id="gestión-de-archivos-y-directorios">Gestión de Archivos y Directorios </h2>
 <p>Las operaciones básicas en la gestión de archivos son:</p>
 <ul>
@@ -302,13 +298,6 @@ Los distintos permisos de usuario en Nextcloud son:</li>
 </li>
 </ul>
 <p>Es importante definir una estructura de directorios clara y coherente. Esto facilita el acceso y la organización de la información. Por ejemplo, se pueden crear carpetas por proyectos, departamentos o tipos de archivo (documentos, imágenes, videos).</p>
-<div class="admonition note">
-<p class="admonition-title">Práctica de Gestión de Archivos y Directorios</p>
-<p>Crea una estructura de carpetas dentro de Nextcloud para organizar diferentes tipos de archivos (por ejemplo: “Documentos”, “Imágenes”, “Proyectos”). Prueba a mover, copiar y renombrar archivos dentro de esta estructura.<br>
-Sube un archivo de metadatos (por ejemplo, un archivo JSON o TXT con descripciones) junto con un archivo principal. Añade etiquetas y comentarios a los archivos subidos.<br>
-Comprueba que los archivos se pueden buscar y acceder fácilmente utilizando los criterios de indexación.<br>
-Asegúrate de que la información adicional y los metadatos sean accesibles y útiles.</p>
-</div>
 <h2 id="creación-de-recursos-compartidos">Creación de Recursos Compartidos </h2>
 <p>Las opciones de compartición en Nextcloud son:</p>
 <ul>
@@ -321,10 +310,6 @@ Asegúrate de que la información adicional y los metadatos sean accesibles y ú
 <li>Lectura y escritura: Permite a los usuarios modificar o eliminar archivos compartidos.</li>
 <li>Protección con contraseña: Los enlaces compartidos se pueden proteger con una contraseña para mayor seguridad.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Práctica de Gestión de Recursos compartidos</p>
-<p>Comparte una carpeta con otro usuario en Nextcloud y configura diferentes niveles de permisos (solo lectura, lectura/escritura). También comparte un archivo mediante enlace público con protección por contraseña.</p>
-</div>
 <h2 id="informes-y-auditoría-en-nextcloud">Informes y Auditoría en Nextcloud </h2>
 <p>La auditoría y seguimiento en Nextcloud incluyen:</p>
 <ul>
@@ -336,10 +321,6 @@ Asegúrate de que la información adicional y los metadatos sean accesibles y ú
 <li>Acceso y modificación de archivos: Se puede rastrear quién accedió o modificó un archivo específico.</li>
 <li>Eventos de seguridad: Registros de intentos de inicio de sesión fallidos y otras actividades de seguridad.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Práctica de informes</p>
-<p>Genera un informe de actividad de usuarios dentro de Nextcloud y revisa el historial de acceso y modificaciones de archivos.</p>
-</div>
 <h2 id="seguridad-en-nextcloud">Seguridad en Nextcloud </h2>
 <p>Vamos a ver como aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante <strong>HTTPS</strong>, <strong>autenticación de dos factores (2FA)</strong> y el <strong>cifrado de archivos</strong>.</p>
 <div class="admonition info">
@@ -355,14 +336,6 @@ Asegúrate de que la información adicional y los metadatos sean accesibles y ú
 Una vez activado el módulo, ve a <strong>Configuración &gt; Administración &gt; Seguridad</strong>. En la sección de <strong>Cifrado</strong>, habilita la opción para cifrar todos los archivos nuevos que se suban al servidor.</p>
 <p>Para comprobar si funciona sube un archivo cualquiera a Nextcloud. Dirígete al servidor y trata de abrir el archivo desde el sistema de archivos directamente (sin pasar por la interfaz de Nextcloud). Verás que el archivo está cifrado y no se puede leer sin el acceso adecuado a Nextcloud.</p>
 <p>Intenta descargar el archivo desde la interfaz web de Nextcloud y verifica que el archivo sea legible. De esta manera, se asegura que solo los usuarios autorizados dentro del sistema pueden acceder al contenido real de los archivos.</p>
-<div class="admonition note">
-<p class="admonition-title">Práctica de Seguridad HTTPS</p>
-<ol>
-<li>HTTPS:<br>
-Completa la configuración de HTTPS en tu servidor local de Nextcloud. Asegúrate de que el acceso a la plataforma sea a través de <a href="https://localhost/nextcloud">https://localhost/nextcloud</a>.<br>
-Verifica la seguridad accediendo al sitio con el protocolo HTTPS activado.</li>
-</ol>
-</div>
 <h1 id="bibliografía">Bibliografía </h1>
 <p><a href="https://ioc.xtec.cat/materials/FP/Recursos/fp_smx_m08_/web/fp_smx_m08_htmlindex/index.html">Aplicacions web - Institut Obert de Catalunya</a></p>
 
