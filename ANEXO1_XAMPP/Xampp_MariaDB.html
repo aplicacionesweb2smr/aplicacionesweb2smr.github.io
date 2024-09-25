@@ -87,30 +87,62 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <h1 id="instalación-del-xampp-y-creación-de-la-base-de-datos">Instalación del XAMPP y creación de la base de datos </h1>
 
 <div class="md-toc">
-<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#instalación-del-xampp-y-creación-de-la-base-de-datos-1" class="md-toc-link">
-            <p>Instalación del XAMPP y creación de la base de datos</p>
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#instalación-del-xampp-y-creación-de-la-base-de-datos-1" class="md-toc-link"><p>Instalación del XAMPP y creación de la base de datos</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#instalación-de-xampp" class="md-toc-link">
+            <p>Instalación de XAMPP</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#actualizar-a-mariabd-a-la-última-versión" class="md-toc-link">
+            <p>Actualizar a MariaBD a la última versión</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#creación-de-la-base-de-datos" class="md-toc-link">
+            <p>Creación de la base de datos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#creación-de-un-proyecto-en-xampp" class="md-toc-link">
+            <p>Creación de un proyecto en XAMPP</p>
 
           </a></div>
+        </div>
+      </details>
+    
 </div>
 <br>
 <p><a href="./Xampp_MariaDB.pdf">Descargar estos apuntes</a></p>
 <div style="page-break-after:always;"></div>
 <h1 id="instalación-del-xampp-y-creación-de-la-base-de-datos-1">Instalación del XAMPP y creación de la base de datos </h1>
 <p>Para instalar una aplicación web en un equipo local, es necesario instalar un servidor web local con soporte para <strong>PHP</strong> y <strong>MySQL</strong>. Uno de los servidores web locales más utilizados es <strong>XAMPP</strong>, que permite instalar un servidor web con soporte para PHP y MySQL en un equipo local.</p>
-<p><a href="https://www.apachefriends.org/es/index.html">Descargar XAMPP</a></p>
 <p>Comprobar los requisitos en la web de la aplicación web que vayamos a instalar (NextCloud, Moodle, Wordpress). Hay que recordar que además del software hay otros requisitos que hay que comprobar antes de empezar con la instalación; por ejemplo, el espacio de disco duro o la memoria necesaria. Por ejemplo, en la instalación de Xampp nos puede ocurrir que la versión de la BBDD no cumple los requisitos y debemos actualizarla. Puede ser necesario también cambiar parámetros de configuración del servidor web Apache para que funcione correctamente. Normalmente en el fichero php.ini se pueden cambiar estos parámetros.</p>
-<div class="admonition note">
-<p class="admonition-title">Actualizar a MariaBD a la última versión</p>
-<ol>
-<li>Descarga la última versión de MariaDB en formato zip.</li>
-<li>Renombra xampp/mysql a xampp/mysql-old</li>
-<li>Descomprime la nueva versión en xampp/mysql</li>
-<li>Copia xampp/mysql_old/bin/my.ini a xampp/mysql/bin/my.ini</li>
-<li>Copia carpeta xampp/mysql_old/backup a xampp/mysql/backup</li>
-<li>Copia SOLO las carpetas (no archivos) de xampp/mysql_old/backup a xampp/mysql/data</li>
-</ol>
-</div>
+<h2 id="instalación-de-xampp">Instalación de XAMPP </h2>
+<p>Al acceder a la URL de descarga de Xampp pulsaremos sobre descargar otras versiones para acceder a la versión portable y poder instalarla en un pendrive o disco duro externo.</p>
+<p><a href="https://www.apachefriends.org/es/index.html">Descargar XAMPP PORTABLE</a></p>
+<p><img src="./images/descarga_versiones.png" alt="Descargar otras versiones"></p>
+<p>Pulsaremos <strong>More Downloads</strong></p>
+<p><img src="./images/more_downloads.png" alt="More downloads"></p>
+<p>Pulsamos sobre las versiones de nuestro sistema operativo, en nuestro caso Windows.</p>
+<p><img src="./images/windows.png" alt="Windows"></p>
+<p>Seleccionaremos la <strong>versión más reciente</strong>.</p>
+<p>Y descargaremos la <strong>versión portable</strong>. Esta versión nos permite instalar Xampp en un disco extraible, e incluso llevarlo en un pendrive para poder ejecutarlo en cualquier equipo.</p>
+<p><img src="./images/portable.png" alt="Portable"></p>
+<p>Una vez descargado el archivo, lo <strong>copiamos donde queramos instalarlo y ejecutamos y seguimos los pasos del asistente de instalación</strong>.</p>
+<p>Asegúrate de instalarlo en la unidad que deseas, C o en el Usb o disco externo.</p>
+<p><img src="./images/unidad_extraible.png" alt="Unidad extraible"></p>
+<p>Una vez instalado podemos probar a arrancar el servidor Apache y MySQL y comprobar que todo funciona correctamente. Para ello, abrimos un navegador web y accedemos a la URL <a href="http://localhost">http://localhost</a>. Si todo funciona correctamente, deberíamos ver la página de inicio de XAMPP.</p>
+<p><img src="./images/servicios.png" alt="Servicios arrancados"></p>
+<p><img src="./images/localhost.png" alt="Localhost página de inicio de Xampp"></p>
+<p>Cuando cerramos Xampp, por defecto, se queda en segundo plano. Para cerrarlo completamente, debemos hacer clic en el botón "Salir" de la ventana de control de Xampp.</p>
+<p>Podemos comprobar si está en segundo plano viendo la barra de tareas de Windows.</p>
+<p><img src="./images/xampp_segundoplano.png" alt="Xampp en segundo plano"></p>
+<p>E incluso mostrarlo o cerrarlo desde la barra de tareas.</p>
+<p><img src="./images/show_hide.png" alt="Mostrar u ocultar"></p>
+<p>Una vez instalado XAMPP, puede ser necesario cambiar algunos parámetros de configuración del servidor web Apache para que funcione correctamente. Por ejemplo, en la instalación de Moodle, es necesario cambiar el tiempo máximo de ejecución de un script de PHP para que la instalación se realice correctamente. Para cambiar los parámetros de configuración del servidor web Apache, es necesario acceder al fichero de configuración php.ini y cambiar los parámetros necesarios.</p>
 <div class="admonition note">
 <p class="admonition-title">Cambiar parámetros en el fichero php.ini</p>
 <p>Desde este fichero podemos cambiar parámetros como:<br>
@@ -128,24 +160,61 @@ extension=tidy<br>
 extension=zip<br>
 O copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
 </div>
-<p>Una vez instalado XAMPP, y actualizada la versión de MariaDB (<em>en caso de ser necesario para Moodle, por ejemplo</em>), es necesario crear una base de datos en MySQL para almacenar los contenidos del gestor de contenidos. Para crear una base de datos en MySQL, es necesario acceder a la interfaz de administración de MySQL y crear una nueva base de datos con un nombre y una contraseña.</p>
-<p>Para ello accedemos a la interfaz de administración de MySQL a través de un navegador web, introduciendo la URL <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> en la barra de direcciones del navegador. Una vez en la interfaz de administración de MySQL, hacemos clic en la pestaña "Base de datos" y creamos una nueva base de datos con un nombre y una contraseña.</p>
-<p>Crearemos un usuario en la base de datos con todos los privilegios sobre la base de datos creada.</p>
-<p>Para ello, podemos hacerlo accediendo a la pestaña "Usuarios" y creamos un nuevo usuario con un nombre y una contraseña. A continuación, asignamos todos los privilegios al usuario sobre la base de datos creada.</p>
-<p>También podemos <strong>crear el usuario desde SQL</strong>, ejecutando el siguiente comando, cambiando los valores de <em>miusuario</em> y <em>mipassword</em> por los que queramos:</p>
-<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-USER">USER</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword keyword-BY">BY</span> <span class="token string">'mipassword'</span><span class="token punctuation">;</span>
-<span class="token keyword keyword-GRANT">GRANT</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-PRIVILEGES">PRIVILEGES</span> <span class="token keyword keyword-ON">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword keyword-TO">TO</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span><span class="token punctuation">;</span>
-</code></pre><p>Al pulsar continuar, se creará el usuario con todos los privilegios sobre la base de datos y nos debe aparecer un mensaje indicando que se ha ejecutado correctamente.</p>
-<div class="admonition note">
-<p class="admonition-title">Creamos una usuario alumno con contraseña alumno con todos los privilegios.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Importante</strong></p>
+<p>Si cambiamos algún parámetro en el fichero php.ini, es necesario reiniciar el servidor web Apache para que los cambios surtan efecto. Para reiniciar el servidor web Apache, es necesario acceder a la interfaz de administración de XAMPP (xampp-control.exe) y hacer clic en el botón "Reiniciar" o Start y Stop del servidor web Apache.</p>
 </div>
-<p>Ahora <strong>creamos la base de datos</strong> con el nombre que queramos. Desde la pestaña "Base de datos" creamos una nueva base de datos con el nombre que queramos, por ejemplo <em>bd_primerwordpress</em></p>
 <div class="admonition info">
 <p class="admonition-title">Para poder instalar sin problemas un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable max_execution_time en php.ini. Por defecto su valor es de 30 segundos, pero recomendamos indicar 150.</p>
 </div>
-<p>En la carpeta C:\xampp\htdocs, creamos una carpeta con el nombre del proyecto, por ejemplo, <em>primerwordpress</em>. Podemos tener tantas carpetas como proyectos queramos tener en nuestro servidor local.</p>
-<p>Para crear la base de datos vacía y un usuario que tenga acceso con unos determinados privilegios hay diversas formas de hacerlo. En Xampp, por ejemplo, se puede hacer desde la consola del MySQL o bien con la herramienta phpMyAdmin, que es una aplicación web para administrar la base de datos y que se instala con la mayoría de paquetes.</p>
-<p>También se puede utilizar <strong>MySQL Workbench</strong>, una herramienta gráfica muy utilizada en la administración de bases de datos. Podéis encontrar más información en la página oficial de MySQL Workbench.</p>
+<h2 id="actualizar-a-mariabd-a-la-última-versión">Actualizar a MariaBD a la última versión </h2>
+<p>En ocasiones, la versión de MariaDB que viene con XAMPP no es la última y puede ser necesario actualizarla para poder instalar una aplicación web que requiera una versión más reciente de MariaDB. Para actualizar la versión de MariaDB en XAMPP, es necesario seguir los siguientes pasos:</p>
+<ol>
+<li>
+<p>Descarga la última versión de MariaDB en formato zip.</p>
+<p><img src="./images/mariadb.png" alt="Descargar MariaDB">)</p>
+</li>
+<li>
+<p>Renombra la carpeta de xampp/mysql a xampp/mysql-old.</p>
+</li>
+<li>
+<p>Descomprime el archivo zip descargado de mariadb, y copia el contenido en una nueva carpeta en xampp/mysql</p>
+</li>
+</ol>
+<p><img src="./images/copiar_mariadb.png" alt="Copiar en xampp/myql"></p>
+<ol start="4">
+<li>Copia xampp/mysql_old/bin/my.ini a xampp/mysql/bin/my.ini</li>
+</ol>
+<p><img src="./images/my.png" alt="Copiamos my.ini"></p>
+<ol start="5">
+<li>Copia carpeta xampp/mysql_old/backup a xampp/mysql/backup</li>
+</ol>
+<p><img src="./images/backup.png" alt="Copiamos backup"></p>
+<ol start="6">
+<li>Copia SOLO las carpetas (no archivos) de xampp/mysql_old/backup a xampp/mysql/data</li>
+</ol>
+<p><img src="./images/data.png" alt="Copiamos backup a data"></p>
+<p>Probamos a arrancar Xampp y comprobamos que todo funciona correctamente. Arrancamos Apache y MySQL y comprobamos que no hay errores.</p>
+<h2 id="creación-de-la-base-de-datos">Creación de la base de datos </h2>
+<p>Una vez instalado XAMPP, y actualizada la versión de MariaDB (<em>en caso de ser necesario para Moodle, por ejemplo</em>), es necesario crear una base de datos en MySQL para almacenar los contenidos del gestor de contenidos. Para crear una base de datos en MySQL, es necesario acceder a la interfaz de administración de MySQL y crear una nueva base de datos con un nombre y una contraseña.</p>
+<p>Para ello accedemos a la interfaz de administración de MySQL a través de un navegador web, introduciendo la URL <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> en la barra de direcciones del navegador. O desde la página de inicio de Xampp, accediendo desde localhost.</p>
+<p><img src="./images/phpadmin.png" alt="Localhost PHPadmin"></p>
+<p>Una vez en la interfaz de administración de MySQL, hacemos clic en la pestaña <strong>"Base de datos"</strong> y creamos una nueva base de datos.</p>
+<p><img src="image.png" alt="alt text"></p>
+<p>Crearemos un usuario en la base de datos con todos los privilegios sobre la base de datos creada.</p>
+<p>Para ello, podemos hacerlo accediendo a la pestaña <strong>"Cuentas de Usuarios"</strong> y creamos un nuevo usuario con un <strong>nombre y una contraseña</strong>. A continuación, <strong>asignamos todos los privilegios al usuario sobre la base de datos creada.</strong></p>
+<p>También podemos <strong>crear el usuario desde SQL</strong>, ejecutando el siguiente comando, cambiando los valores de <em>miusuario</em> y <em>mipassword</em> por los que queramos:</p>
+<p><img src="image-2.png" alt="alt text"></p>
+<pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-USER">USER</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword keyword-BY">BY</span> <span class="token string">'mipassword'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-GRANT">GRANT</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-PRIVILEGES">PRIVILEGES</span> <span class="token keyword keyword-ON">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword keyword-TO">TO</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span><span class="token punctuation">;</span>
+</code></pre><p>Al pulsar continuar, se creará el usuario con todos los privilegios y nos debe aparecer un mensaje indicando que se ha ejecutado correctamente.</p>
+<div class="admonition note">
+<p class="admonition-title">Creación de usuario y base de datos</p>
+<p>Creamos una <strong>usuario alumnado</strong> con <strong>contraseña alumnado</strong> con todos los privilegios. Desde la pestaña "Base de datos" creamos una nueva base de datos con el nombre que queramos, por ejemplo <em>bd_primerwordpress</em></p>
+</div>
+<p>Para gestionar las bases de datos también se puede utilizar <strong>MySQL Workbench</strong>, una herramienta gráfica muy utilizada en la administración de bases de datos. Podéis encontrar más información en la página oficial de MySQL Workbench.</p>
+<h2 id="creación-de-un-proyecto-en-xampp">Creación de un proyecto en XAMPP </h2>
+<p>En la carpeta <strong>C:\xampp\htdocs</strong>, creamos una carpeta con el nombre del proyecto, por ejemplo, <em>primerwordpress</em>. Podemos tener tantas carpetas como proyectos queramos tener en nuestro servidor local.</p>
 
       </div>
       
