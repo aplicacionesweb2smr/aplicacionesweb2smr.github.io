@@ -129,12 +129,11 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p>Pulsamos sobre las versiones de nuestro sistema operativo, en nuestro caso Windows.</p>
 <p><img src="./images/windows.png" alt="Windows"></p>
 <p>Seleccionaremos la <strong>versión más reciente</strong>.</p>
-<p>Y descargaremos la <strong>versión portable</strong>. Esta versión nos permite instalar Xampp en un disco extraible, e incluso llevarlo en un pendrive para poder ejecutarlo en cualquier equipo.</p>
+<p>Y descargaremos la <strong>versión portable en ZIP</strong>. Esta versión nos permite instalar Xampp en un disco extraible, e incluso llevarlo en un pendrive para poder ejecutarlo en cualquier equipo.</p>
 <p><img src="./images/portable.png" alt="Portable"></p>
-<p>Una vez descargado el archivo, lo <strong>copiamos donde queramos instalarlo y ejecutamos y seguimos los pasos del asistente de instalación</strong>.</p>
-<p>Asegúrate de instalarlo en la unidad que deseas, C o en el Usb o disco externo.</p>
-<p><img src="./images/unidad_extraible.png" alt="Unidad extraible"></p>
-<p>Una vez instalado podemos probar a arrancar el servidor Apache y MySQL y comprobar que todo funciona correctamente. Para ello, abrimos un navegador web y accedemos a la URL <a href="http://localhost">http://localhost</a>. Si todo funciona correctamente, deberíamos ver la página de inicio de XAMPP.</p>
+<p>Una vez descargado el archivo, lo descomprimimos y copiamos la carpeta xampp en la unidad que deseamos, por ejemplo <strong>D:/xampp</strong>.</p>
+<p>Ejecuta el archivo <strong>setup_xampp.bat</strong> para configurar Xampp.</p>
+<p>Una vez ejecutado el setup_xampp podemos probar a arrancar Xampp desde <strong>xampp-control</strong> y arrancar el servidor Apache y MySQL y comprobar que todo funciona correctamente. Para ello, abrimos un navegador web y accedemos a la URL <a href="http://localhost">http://localhost</a>. Si todo funciona correctamente, deberíamos ver la página de inicio de XAMPP.</p>
 <p><img src="./images/servicios.png" alt="Servicios arrancados"></p>
 <p><img src="./images/localhost.png" alt="Localhost página de inicio de Xampp"></p>
 <p>Cuando cerramos Xampp, por defecto, se queda en segundo plano. Para cerrarlo completamente, debemos hacer clic en el botón "Salir" de la ventana de control de Xampp.</p>
@@ -144,12 +143,12 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><img src="./images/show_hide.png" alt="Mostrar u ocultar"></p>
 <p>Una vez instalado XAMPP, puede ser necesario cambiar algunos parámetros de configuración del servidor web Apache para que funcione correctamente. Por ejemplo, en la instalación de Moodle, es necesario cambiar el tiempo máximo de ejecución de un script de PHP para que la instalación se realice correctamente. Para cambiar los parámetros de configuración del servidor web Apache, es necesario acceder al fichero de configuración php.ini y cambiar los parámetros necesarios.</p>
 <div class="admonition note">
-<p class="admonition-title">Cambiar parámetros en el fichero php.ini</p>
-<p>Desde este fichero podemos cambiar parámetros como:<br>
+<p class="admonition-title">Cambiar parámetros en el <strong>fichero php.ini</strong></p>
+<p>Desde este fichero podemos buscar y cambiar los parámetros como:<br>
 post_max_size = 500M<br>
 upload_max_filesize = 500M<br>
-max_input_vars = 10000<br>
-O descomentar las siguientes líneas para activar las extensiones necesarias:<br>
+max_input_vars = 10000</p>
+<p>Descomentar las siguientes líneas para activar las extensiones necesarias:<br>
 extension=gd<br>
 extension=gmp<br>
 extension=intl<br>
@@ -158,14 +157,14 @@ extension=soap<br>
 extension=sodium<br>
 extension=tidy<br>
 extension=zip<br>
-O copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
+Copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title"><strong>Importante</strong></p>
 <p>Si cambiamos algún parámetro en el fichero php.ini, es necesario reiniciar el servidor web Apache para que los cambios surtan efecto. Para reiniciar el servidor web Apache, es necesario acceder a la interfaz de administración de XAMPP (xampp-control.exe) y hacer clic en el botón "Reiniciar" o Start y Stop del servidor web Apache.</p>
 </div>
 <div class="admonition info">
-<p class="admonition-title">Para poder instalar sin problemas un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable max_execution_time en php.ini. Por defecto su valor es de 30 segundos, pero recomendamos indicar 150.</p>
+<p class="admonition-title">Para poder instalar sin problemas un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable <strong>max_execution_time</strong> en php.ini. Por defecto su valor es de 30 segundos, pero recomendamos indicar 150.</p>
 </div>
 <h2 id="actualizar-a-mariabd-a-la-última-versión">Actualizar a MariaBD a la última versión </h2>
 <p>En ocasiones, la versión de MariaDB que viene con XAMPP no es la última y puede ser necesario actualizarla para poder instalar una aplicación web que requiera una versión más reciente de MariaDB. Para actualizar la versión de MariaDB en XAMPP, es necesario seguir los siguientes pasos:</p>
@@ -214,7 +213,7 @@ O copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
 </div>
 <p>Para gestionar las bases de datos también se puede utilizar <strong>MySQL Workbench</strong>, una herramienta gráfica muy utilizada en la administración de bases de datos. Podéis encontrar más información en la página oficial de MySQL Workbench.</p>
 <h2 id="creación-de-un-proyecto-en-xampp">Creación de un proyecto en XAMPP </h2>
-<p>En la carpeta <strong>C:\xampp\htdocs</strong>, creamos una carpeta con el nombre del proyecto, por ejemplo, <em>primerwordpress</em>. Podemos tener tantas carpetas como proyectos queramos tener en nuestro servidor local.</p>
+<p>En la carpeta <strong>C:\xampp\htdocs</strong>, creamos una carpeta con el nombre del proyecto para cada proyecto que tengamos, por ejemplo, <em>primerwordpress</em>. Podemos tener tantas carpetas como proyectos queramos tener en nuestro servidor local.</p>
 
       </div>
       
