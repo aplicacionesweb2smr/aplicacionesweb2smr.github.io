@@ -252,12 +252,23 @@ A veces en la versión de XAMPP podemos encontrar una base de datos más antigua
 <p>Iniciar XAMPP y activar los servicios de Apache y MySQL. Configurar MySQL <strong>creando una base de datos para Nextcloud</strong></p>
 </li>
 <li>
-<p>Descargar e instalar Nextcloud Server: Descargar Nextcloud desde su sitio web oficial (<a href="https://nextcloud.com/install/">https://nextcloud.com/install/</a>). Mover los archivos descargados a la carpeta htdocs en el directorio donde se instaló XAMPP.</p>
-</li>
-<li>
-<p>Configuración en el navegador: Acceder a localhost/[nuestracarpeta_nextcloud] desde el navegador para completar la instalación a través de la interfaz gráfica.</p>
+<p>Descargar e instalar <strong>Nextcloud Server en ZIP</strong>: Descargar Nextcloud desde su sitio web oficial (<a href="https://nextcloud.com/install/">https://nextcloud.com/install/</a>). Descomprimir el archivo ZIP y mover la carpeta nextcloud a la carpeta htdocs en el directorio donde se instaló XAMPP.</p>
 </li>
 </ol>
+<p><img src="./images/nextcloud_htdocs.png" alt="carpeta nextcloud en htdocs"></p>
+<ol start="3">
+<li>Creamos la base de datos para nextcloud</li>
+</ol>
+<p>Creamos la base de datos en MySQL y el usuario que la gestionará.</p>
+<p><img src="./images/DBnextcloud.png" alt="crear base de datos"></p>
+<p><img src="./images/crear_usuario.png" alt="crear usuario con permisos"></p>
+<p>Comprobamos que tenemos la base de datos creada y el usuario con los permisos adecuados.<br>
+<img src="./images/privilegios.png" alt="comprobación permisos"></p>
+<ol start="4">
+<li>Configuración en el navegador: Acceder a <strong>localhost/nextcloud</strong> desde el navegador para completar la instalación a través de la interfaz gráfica. Si a la carpeta la hemos llamado de otra forma, accederemos a <strong>localhost/nombre_carpeta</strong>.</li>
+</ol>
+<p><img src="./images/instalacion_usr_admin.png" alt="alt text"></p>
+<p>Nos pide nombre de usuario y contraseña para el administrador de Nextcloud.</p>
 <h2 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h2>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
 <ul>
