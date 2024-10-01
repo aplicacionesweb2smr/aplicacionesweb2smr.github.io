@@ -93,11 +93,20 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </a>
           </summary>
         <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#instalación-de-xampp" class="md-toc-link"><p>Instalación de XAMPP</p>
+</a>
+          </summary>
+        <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#instalación-de-xampp" class="md-toc-link">
-            <p>Instalación de XAMPP</p>
+          <a href="#como-arreglar-errores-en-xampp" class="md-toc-link">
+            <p>Como arreglar errores en Xampp</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#actualizar-a-mariabd-a-la-última-versión" class="md-toc-link">
             <p>Actualizar a MariaBD a la última versión</p>
 
@@ -133,10 +142,11 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><img src="./images/portable.png" alt="Portable"></p>
 <p>Una vez descargado el archivo, lo descomprimimos y copiamos la carpeta xampp en la unidad que deseamos, por ejemplo <strong>D:/xampp</strong>.</p>
 <p>Ejecuta el archivo <strong>setup_xampp.bat</strong> para configurar Xampp.</p>
-<p>Una vez ejecutado el setup_xampp podemos probar a arrancar Xampp desde <strong>xampp-control</strong> y arrancar el servidor Apache y MySQL y comprobar que todo funciona correctamente. Para ello, abrimos un navegador web y accedemos a la URL <a href="http://localhost">http://localhost</a>. Si todo funciona correctamente, deberíamos ver la página de inicio de XAMPP.</p>
+<p>Una vez ejecutado el setup_xampp podemos probar a arrancar Xampp desde <strong>xampp-control</strong> y arrancar el servidor Apache y MySQL y comprobar que todo funciona correctamente.</p>
 <p><img src="./images/servicios.png" alt="Servicios arrancados"></p>
+<p>Para ello, abrimos un navegador web y accedemos a la <strong>URL <a href="http://localhost">http://localhost</a></strong>. Si todo funciona correctamente, deberíamos ver la página de inicio de XAMPP.</p>
 <p><img src="./images/localhost.png" alt="Localhost página de inicio de Xampp"></p>
-<p>Cuando cerramos Xampp, por defecto, se queda en segundo plano. Para cerrarlo completamente, debemos hacer clic en el botón "Salir" de la ventana de control de Xampp.</p>
+<p>Cuando cerramos Xampp, por defecto, se queda en segundo plano. Para cerrarlo completamente, debemos hacer clic en Stop en todos los servicios y en el botón "Salir" de la ventana de control de Xampp.</p>
 <p>Podemos comprobar si está en segundo plano viendo la barra de tareas de Windows.</p>
 <p><img src="./images/xampp_segundoplano.png" alt="Xampp en segundo plano"></p>
 <p>E incluso mostrarlo o cerrarlo desde la barra de tareas.</p>
@@ -144,11 +154,13 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p>Una vez instalado XAMPP, puede ser necesario cambiar algunos parámetros de configuración del servidor web Apache para que funcione correctamente. Por ejemplo, en la instalación de Moodle, es necesario cambiar el tiempo máximo de ejecución de un script de PHP para que la instalación se realice correctamente. Para cambiar los parámetros de configuración del servidor web Apache, es necesario acceder al fichero de configuración php.ini y cambiar los parámetros necesarios.</p>
 <div class="admonition note">
 <p class="admonition-title">Cambiar parámetros en el <strong>fichero php.ini</strong></p>
-<p>Desde este fichero podemos buscar y cambiar los parámetros como:<br>
+<p>El fichero de configuración de PHP (php.ini) se encuentra en la carpeta <strong>xampp/php/php.ini</strong>. Antes de modificar cualquier archivo de configuración <strong>realizaremos una copia de seguridad</strong> de ese archivo. Podemos hacer una copia del archivo php.ini y renombrarlo a php.ini.bak.</p>
+<p><img src="./images/configphp.png" alt="Config php.ini"></p>
+<p>Abrimos php.ini desde la carpeta o desde el menú Config, y desde este fichero podemos <strong>buscar y cambiar los parámetros</strong> como:<br>
 post_max_size = 500M<br>
 upload_max_filesize = 500M<br>
 max_input_vars = 10000</p>
-<p>Descomentar las siguientes líneas para activar las extensiones necesarias:<br>
+<p><strong>Descomentar (quitar el ; de delante)</strong> las siguientes líneas para activar las extensiones necesarias:<br>
 extension=gd<br>
 extension=gmp<br>
 extension=intl<br>
@@ -156,54 +168,80 @@ extension=imap<br>
 extension=soap<br>
 extension=sodium<br>
 extension=tidy<br>
-extension=zip<br>
-Copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
+extension=zip</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Copiar el archivo libsodium.dll</p>
+<p>Copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title"><strong>Importante</strong></p>
 <p>Si cambiamos algún parámetro en el fichero php.ini, es necesario reiniciar el servidor web Apache para que los cambios surtan efecto. Para reiniciar el servidor web Apache, es necesario acceder a la interfaz de administración de XAMPP (xampp-control.exe) y hacer clic en el botón "Reiniciar" o Start y Stop del servidor web Apache.</p>
 </div>
 <div class="admonition info">
-<p class="admonition-title">Para poder instalar sin problemas un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable <strong>max_execution_time</strong> en php.ini. Por defecto su valor es de 30 segundos, pero recomendamos indicar 150.</p>
+<p class="admonition-title">Si da problemas para poder instalar un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable <strong>max_execution_time</strong> en php.ini. Si hace falta, se puede incrementar el valor de la variable <strong>max_execution_time</strong> a 300 segundos.</p>
 </div>
+<h3 id="como-arreglar-errores-en-xampp">Como arreglar errores en Xampp </h3>
+<p>Si no puedes conseguir que el servicio se inicie, tu primer paso debería ser comprobar tus registros de error. Esto puede indicarte la causa del problema.</p>
+<p>Si sabes por qué se produce el problema, deberías ser capaz de resolverlo mucho más rápido que solucionarlo por prueba y error. El acceso a los registros se realiza a través de diferentes rutas, dependiendo del sistema operativo y de la versión. Afortunadamente, hay una manera sencilla de encontrar la ruta para su configuración.</p>
+<p>En Windows, el registro de actividad de XAMPP aparece en la mitad inferior del cuadro de diálogo del panel de control. También puedes acceder al registro de errores pulsando el botón <strong>Logs</strong> junto al botón Apache Config.</p>
+<p>Para localizar tus registros de errores de PHP, abre el panel de control de XAMPP escribiendo <a href="http://localhost">http://localhost</a> en la barra de direcciones de tu navegador. Allí, haz clic en <strong>PHPInfo</strong> en la parte superior de la pantalla:</p>
+<p>A continuación, busca <strong>error_log</strong>. Esto revelará la ruta que debe introducir en tu barra de direcciones para ver el registro.</p>
+<p>Normalmente el error más común es que el puerto está ocupado por otro servicio. Si haces clic en el botón <strong>Netstat</strong> en el panel de control de XAMPP, debería mostrarte todos los puertos que están actualmente en uso, y qué aplicaciones los están utilizando.</p>
+<p>Si sabes qué programa es el problema y puedes desbloquear el puerto eliminando la aplicación que estorba, esto resolverá el problema inmediatamente. Sin embargo, también puedes cambiar el puerto de escucha de Apache para XAMPP, de modo que te conectes dejando tus otras plataformas intactas.</p>
+<p>Desde config, puedes acceder al archivo httpd.conf. Busca en este archivo la línea que dice «Listen 80», y cámbiala por «Listen 8080». Esto le permitirá conectarse a Apache a través del puerto 8080 en lugar de la opción por defecto. También tendrás que buscar la línea que dice ServerName localhost:80, y cambiarla por ServerName localhost:8080. Guarda y cierra el archivo.</p>
+<p>Luego, intenta iniciar Apache de nuevo. Si éste es el único problema, la plataforma debería funcionar como es debido. Sin embargo, ten en cuenta que si tienes una instalación de WordPress alojada a través de XAMPP, tendrás que encontrar y sustituir todas las menciones de «localhost» por «localhost:8080», incluyendo las de tu base de datos.</p>
+<p>El puerto por defecto de XAMPP Apache por su nuevo puerto de escucha para no tener que especificarlo en la barra de direcciones. Para ello, haz clic en <strong>Config &gt; Configuración de servicios y puertos &gt; Apache</strong> en el panel de control de XAMPP:</p>
+<p><img src="./images/puertoapache.png" alt="puerto apache"></p>
 <h2 id="actualizar-a-mariabd-a-la-última-versión">Actualizar a MariaBD a la última versión </h2>
 <p>En ocasiones, la versión de MariaDB que viene con XAMPP no es la última y puede ser necesario actualizarla para poder instalar una aplicación web que requiera una versión más reciente de MariaDB. Para actualizar la versión de MariaDB en XAMPP, es necesario seguir los siguientes pasos:</p>
 <ol>
 <li>
-<p>Descarga la última versión de MariaDB en formato zip.</p>
+<p><strong>Descarga</strong> la última versión de <strong>MariaDB en formato zip</strong>.</p>
 <p><img src="./images/mariadb.png" alt="Descargar MariaDB">)</p>
 </li>
 <li>
-<p>Renombra la carpeta de xampp/mysql a xampp/mysql-old.</p>
+<p><strong>Renombra</strong> la carpeta de xampp/mysql a xampp/mysql-old.</p>
 </li>
 <li>
-<p>Descomprime el archivo zip descargado de mariadb, y copia el contenido en una nueva carpeta en xampp/mysql</p>
+<p><strong>Crea una nueva carpeta</strong> en xampp con el nombre mysql.</p>
+</li>
+<li>
+<p><strong>Descomprime</strong> el archivo zip descargado de mariadb, y copia el contenido en la <strong>nueva carpeta en xampp/mysql</strong>. Fíjate que no copia la carpeta que ha creado, sino el contenido  (en este ejemplo la carpeta mariadb-11.5.2-winx64.)</p>
 </li>
 </ol>
 <p><img src="./images/copiar_mariadb.png" alt="Copiar en xampp/myql"></p>
 <ol start="4">
-<li>Copia xampp/mysql_old/bin/my.ini a xampp/mysql/bin/my.ini</li>
+<li><strong>Copia xampp/mysql_old/bin/my.ini a xampp/mysql/bin/my.ini</strong></li>
 </ol>
 <p><img src="./images/my.png" alt="Copiamos my.ini"></p>
 <ol start="5">
-<li>Copia carpeta xampp/mysql_old/backup a xampp/mysql/backup</li>
+<li><strong>Copia carpeta xampp/mysql_old/backup a xampp/mysql/backup</strong></li>
 </ol>
 <p><img src="./images/backup.png" alt="Copiamos backup"></p>
 <ol start="6">
-<li>Copia SOLO las carpetas (no archivos) de xampp/mysql_old/backup a xampp/mysql/data</li>
+<li>
+<p>Si no existe, <strong>crea la carpeta xampp/mysql/data</strong>.</p>
+</li>
+<li>
+<p><strong>Copia</strong> <strong>SOLO las carpetas</strong> (no archivos) de <strong>xampp/mysql_old/backup</strong> a <strong>xampp/mysql/data</strong></p>
+</li>
 </ol>
 <p><img src="./images/data.png" alt="Copiamos backup a data"></p>
+<ol start="8">
+<li>Incrementamos la variable <strong>interactive_timeout</strong> a 512MB en el fichero my.ini de la carpeta xampp/mysql/bin/my.ini. Se puede acceder desde el Panel de control de Xampp, pulsando Config en MySQL. Por supuesto, antes de modificar el archivo, <strong>realizaremos una copia de seguridad</strong>.</li>
+</ol>
 <p>Probamos a arrancar Xampp y comprobamos que todo funciona correctamente. Arrancamos Apache y MySQL y comprobamos que no hay errores.</p>
 <h2 id="creación-de-la-base-de-datos">Creación de la base de datos </h2>
 <p>Una vez instalado XAMPP, y actualizada la versión de MariaDB (<em>en caso de ser necesario para Moodle, por ejemplo</em>), es necesario crear una base de datos en MySQL para almacenar los contenidos del gestor de contenidos. Para crear una base de datos en MySQL, es necesario acceder a la interfaz de administración de MySQL y crear una nueva base de datos con un nombre y una contraseña.</p>
 <p>Para ello accedemos a la interfaz de administración de MySQL a través de un navegador web, introduciendo la URL <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a> en la barra de direcciones del navegador. O desde la página de inicio de Xampp, accediendo desde localhost.</p>
 <p><img src="./images/phpadmin.png" alt="Localhost PHPadmin"></p>
 <p>Una vez en la interfaz de administración de MySQL, hacemos clic en la pestaña <strong>"Base de datos"</strong> y creamos una nueva base de datos.</p>
-<p><img src="image.png" alt="alt text"></p>
+<p><img src="./images/crearDB.png" alt="cear base de datos"></p>
 <p>Crearemos un usuario en la base de datos con todos los privilegios sobre la base de datos creada.</p>
 <p>Para ello, podemos hacerlo accediendo a la pestaña <strong>"Cuentas de Usuarios"</strong> y creamos un nuevo usuario con un <strong>nombre y una contraseña</strong>. A continuación, <strong>asignamos todos los privilegios al usuario sobre la base de datos creada.</strong></p>
 <p>También podemos <strong>crear el usuario desde SQL</strong>, ejecutando el siguiente comando, cambiando los valores de <em>miusuario</em> y <em>mipassword</em> por los que queramos:</p>
-<p><img src="image-2.png" alt="alt text"></p>
+<p><img src="./images/sql_usuarios.png" alt="SQL Usuarios"></p>
 <pre data-role="codeBlock" data-info="sql" class="language-sql sql"><code><span class="token keyword keyword-CREATE">CREATE</span> <span class="token keyword keyword-USER">USER</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword keyword-BY">BY</span> <span class="token string">'mipassword'</span><span class="token punctuation">;</span>
 <span class="token keyword keyword-GRANT">GRANT</span> <span class="token keyword keyword-ALL">ALL</span> <span class="token keyword keyword-PRIVILEGES">PRIVILEGES</span> <span class="token keyword keyword-ON">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword keyword-TO">TO</span> <span class="token string">'miusuario'</span><span class="token variable">@'localhost'</span><span class="token punctuation">;</span>
 </code></pre><p>Al pulsar continuar, se creará el usuario con todos los privilegios y nos debe aparecer un mensaje indicando que se ha ejecutado correctamente.</p>
