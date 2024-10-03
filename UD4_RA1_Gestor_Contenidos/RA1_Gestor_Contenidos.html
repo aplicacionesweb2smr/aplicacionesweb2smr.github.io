@@ -110,8 +110,12 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#instalación-en-servidor-local-con-xampp-y-creación-de-la-base-de-datos" class="md-toc-link">
-            <p>Instalación en servidor local con XAMPP y creación de la base de datos</p>
+          <a href="#instalación-en-servidor-local-con-xampp" class="md-toc-link">
+            <p>Instalación en servidor local con XAMPP</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#creación-de-la-base-de-datos-y-el-usuario" class="md-toc-link">
+            <p>Creación de la base de datos y el usuario</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#instalación-de-wordpress" class="md-toc-link">
@@ -258,22 +262,37 @@ j) Se han realizado copias de seguridad de los contenidos del gestor.</p>
 <strong>URL</strong>: Es la dirección de una página web en Internet, por ejemplo, <a href="http://www.ejemplo.com/pagina">www.ejemplo.com/pagina</a>.<br>
 <strong>Alojamiento web o hosting</strong>: Es el disco duro en la web. Es un servicio que permite a los usuarios almacenar y gestionar sus sitios web en servidores web remotos. Debemos tener en cuenta que el alojamiento web es un servicio de pago, y que los precios pueden variar en función de las características y funcionalidades del servicio.</p>
 </div>
-<h2 id="instalación-en-servidor-local-con-xampp-y-creación-de-la-base-de-datos">Instalación en servidor local con XAMPP y creación de la base de datos </h2>
+<h2 id="instalación-en-servidor-local-con-xampp">Instalación en servidor local con XAMPP </h2>
 <p>Para instalar Wordpress usando un servidor local como XAMPP, es necesario tenerlo instalado previamente.<br>
 Los pasos de la instalación de XAMPP se pueden encontrar en el anexo <a href="../ANEXO1_XAMPP/Xampp_MariaDB.html">Instalación de XAMPP</a>.</p>
+<h2 id="creación-de-la-base-de-datos-y-el-usuario">Creación de la base de datos y el usuario </h2>
 <p>Si ya lo tenemos instalado, podemos seguir con la creación de la base de datos. Para ello, abrimos el panel de control de XAMPP y <strong>arrancamos los servicios de Apache y MySQL.</strong></p>
+<p>Comprobamos que accedemos a la página de inicio de XAMPP escribiendo en el navegador <strong><a href="http://localhost">http://localhost</a></strong>. Desde aquí accederemos a la administración de la base de datos MySQL, <strong>phpMyAdmin</strong>.</p>
 <p>Desde la pestaña <strong>"Base de datos"</strong> creamos una nueva base de datos con el nombre que queramos.</p>
-<p><img src="./images/creardb.png" alt="Crear base de datos"></p>
+<p><img src="./images/crearbd.png" alt="Crear base de datos"></p>
 <div class="admonition warning">
 <p class="admonition-title">Importante</p>
 <p>Es importante recordar el nombre de la base de datos, el nombre de usuario y la contraseña, ya que los necesitaremos para instalar Wordpress. Además, debemos comprobar que el usuario tenga todos los privilegios sobre la base de datos.</p>
 </div>
+<p>Aquí podemos ver la base de datos en la que nos encontramos</p>
+<p><img src="image-2.png" alt="alt text"></p>
+<p>Para volver a la página inicial de phpMyAdmin, pulsamos en el icono de la casa o en el nombre phpMyAdmin en la parte superior izquierda.</p>
+<p><img src="image.png" alt="Icono o home php"></p>
+<p>Desde la página principal, en la pestaña <strong>"Cuentas de Usuarios"</strong> creamos un nuevo usuario con el nombre que queramos y la contraseña que queramos. Le damos todos los privilegios sobre la base de datos que hemos creado.</p>
+<p><img src="image-3.png" alt="cuenta de usuario Nuevo"></p>
+<p><img src="image-5.png" alt="Usuario con privilegios"></p>
+<p>Podemos comprobar si el usuario tiene todos los privilegios sobre la base de datos creada, accediendo de nuevo a la base de datos y pulsando en la pestaña <strong>"Privilegios"</strong>.</p>
+<p><img src="image-6.png" alt="Chequeo de Privilegios"></p>
 <h2 id="instalación-de-wordpress">Instalación de WordPress </h2>
 <p>Una vez creada la base de datos en MySQL, se puede instalar el gestor de contenidos en el servidor web local. Para instalar un gestor de contenidos en un servidor web local, es necesario descargar el software del gestor de contenidos y subirlo al servidor web local.</p>
 <p><a href="https://es.wordpress.org/">Descargar Wordpress</a></p>
 <p><img src="./images/descargar.png" alt="Descargar Worpress"></p>
 <p><img src="./images/descargaencasa.png" alt="Descarga e instálalo en casa"></p>
 <p>Descomprimimos el archivo descargado y copiamos el contenido de la carpeta <strong>wordpress</strong> en la carpeta creada para nuestro proyecto dentro de c:\xampp\htdocs[<strong>wordpress</strong>].</p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Es importante recordar el nombre de la carpeta, ya que lo necesitaremos para acceder al sitio web. Y en el raiz de esta carpeta deben estar todos los archivos. <strong>No debemos tener otra carpeta con todo.</strong> En la imagen de abajo se muestra como en nuestra carepta de htdocs tenemos la carpeta wordpress, y en ella todos los archivos de wordpress directamente.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Muchas instalaciones</p>
 <p>Podemos tener muchas instalaciones en nuestro servidor local, cada una en una carpeta diferente. Por ejemplo, si queremos tener dos wordpress para dos negocios, uno mitiendaalimentos y otro nutricionistaonline, podemos tener dos carpetas, una para cada proyecto.</p>
@@ -283,6 +302,10 @@ Los pasos de la instalación de XAMPP se pueden encontrar en el anexo <a href=".
 <p><img src="./images/bienvenida.png" alt="Bienvenida"></p>
 <p>Pulsamos <strong>Vamos a ello</strong> y comenzamos con la instalación.</p>
 <p>Solicitará los datos de la base de datos, nombre de usuario y contraseña, etc.</p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Si da error volved a escribir los datos. Ojo, que wordpress viene propuesto como el nombre de la base de datos, pero no está realmente relleno. Hay que rellenar el campo. Además, nuestra base de datos se puede llamar de cualquier otra forma, no tiene por qué llamarse wordpress.</p>
+</div>
 <p><img src="./images/datosconfig.png" alt="Datos configuración"></p>
 <div class="admonition question">
 <p class="admonition-title">¿Qué datos debemos introducir en la instalación de WordPress?</p>
@@ -305,7 +328,7 @@ No se recomienda utilizar estos datos en un entorno de real.</p>
 <p>Si todo ha ido correctamente, aparecerá un mensaje de éxito y un botón para acceder al panel de administración de WordPress.</p>
 <p><img src="./images/exito.png" alt="Exito"></p>
 <h2 id="acceso-al-backend-y-frontend-de-wordpress">Acceso al backend y frontend de WordPress </h2>
-<p>Una vez instalado WordPress, se puede acceder al backend y al frontend del sitio web a través de un navegador web. Para acceder al backend de WordPress, es necesario introducir la URL del sitio web seguida de /wp-admin en la barra de direcciones del navegador. Por ejemplo, si la URL del sitio web (nuestra carpeta en htdocs) es <em><a href="http://localhost/wordpress">http://localhost/wordpress</a></em>, la URL del backend de WordPress será <em><a href="http://localhost/wordpress/wp-admin">http://localhost/wordpress/wp-admin</a></em>.</p>
+<p>Una vez instalado WordPress, se puede acceder al backend y al frontend del sitio web a través de un navegador web. Para acceder al backend de WordPress, es necesario introducir la URL del sitio web seguida de <strong>/wp-admin</strong> en la barra de direcciones del navegador. Por ejemplo, si la URL del sitio web (nuestra carpeta en htdocs) es <em><a href="http://localhost/wordpress">http://localhost/wordpress</a></em>, la URL del backend de WordPress será <em><a href="http://localhost/wordpress/wp-admin">http://localhost/wordpress/wp-admin</a></em>.</p>
 <div class="admonition info">
 <p class="admonition-title">Servidores arrancados</p>
 <p>Para poder acceder a la administración de WordPress, es necesario tener arrancados los servidores Apache y MySQL de XAMPP.</p>
