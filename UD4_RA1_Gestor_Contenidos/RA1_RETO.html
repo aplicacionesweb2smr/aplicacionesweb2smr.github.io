@@ -114,6 +114,13 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <div style="page-break-after:always;"></div>
 <h1 id="descripción-del-reto">Descripción del Reto </h1>
 <p>El alumnado deberá crear y gestionar un portal para un <strong>club deportivo</strong> utilizando un gestor de contenidos (CMS) popular como <strong>WordPress</strong>. Este portal servirá como una plataforma de intercambio de información y recursos para las personas interesadas en el club, incluyendo noticias, eventos, galerías de fotos, foros y otros contenidos relevantes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Las faltas de asistencia sin justificar penalizarán la nota final del proyecto:</p>
+<ul>
+<li>Sesión de planificación del Sprint: 1 punto</li>
+<li>Sesión de presentación (Revisión) del proyecto: 2 puntos</li>
+</ul>
+</div>
 <p><strong>Tecnologías a utilizar:</strong></p>
 <ul>
 <li>WordPress: Plataforma de CMS ampliamente utilizada que permite una instalación y gestión sencilla, ideal para el entorno educativo.</li>
@@ -140,38 +147,63 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </ul>
 <h1 id="product-backlog-detallado">Product Backlog Detallado </h1>
 <p>a) Instalación del CMS online (WordPress)<br>
-b) Gestión de Usuarios con Roles Diferentes: Crear usuarios con diferentes roles (administrador y autor).<br>
+b) Gestión de Usuarios con Roles Diferentes: Crear un usuario para cada miembro del equipo con rol administrador. Si es posible, usando otros emails, crear un usuario editor, uno autor y uno suscriptor.<br>
 c) Personalización de la Interfaz</p>
 <ul>
-<li>Seleccionar e instalar un tema apropiado para el portal.</li>
+<li>Seleccionar e instalar un tema apropiado para el portal. ¿Cómo seleccionamos un buen tema?</li>
 <li>Personalizar el tema elegido (logos, colores, estructura de menús).</li>
-<li>Añadir widgets y plugins necesarios para mejorar la funcionalidad y estética del portal.</li>
-</ul>
-<p>d) Realización de Copias de Seguridad y probar su restauración en local<br>
+<li>Añadir widgets y plugins necesarios para mejorar la funcionalidad y estética del portal.<br>
+d) Realización de Copias de Seguridad y probar su restauración en local.<br>
 e) Página de inicio: Crear una página de inicio atractiva con información relevante sobre el club.<br>
 f) Crear una página por cada Deporte que se practique en el club (Futbol 11, Voley, Pádel, etc) con información sobre horarios, entrenadores, equipos, etc.<br>
-f) Formulario de inscripciones: Crear un formulario de inscripción para nuevos miembros.<br>
-g) Crear una página de contacto con un formulario de contacto e información sobre la ubicación del club (con mapa de Google incrustado)<br>
-h) Crear una página de noticias con las últimas novedades del club (blog).<br>
-i) Crear una galería de fotos con imágenes de eventos y actividades del club.<br>
-j) Crear una página de eventos con un calendario de actividades (entrenamientos, partidos, torneos).<br>
-k) Area de socios: Crear un área privada para socios con información exclusiva y recursos adicionales.<br>
-l) Crear una tienda online con productos relacionados con el club.</p>
-<ul>
-<li>Instalar WooCommerce y configurar la tienda.</li>
-<li>Añadir productos y configurar métodos de pago por transferencia o reembolso (con incremento de 1 euro).</li>
-<li>Gestión de envíos en 3 zonas: local en Alicante (3 euros), nacional (5 euros) e internacional (20 euros).</li>
-<li>Establecer el envío gratuito a partir de 50 euros.</li>
-<li>Realizar un pedido de prueba de menos de 50 euros de cada zona y verificar que se recibe correctamente, con los gastos de envío correspondientes.</li>
-<li>
-<ul>
-<li>Realizar un pedido de prueba de más de 50 euros de la zona local y verificar que se recibe correctamente, sin gastos de envío.</li>
+g) Crear 4 entradas para cada una de las 4 categoría de deporte con información relevante.<br>
+h) Formulario de inscripciones: Crear un formulario de inscripción para nuevos miembros. Ayudaros de un plugin de formularios.<br>
+i) Crear una página de contacto con un formulario de contacto (usando el plugin) e información sobre la ubicación del club (con mapa de Google incrustado)<br>
+j) Crear una galería de fotos con imágenes de eventos y actividades del club.</li>
 </ul>
+<p><strong>Ampliación</strong>:<br>
+k) Crear una página de eventos con un calendario de actividades (entrenamientos, partidos, torneos).<br>
+m) Area de socios: Crear un área privada para socios con información exclusiva y recursos adicionales.</p>
+<p><strong>Woocomerce</strong></p>
+<p>n) Crear una tienda online con productos relacionados con el club.</p>
+<ul>
+<li>
+<p>Instalar <strong>WooCommerce</strong> y configurar la tienda:</p>
+<ul>
+<li>Ajustes generales.</li>
+<li>Impuestos: Normal 21%, reducido 10%, superreducido 4%.</li>
+</ul>
+</li>
+<li>
+<p>Añadir 12 productos (3 cada miembro del equipo). Deben tener distintos tipos de impuestos (Normal, reducido, superreducido)</p>
+</li>
+<li>
+<p>Configurar <strong>métodos de pago</strong> <strong>por transferencia</strong> o <strong>reembolso</strong> (con incremento de 1 euro).</p>
+</li>
+<li>
+<p><strong>Gestión de envíos</strong> en 3 zonas: local en Alicante (3 euros), nacional (5 euros) e internacional (20 euros).</p>
+</li>
+<li>
+<p>Establecer el <strong>envío gratuito</strong> a partir de 50 euros.</p>
+</li>
+<li>
+<p>Configurar cupones de descuento.</p>
+</li>
+<li>
+<p>Realizar un pedido de prueba de menos de 50 euros <strong>para cada zona</strong> y verificar que se recibe correctamente, con los gastos de envío correspondientes.</p>
+</li>
+<li>
+<p>Realizar un pedido de prueba <strong>de más de 50 euros de la zona local</strong> y verificar que se recibe correctamente, <strong>sin gastos de envío</strong>.</p>
 </li>
 </ul>
 <p><strong>POSIBLE FUTURA AMPLIACIÓN:</strong></p>
 <ul>
+<li>Incluir algún producto variable: talla, color, etc.</li>
+<li>Incluir algún producto descargable.</li>
+<li>Activar y gestionar el inventario de los productos.</li>
+<li>Personalizar los correos electrónicos.</li>
 <li><strong>SEO</strong>: Instalar y configurar el <strong>plugin Yoast SEO</strong> para mejorar la visibilidad del sitio en los motores de búsqueda.</li>
+<li>Todo aquello que hayáis descubierto o investigado, y queráis mostrar.</li>
 </ul>
 <h1 id="entrega-final">Entrega Final </h1>
 <p>Al final del proyecto, de entregará una <strong>copia de seguridad</strong> con el proyecto.<br>
@@ -228,7 +260,7 @@ Se deberá entregar <strong>documentación detallada sobre el proceso de creaci�
 </tr>
 <tr>
 <td><strong>Seguimiento del Proceso Scrum</strong></td>
-<td>Se realizó la planificación del Sprint y se definió la meta del Sprint.</td>
+<td>Se participó en la planificación del Sprint.</td>
 <td></td>
 <td></td>
 </tr>
@@ -258,7 +290,7 @@ Se deberá entregar <strong>documentación detallada sobre el proceso de creaci�
 </tr>
 <tr>
 <td></td>
-<td>Se propusieron mejoras y soluciones innovadoras durante el Sprint.</td>
+<td>Se propusieron mejoras y soluciones durante el Sprint.</td>
 <td></td>
 <td></td>
 </tr>
@@ -277,17 +309,23 @@ Se deberá entregar <strong>documentación detallada sobre el proceso de creaci�
 </tbody>
 </table>
 <p><strong>Proceso de Evaluación:</strong></p>
+<p>Se documenta a modo de diario del trabajo realizado sobre el Sprint:</p>
+<ul>
+<li>Tareas realizadas durante el Sprint (se valoran capturas mostrando el trabajo de configuración y el resultado obtenido)</li>
+<li>Observaciones sobre las reuniones diarias</li>
+<li>Observaciones sobre la reunión de la Revisión</li>
+<li>Observaciones sobre la reunión de la Retrospectiva</li>
+</ul>
 <p>Se realizará una autoevaluación y una evaluación del equipo en cada Sprint, utilizando la lista de cotejo anterior.</p>
 <ol>
 <li><strong>Autoevaluación:</strong>
 <ul>
-<li>Durante la <strong>Sprint Review</strong> primero cada miembro del equipo completa la lista de cotejo basada en su percepción del trabajo realizado durante el Sprint.</li>
+<li>Durante o después de la <strong>Sprint Retrospective</strong> primero cada miembro del equipo completa la lista de cotejo basada en su percepción del trabajo realizado durante el Sprint.</li>
 </ul>
 </li>
 <li><strong>Evaluación del Equipo:</strong>
 <ul>
-<li>Durante la <strong>Sprint Review</strong>, el equipo en conjunto evalúa el trabajo del Sprint utilizando la misma lista de cotejo.</li>
-<li>Se discuten los resultados y se llegan a acuerdos sobre las calificaciones.</li>
+<li>Durante o después de la <strong>Sprint Retrospective</strong>, el equipo en conjunto evalúa el trabajo del Sprint utilizando la misma lista de cotejo.</li>
 </ul>
 </li>
 </ol>
@@ -298,13 +336,6 @@ Se deberá entregar <strong>documentación detallada sobre el proceso de creaci�
 <li><strong>Funcionalidad:</strong> Todas las funcionalidades del sitio web (formularios, menús, galerías, tienda online, etc.) funcionan correctamente.</li>
 <li><strong>Seguridad:</strong> Se han implementado medidas de seguridad para proteger el sitio web de posibles ataques y vulnerabilidades.</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Las faltas de asistencia sin justificar penalizarán la nota final del proyecto:</p>
-<ul>
-<li>Sesión de planificación del Sprint: 1 punto</li>
-<li>Sesión de presentación (Revisión) del proyecto: 2 puntos</li>
-</ul>
-</div>
 
       </div>
       
