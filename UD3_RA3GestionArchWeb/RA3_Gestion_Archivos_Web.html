@@ -106,8 +106,12 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#proceso-de-instalación-de-nextcloud" class="md-toc-link">
-            <p>Proceso de instalación de NextCloud</p>
+          <a href="#proceso-de-instalación-de-nextcloud-con-xampp" class="md-toc-link">
+            <p>Proceso de instalación de NextCloud con Xampp</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#proceso-de-instalación-de-nextcloud-con-docker" class="md-toc-link">
+            <p>Proceso de instalación de NextCloud con Docker</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#configuración-básica-de-nextcloud" class="md-toc-link">
@@ -232,7 +236,7 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <p>Este conjunto de características que hemos visto relativas a los gestores de archivos son aplicables también a los gestores de archivos web. Todos los gestores de archivos web permiten hacer de una manera u otra cargas de archivos al servidor (si no, se perdería el sentido de gestión remota), y para hacerlo, en última instancia del proceso, acaban llamando al gestor local (suele haber siempre un botón que dice navegar) para que el usuario pueda explorar el sistema de archivos y seleccionar los que quiere cargar al servidor.</p>
 <p>Los gestores de archivos web imitan a los gestores de archivos locales en el sentido que ofrecen funcionalidades muy similares accesibles a través de Internet para poder gestionar remotamente nuestros archivos.</p>
 <p>Una de las grandes ventajas de trabajar con una interfaz web es que no es necesario instalar ninguna aplicación del lado del cliente.</p>
-<h2 id="proceso-de-instalación-de-nextcloud">Proceso de instalación de NextCloud </h2>
+<h2 id="proceso-de-instalación-de-nextcloud-con-xampp">Proceso de instalación de NextCloud con Xampp </h2>
 <p>Requisitos previos para la instalación de Nextcloud en Windows:</p>
 <ul>
 <li><strong>Servidor web</strong>: En Windows, utilizaremos <strong>XAMPP</strong>, un paquete que incluye Apache, PHP y MySQL.</li>
@@ -267,8 +271,13 @@ A veces en la versión de XAMPP podemos encontrar una base de datos más antigua
 <ol start="4">
 <li>Configuración en el navegador: Acceder a <strong>localhost/nextcloud</strong> desde el navegador para completar la instalación a través de la interfaz gráfica. Si a la carpeta la hemos llamado de otra forma, accederemos a <strong>localhost/nombre_carpeta</strong>.</li>
 </ol>
-<p><img src="./images/instalacion_usr_admin.png" alt="alt text"></p>
-<p>Nos pide nombre de usuario y contraseña para el administrador de Nextcloud.</p>
+<p><img src="./images/instalacion_usr_admin.png" alt="Pagina inicial configuración"></p>
+<p><img src="./images/config_inicial.png" alt="Configuración inicial"></p>
+<p>Nos pide nombre de usuario y contraseña para el administrador de Nextcloud. En un entorno de pruebas podemos poner <strong>admin</strong> y <strong>admin123</strong>, o cosas similares. Pero en un entorno real, debemos poner una contraseña segura.</p>
+<p>En nuestro caso, si hemos creado una <strong>base de datos</strong> nextcloud, el <strong>usuario de la base de datos</strong> sería alumnado y la <strong>contraseña del usuario de la base de datos</strong> sería alumnado, debemos poner estos datos en la configuración de la base de datos. El <strong>host</strong> será <strong>localhost:443</strong>.</p>
+<p><img src="./images/nuestraConfig.png" alt="Datos de la base de datos"></p>
+<p>Admin_123</p>
+<h2 id="proceso-de-instalación-de-nextcloud-con-docker">Proceso de instalación de NextCloud con Docker </h2>
 <h2 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h2>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
 <ul>
