@@ -88,19 +88,19 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><a href="./RestaurarDuplicator.pdf">Descargar estos apuntes</a></p>
 <ul>
 <li>
-<p><strong>Copia  los  archivos  del  Duplicator</strong>  en  una  carpeta  en  C:\xampp\htdocs,  por  ejemplo<br>
-**C:\xampp\htdocs\<span style="color: red">nombrecarpeta</span>.</p>
+<p><strong>Copia  los 2 archivos  del  Duplicator (el archivo comprimido y el installer.php)</strong>  en  la  carpeta <strong>htdocs</strong> de vuestro <strong>Xampp</strong>. Por  ejemplo<br>
+<strong>C:\xampp\htdocs\<span style="color: red">nombrecarpeta</span>.</strong></p>
 </li>
 <li>
 <p>Arranca <strong>Xampp</strong>, tanto el servidor de base de datos <strong>MySQL</strong>, como el <strong>Apache</strong>.</p>
 </li>
 <li>
 <p>Accede a <a href="http://localhost/phpmyadmin/">http://localhost/phpmyadmin/</a> para comprobar que usuario tiene privilegios. <u>Si no existiese</u>, podemos crear uno desde el apartado de SQL.</p>
-<pre data-role="codeBlock" data-info="" class="language-text"><code>CREATE USER 'alumno'@'localhost' IDENTIFIED BY 'alumno';  
-GRANT ALL PRIVILEGES ON * . * TO 'alumno'@'localhost'; 
+<pre data-role="codeBlock" data-info="" class="language-text"><code>CREATE USER 'alumnado'@'localhost' IDENTIFIED BY 'alumnado';  
+GRANT ALL PRIVILEGES ON * . * TO 'alumnado'@'localhost'; 
 </code></pre></li>
 <li>
-<p>Accede al instalador desde el navegador: <a href="http://localhost/">http://localhost/</a><span style="color: red">nombrecarpeta</span>, al archivo installer.php y restaura la copia de seguridad  de  WordPress.</p>
+<p>Accede al instalador desde el navegador: <a href="http://localhost/">http://localhost/</a><span style="color: red">nombrecarpeta</span>, al archivo <strong>installer.php</strong> y restaura la copia de seguridad  de  WordPress.</p>
 </li>
 </ul>
 <p><img src="./images/image-3.png" alt="Acceso al installer"></p>
@@ -108,17 +108,29 @@ GRANT ALL PRIVILEGES ON * . * TO 'alumno'@'localhost';
 <ul>
 <li>Marcaremos <strong>Create New Database</strong></li>
 <li>Pondremos un <strong>nombre de la base de datos</strong>, por ejemplo, el nombre de nuestra carpeta <strong>acabado en db</strong>: <span style="color: red">nombrecarpetadb</span>.</li>
-<li><strong>Usuario y contraseña</strong> que tengamos en Phpmyadmin.</li>
+<li><strong>Usuario y contraseña</strong> que tengamos en Phpmyadmin. En este ejemplo, usuario alumnado y contraseña alumnado.</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Si nos diera un error (es posible que ponga algo de <strong>UNZIP</strong>), es posible que no haya podido descomprimir el archivo comprimido que hay en la carpeta. Lo podemos hacer manualmente.</p>
-</div>
 <p><img src="./images/image-4.png" alt="Datos instalación"></p>
-<p>Le daremos a Validate.</p>
-<p>En la siguiente pestaña:<br>
-<img src="./images/image-1.png" alt="Aceptamos"></p>
-<p>y Ok:<br>
-<img src="./images/image-2.png" alt="ok"></p>
+<p>Le daremos a <strong>Validate</strong>.</p>
+<p>Una vez pasada la validación, en la siguiente pestaña:</p>
+<p><img src="./images/image-1.png" alt="Aceptamos"></p>
+<p>y <strong>Ok</strong>:</p>
+<p><img src="./images/image-2.png" alt="ok"></p>
+<p>Si todo ha ido bien veréis una pantalla que nos permita acceder al administrador de Wordpress.</p>
+<p><img src="./images/adminlog.png" alt="admin log"></p>
+<div class="admonition warning">
+<p class="admonition-title">¿Te ha dado problemas?</p>
+<ul>
+<li>Si nos diera un error al descomprimir el archivo (es posible que ponga algo de <strong>UNZIP</strong>) lo podemos hacer manualmente.</li>
+<li>Si da algún error en la <strong>validación de la base de datos</strong>:
+<ul>
+<li>Revisa que has puesto bien el usuario y contraseña</li>
+<li>Revisa que existe ese usuario y contraseña en <strong>phpMyAdmin</strong> y tiene <strong>privilegios</strong>.</li>
+<li>Revisa que has puesto en Action <strong>Create New Database</strong>, y <strong>NO</strong> tienes ninguna base de datos con el mismo nombre en PhpAdmin.</li>
+</ul>
+</li>
+</ul>
+</div>
 
       </div>
       

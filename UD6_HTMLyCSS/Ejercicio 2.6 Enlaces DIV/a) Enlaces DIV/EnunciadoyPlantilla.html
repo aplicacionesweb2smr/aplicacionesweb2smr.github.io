@@ -1,0 +1,82 @@
+<!-- EJERCICIO 2.6 A ENLACES CON ESTILO
+
+Crea una carpeta llamada ejercicio2_6.
+En ella copia este archivo y renombralo a ejer06_mountain.html.
+Modifica las palabras en MAYÚSCULAS por la palabra correspondiente en CSS.
+Comprueba que el enlace a Montañas está activo y los demás no, y que funciona correctamente.
+Cuando tengas esta página lista, copiala y renombrala a ejer06_lagos.html, ejer06_rios.html y ejer06_mares.html.
+Adapta cada una de ellas a su contenido correspondiente que se indica en el archivo ejer06_texto_contenido.txt.
+Prueba que funcionan todos los enlaces y los colores activos son los correctos.
+
+EXTRA:
+Extrae los estilos CSS a un archivo externo y enlázalo en cada una de las páginas. Elimina los estilos de las páginas HTML.
+Prueba a modificar los estilos en el archivo CSS y comprueba que se aplican correctamente en todas las páginas.
+-->	
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Enlaces</title>
+</head>
+<body>
+
+<!-- MENÚ  -->
+<div style="ANCHURA:80%;
+			MARGEN-EXTERIOR: (ARRIBA Y ABAJO=10px, IZQUIERDA Y DERECHA=CENTRADO);
+			MARGEN-INTERIOR: (ARRIBA Y ABAJO=5px, IZQUIERDA Y DERECHA=2px);c
+			BORDE:1px LINEA-CONTINUA NEGRO; 
+			COLOR-DE-FONDO:#cccccc; 
+			COLOR-TEXTO:white;
+			TAMAÑO-TEXTO:20px;
+			GROSOR-TEXTO:negrita;
+			">
+	<div style="display:inline-block;
+				COLOR-DE-FONDO:#8C482B; /* ESTE ES EL COLOR ACTIVO */
+				MARGEN-INTERIOR: (TODOS = 10px);
+				cursor:pointer;">
+			<a href="ejer06_mountain.html" target="_self" style="text-decoration:none; color:inherit;">MONTAÑAS</a>
+	</div>
+	<div style="display:inline-block;
+				COLOR-DE-FONDO:#FF8956; /* ESTE ES EL COLOR NO ACTIVO */
+				MARGEN-INTERIOR: (TODOS = 10px);
+				cursor:pointer;">
+			<a href="ejer06_lagos.html" target="_self" style="text-decoration:none;color:inherit;">LAGOS</a>
+	</div>
+	<div style="display:inline-block;
+				COLOR-DE-FONDO:#FF8956; /* ESTE ES EL COLOR NO ACTIVO */
+				MARGEN-INTERIOR: (TODOS = 10px);
+				cursor:pointer;">
+			<a href="ejer06_rios.html" target="_self" style="text-decoration:none;color:inherit;">RÍOS</a>
+	</div>
+	<div style="display:inline-block;
+				COLOR-DE-FONDO:#FF8956; /* ESTE ES EL COLOR NO ACTIVO */
+				MARGEN-INTERIOR: (TODOS = 10px);
+				cursor:pointer;">
+			<a href="ejer06_mares.html" target="_self" style="text-decoration:none;color:inherit;">MARES</a>
+	</div>
+	
+</div>
+
+<!-- CONTENIDO  -->
+<div style="ANCHURA:80%;
+			MARGEN-EXTERIOR:10px CENTRADO;
+			MARGEN-INTERIOR:5px 2px;
+			BORDE:1px LINEA-CONTINUA NEGRO; 
+			COLOR-DE-FONDO:#cccccc; 
+			">
+
+	<div style="ANCHURA:100%; 
+				ALINEACIÓN-DEL-TEXTO: justificado; 
+				TIPO-FUENTE:Arial;">
+		<h1>MONTAÑAS</h1>
+
+		<p>Una montaña es una eminencia topográfica (elevación natural de terreno) superior a 700 m respecto a su base. Las montañas se agrupan, a excepción de los volcanes, en cordilleras o sierras.</p>
+
+		<p>Las montañas cubren 53 % de Asia, 58 % de América, 25 % de Europa, 17 % de Australia y 3 % de África. En total, un 24 % de la litosfera constituye masa montañosa. Un 10 % de la población mundial habita en regiones montañosas. Todos los ríos mayores nacen en áreas montañosas y más de la mitad de la humanidad depende del agua de las montañas.</p>
+	</div>
+</div>
+
+<!-- FIN CÓDIGO HTML  -->
+</body>
+</html>

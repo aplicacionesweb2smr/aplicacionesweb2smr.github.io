@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>SMR Móviles 2024-2025</title>
+  <style>
+    .contenedor-principal {
+		width:100%;
+		text-align:center;
+	}
+  
+	.contenedor {
+		display:inline-block;
+		border:1px solid black;
+		padding:30px;
+		margin:0 auto;
+		background-color:#dac6b5;
+	}
+  
+	.tablaResultado {
+		border:1px solid black;
+		border-collapse:collapse;
+		min-width:250px;
+		background-color:#f1d6b8;
+	}
+	.tablaResultado td {
+		border:1px solid black;
+		padding:3px;
+		text-align:left;
+	}
+  </style>  
+</head>
+<body>
+
+
+
+<!-- UNA COLUMNA DE 50% Y OTRA DE 50% -->	
+<div class="contenedor-principal">
+	<div class="contenedor">
+
+			<div id="divValores">Valores</div>
+	
+	</div>
+</div>
+
+
+
+
+  <!-- FIN DE TU CÓDIGO HTML  -->
+  
+<script>
+
+function replaceAll(cadena, car1, car2) {
+	var resul=cadena;
+	resul=cadena.replace(car1,car2);
+	if (resul==cadena) {
+		return resul;
+	} else {
+		return replaceAll(resul,car1,car2);
+	}
+	
+}
+
+
+var url = location.href;
+var urlSplit = url.split('?');
+var resulDatos = urlSplit[1];
+resulDatos = replaceAll(resulDatos,"=", "</td><COL2TD><b>");
+resulDatos = replaceAll(resulDatos,"&", "</b></td></tr><tr><td>");
+resulDatos = replaceAll(resulDatos,"COL2TD", "td class='col2'");
+var resul1="<table class='tablaResultado'>";
+var resul2="<caption><h3>Datos recogidos del formulario</h3><br></caption";
+var resul3="<colgroup><col style='background-color:#cccccc;width:20%'></col><col></col></colgroup>"
+var resul4="<tr><td>"+resulDatos+"</td></tr></table>";
+
+document.getElementById("divValores").innerHTML = resul1+resul2+resul3+resul4;
+		
+</script>		
+  
+  
+</body>
+</html>

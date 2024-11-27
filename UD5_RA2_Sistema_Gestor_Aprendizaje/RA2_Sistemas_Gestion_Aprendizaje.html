@@ -116,12 +116,12 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
             <p>Actividades</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#roles" class="md-toc-link">
-            <p>Roles</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#herramientas-de-comunicación" class="md-toc-link">
             <p>Herramientas de comunicación</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#roles" class="md-toc-link">
+            <p>Roles</p>
 
           </a></div>
         </div>
@@ -241,6 +241,8 @@ h) Se ha comprobado la seguridad del sitio.</p>
 <p>El software se encuentra en el directorio <strong>/moodle</strong>, y en general solo hay que guardar lo que se haya modificado para personalizar el entorno, archivos de configuración o temas añadidos. Los datos de los cursos se encuentran en el directorio <strong>/moodledata</strong>, que contiene todo el trabajo de los usuarios; por tanto, hay que guardarlo entero. La <strong>base de datos</strong>, que se llama moodle, contiene la información que gestiona y relaciona el portal y su contenido, y también se ha de copiar entera.</p>
 <div style="page-break-after:always;"></div>
 <h2 id="portales-web-de-aprendizaje-moodle">Portales web de aprendizaje: Moodle </h2>
+<p>Aquí se muestra la pantalla de añadir recursos y actividades en Moodle, que se detallan a continuación.</p>
+<img src="./images/recursos.png" width="40%" alt="Recursos">
 <h3 id="recursos">Recursos </h3>
 <p>Los recursos de los entornos virtuales de aprendizaje son todas aquellas herramientas que permiten a la persona formadora aportar materiales didácticos o bien crearlos para comunicar y complementar el conocimiento a su alumnado.</p>
 <p>Estos son los algunos de los recursos que proporciona Moodle y que el profesorado, en modo edición, pueden añadir a sus cursos:</p>
@@ -257,7 +259,6 @@ h) Se ha comprobado la seguridad del sitio.</p>
 <p class="admonition-title">Modo edición</p>
 <p>El <strong>modo edición</strong> es imprescindible para modificar el contenido de los cursos. Al activarlo aparecen un conjunto de iconos asociados a cada ítem del curso y a los bloques, que nos permitirán modificar su colocación y editar los contenidos didácticos. También nos permite añadir nuevos contenidos al curso. Para activarlo o desactivarlo hay que pulsar el botón “Activa edición” o “Desactiva edición”.</p>
 </div>
-<p><img src="images/recursos.png" alt="Recursos"></p>
 <div style="page-break-after:always;"></div>
 <h3 id="actividades">Actividades </h3>
 <div class="admonition info">
@@ -291,8 +292,7 @@ h) Se ha comprobado la seguridad del sitio.</p>
 <li><strong>Taller</strong>: permite la recogida de los trabajos entregados por el alumnado y la evaluación entre ellos. La evaluación puede ser anónima y el profesorado puede indicar la rúbrica para facilitarla. El alumnado recibe dos notas, la del propio trabajo y la de la evaluación realizada.</li>
 <li><strong>Wiki</strong>: permite la creación colectiva de documentos web. El alumnado edita el documento y añade, modifica o quita contenido. Se puede utilizar para que el alumnado cree sus apuntes de clase.</li>
 </ul>
-<h3 id="roles">Roles </h3>
-<p>Un <strong>rol</strong> es una colección de permisos definida para todo el sistema que podéis asignar a los usuarios en contextos específicos. La combinación de rol y contexto define las acciones que el usuario puede hacer en las páginas. Tratándose de un entorno de aprendizaje, los roles más comunes que ofrece Moodle son el de <strong>profesor/a</strong> y <strong>estudiante</strong> además del de <strong>administrador/a</strong> para gestionar el portal.</p>
+<div style="page-break-after:always;"></div>
 <h3 id="herramientas-de-comunicación">Herramientas de comunicación </h3>
 <p>Las herramientas de comunicación en los portales web de aprendizaje son un elemento básico en el proceso de aprendizaje; la comunicación con el profesorado, las dudas que aclaran los/as compañeros/as o las discusiones y el debate son necesarios y ayudan al alumnado.</p>
 <div class="admonition info">
@@ -308,7 +308,8 @@ h) Se ha comprobado la seguridad del sitio.</p>
 <li><strong>Bitácoras</strong>: también llamadas blogs, que funcionan como un diario donde se pueden escribir pensamientos, anécdotas, informar de eventos interesantes o en general añadir cualquier contenido que no esté necesariamente relacionado con la materia del curso pero que el/la autor/a crea que puede ser interesante para los otros usuarios.</li>
 </ul>
 <p>A parte hay algunas actividades que se pueden hacer servir como herramientas de comunicación, como las encuestas o las cuestiones.</p>
-<div style="page-break-after:always;"></div>
+<h3 id="roles">Roles </h3>
+<p>Un <strong>rol</strong> es una colección de permisos definida para todo el sistema que podéis asignar a los usuarios en contextos específicos. La combinación de rol y contexto define las acciones que el usuario puede hacer en las páginas. Tratándose de un entorno de aprendizaje, los roles más comunes que ofrece Moodle son el de <strong>profesor/a</strong> y <strong>estudiante</strong> además del de <strong>administrador/a</strong> para gestionar el portal.</p>
 <h2 id="configuración-de-moodle">Configuración de Moodle </h2>
 <p>Antes de poner en marcha un sistema informático, hay que configurarlo, y dependiendo de la complejidad que tenga será una tarea más o menos tediosa.</p>
 <p>En un portal web, por ejemplo, se ha de personalizar el aspecto. Es importante que el entorno tenga una estética adecuada con el resto de aplicaciones de la organización en la que se quiere integrar; por ejemplo, hay que poner el logotipo o utilizar los colores apropiados.</p>
@@ -379,18 +380,27 @@ h) Se ha comprobado la seguridad del sitio.</p>
 <p>Nada más hace falta descomprimir el contenido del fichero en el directorio <strong>moodledata</strong>, dentro de una carpeta llamada <strong>lang</strong>, que habrá que crear en caso de que no exista.</p>
 <p>Para configurar el idioma del entorno podéis acceder a los parámetros de idioma dentro del de <strong>Administración del sitio/Idioma/Parámetros de idioma</strong> del bloque de Configuración.</p>
 <p><strong>Pasos para instalar un idioma</strong>:</p>
-<p><img src="./images/image.png" alt="alt text"></p>
-<p><img src="./images/image-1.png" alt="alt text"></p>
-<p><img src="./images/image-2.png" alt="alt text"></p>
+<p>Nos vamos en la administración del sitio, a language packs y seleccionamos el idioma que queremos instalar:</p>
+<div style="text-align: center">
+     <img src="./images/langpacks.png" alt="site administration lang pack" style="width: 30%; display: block; margin: auto;">
+</div>
+<div style="text-align: center">
+     <img src="./images/selectlang.png" alt="site administration" style="width: 30%; display: block; margin: auto;">
+</div>
+<p>Nos indica que se ha instalado correctamente:</p>
+<div style="text-align: center">
+     <img src="./images/langinstalled.png" alt="site administration" style="width: 30%; display: block; margin: auto;">
+</div>
 <p>Una vez instalado ya podemos seleccionarlo:</p>
-<p><img src="./images/image-3.png" alt="alt text"></p>
-<p><img src="./images/image-4.png" alt="alt text"></p>
+<div style="text-align: center">
+     <img src="./images/langsettingsES.png" alt="site administration" style="width: 30%; display: block; margin: auto;">
+</div>
 <p>Guardamos los cambios.</p>
 <p>Una vez hecho esto podemos cambiar el idioma del usuario.</p>
-<p><img src="./images/image-5.png" alt="alt text"></p>
-<h4 id="otros-aspectos-cabecera-pies-de-página-logo">Otros aspectos: cabecera, pies de página, logo... </h4>
-<p>Según el tema que tengáis activado podéis gestionar la cabecera y el pie de las páginas yendo a su menú de configuración o bien a su página de configuración. Allí podéis añadir el logo de la organización, cosa que es recomendable ya que se trata de una información imprescindible que identifica la institución o empresa.</p>
-<p>Otra manera de añadir una cabecera y un pie de página es modificando directamente el código HTML. El administrador del portal puede añadir código HTML adicional a cada página yendo a <strong>Administración del sitio/Apariencia/HTML Complementario</strong> del bloque de Configuración.</p>
+<div style="text-align: center">
+     <img src="./images/profilelang.png" alt="site administration" style="width: 30%; display: block; margin: auto;">
+</div>
+<div style="page-break-after:always;"></div>
 <h3 id="gestión-de-seguridad-roles">Gestión de seguridad. Roles. </h3>
 <p>En cualquier sistema informático multiusuario hay que establecer unas normas de seguridad que garanticen que cada usuario solo puede hacer aquello que se le permite. Además, es necesario que haya diferentes tipos de usuarios, unos con más privilegios que otros según sus funciones y responsabilidades.</p>
 <p>Por <strong>rol</strong> se entiende un conjunto de permisos y prohibiciones agrupados bajo un nombre. Los roles se asignan a los usuarios, y un usuario puede tener más de un rol, dependiendo del contexto que determinará qué podrá hacer en el contexto correspondiente.</p>
@@ -449,14 +459,16 @@ h) Se ha comprobado la seguridad del sitio.</p>
 <p>Se establece una jerarquía de contextos dentro del portal, que hay que conocer para entender cómo se aplican los permisos de los roles y se resuelven las contradicciones. En orden descendente los contextos son:</p>
 <p><em><strong>Sistema / Usuario / Categoría / Curso / Módulo de actividad / Bloque</strong></em></p>
 <p>El sistema define todas las funcionalidades (capacidades) disponibles para los usuarios; por ejemplo, crear cursos o ver los perfiles de los otros usuarios. Cada rol ha de definir los permisos para todas estas funcionalidades.</p>
-<p>Hay cuatro tipos de permisos disponibles:</p>
+<div style="page-break-after:always;"></div>
+Hay cuatro tipos de permisos disponibles:
 <ul>
-<li>No definido. Equivalente a denegado mientras no sea explícitamente permitido por algún otro rol del usuario en un contexto superior.</li>
-<li>Concedido. Permite la funcionalidad en el contexto en que se aplica. También en los contextos inferiores, salvo que se deniegue explícitamente.</li>
-<li>Denegado. No permite la funcionalidad ni siquiera para los usuarios del rol que tienen permiso en un contexto superior.</li>
-<li>Prohibido. Niega los permisos para una determinada funcionalidad completamente en cualquier contexto.</li>
+<li><strong>No definido</strong>. Equivalente a denegado mientras no sea explícitamente permitido por algún otro rol del usuario en un contexto superior.</li>
+<li><strong>Concedido</strong>. Permite la funcionalidad en el contexto en que se aplica. También en los contextos inferiores, salvo que se deniegue explícitamente.</li>
+<li><strong>Denegado</strong>. No permite la funcionalidad ni siquiera para los usuarios del rol que tienen permiso en un contexto superior.</li>
+<li><strong>Prohibido</strong>. Niega los permisos para una determinada funcionalidad completamente en cualquier contexto.</li>
 </ul>
 <p>La funcionalidad o capacidad indica qué quiere hacer el usuario, el contexto define dónde lo quiere hacer y el permiso si lo puede hacer. Los roles de los usuarios, que se definen en un contexto, determinan los permisos para todas las funcionalidades. Cualquier usuario tiene como mínimo un rol en cualquier contexto. En caso de conflicto los permisos más restrictivos siempre prevalecen sobre los menos restrictivos.</p>
+<div style="page-break-after:always;"></div>
 <h3 id="creación-y-configuración-de-cursos">Creación y configuración de cursos </h3>
 <p>Los cursos, junto con los usuarios, son los pilares del portal. Un curso se puede asimilar a un aula virtual. Los cursos se organizan en categorías, por temática o nivel similar, y se pueden crear subcategorías para estructurar el portal y facilitar la búsqueda de cursos.</p>
 <p>En el portal inicialmente se crea la categoría “miscelánea” y, de hecho, aunque la eliminéis se volverá a crear automáticamente si no hay al menos otra categoría.</p>
@@ -544,10 +556,6 @@ h) Se ha comprobado la seguridad del sitio.</p>
 <p>Además, el profesorado puede añadir otros elementos de comunicación como el <strong>Foro</strong> donde tanto los/as profesores/as como los/as estudiantes pueden escribir y el <strong>Chat</strong> donde se establece una comunicación directa. Ambos elementos de comunicación sirven para resolver dudas entre los/as compañeros/as y acercarlos en su proceso de aprendizaje. Es importante que el profesorado estimule el uso de estas herramientas para compensar la lejanía física de los/as estudiantes.</p>
 <p>La organización de los estudiantes en grupos permite que estos realicen tareas como grupo. Algunas de las actividades y herramientas de comunicación que hemos visto facilitan el trabajo grupal, indicándolo en su configuración. Por ejemplo, se puede crear un foro donde las conversaciones solo sean visibles por los miembros de un mismo grupo o bien la actividad Tarea que permite la entrega por grupo.</p>
 <p>Todos los recursos o actividades del curso puede ser editados de nuevo para modificar algún parámetro, recolocarlo en el bloque central tanto moviéndolo horizontalmente como verticalmente, asignarle roles y si es necesario ocultarlo al estudiante.</p>
-<div class="admonition info">
-<p class="admonition-title">Para añadir cualquier recurso, actividad o elemento de comunicación, hay que activar la edición del curso, clicar en Añadir una actividad o recurso, seleccionar el elemento del menú y luego configurar los diferentes parámetros algunos de ellos opcionales y otros obligatorios.</p>
-</div>
-<p>Tan los recursos como las actividades y los elementos de comunicación disponen de unos parámetros propios.</p>
 <div style="page-break-after:always;"></div>
 <h2 id="administración-de-portales-web-de-aprendizaje">Administración de portales web de aprendizaje </h2>
 <h3 id="activar-y-desactivar-funcionalidades">Activar y desactivar funcionalidades. </h3>

@@ -97,33 +97,38 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#instalación-de-docker-desktop" class="md-toc-link">
             <p>Instalación de Docker Desktop</p>
 
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
         <summary class="md-toc-link-wrapper">
           <a href="#automatizar-instalaciones-con-archivos-de-docker-composeyml" class="md-toc-link"><p>Automatizar instalaciones con archivos de docker-compose.yml</p>
 </a>
           </summary>
         <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#ejemplo-de-docker-composeyml" class="md-toc-link"><p>Ejemplo de docker-compose.yml</p>
+</a>
+          </summary>
+        <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#nextcloud" class="md-toc-link">
-            <p>Nextcloud</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#moodle" class="md-toc-link">
             <p>Moodle</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#wordpress" class="md-toc-link">
-            <p>Wordpress</p>
+          <a href="#nextcloud" class="md-toc-link">
+            <p>Nextcloud</p>
 
           </a></div>
         </div>
       </details>
+    
+        </div>
+      </details>
+    
+        </div>
+      </details>
     <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#comandos-de-docker" class="md-toc-link">
-            <p>Comandos de docker</p>
+          <a href="#otros-comandos-de-docker" class="md-toc-link">
+            <p>Otros comandos de docker</p>
 
           </a></div>
 </div>
@@ -131,54 +136,124 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><a href="./InstalacionDockerComposer.pdf">Descargar estos apuntes</a></p>
 <div style="page-break-after:always;"></div>
 <h1 id="instalación-de-docker">Instalación de Docker </h1>
-<p>Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.</p>
-<p>Docker es una plataforma de virtualización a nivel de sistema operativo que permite crear una aplicación y empaquetarla junto con sus dependencias y librerías en un contenedor que será capaz de ejecutarse en cualquier otra máquina que disponga de una capa para la gestión de dichos contenedores.</p>
-<p>Una imagen es una especificación estática de lo que debería ser el contenedor en tiempo de ejecución, incluido el código de la aplicación y las configuraciones de tiempo de ejecución.</p>
-<p>Un contenedor es la instanciación de una imagen, y puede haber múltiples instancias de un mismo contenedor.</p>
+<p><strong>Docker</strong> es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.</p>
+<p>Docker es una <strong>plataforma de virtualización</strong> a nivel de sistema operativo que permite crear una aplicación y empaquetarla junto con sus dependencias y librerías en un contenedor que será capaz de ejecutarse en cualquier otra máquina que disponga de una capa para la gestión de dichos contenedores.</p>
+<p>Una <strong>imagen</strong> es una especificación <strong>estática</strong> de lo que debería ser el contenedor en tiempo de ejecución, incluido el <strong>código de la aplicación</strong> y las <strong>configuraciones de tiempo de ejecución</strong>.</p>
+<p>Un <strong>contenedor</strong> es la <strong>instanciación de una imagen</strong>, y puede haber múltiples instancias de un mismo contenedor.</p>
 <p>Por ejemplo, a partir de una imagen que contenga un Ubuntu + Wordpress podríamos crear 3 contenedores ejecutándose de manera independiente:</p>
-<p><img src="image.png" alt="Contenedores Docker"></p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+  <img height="auto" width="40%" src="image.png" alt="Contenedores Docker">
+</div>
 <p>Hay dos versiones de Docker, una libre y otra comercial. Nosotros trabajaremos con Docker Community Edition, que es la versión libre.</p>
 <p>La virtualización clásica permite que sus sistemas operativos (Windows o Linux) se ejecuten simultáneamente en un solo sistema de hardware.</p>
-<p>En la virtualización con contenedores las aplicaciones instaladas comparten el mismo kernel del sistema operativo y separan los procesos de las aplicaciones del resto del sistema.</p>
-<p><img src="image-1.png" alt="Virtualización clásica vs Docker"></p>
-<p>Los contenedores permiten desplegar aplicaciones más rápido, arrancarlas y pararlas más rápido y aprovechar mejor los recursos de hardware.</p>
+<p>En la virtualización con contenedores las aplicaciones instaladas <strong>comparten el mismo kernel del sistema operativo</strong> y separan los procesos de las aplicaciones del resto del sistema.</p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+  <img height="auto" width="40%" src="image-1.png" alt="Virtualización clásica vs Docker">
+</div>
+<p>Los <strong>contenedores</strong> permiten desplegar aplicaciones <strong>más rápido</strong>, arrancarlas y pararlas más rápido y <strong>aprovechar mejor los recursos de hardware</strong>.</p>
 <p>Las máquinas virtuales nos permiten crear sistemas completos totalmente aislados, con mayor control sobre el entorno y mezclando sistemas operativos host y huésped.</p>
 <h2 id="instalación-de-docker-desktop">Instalación de Docker Desktop </h2>
-<p>Para instalar Docker utilizaremos Docker Desktop:</p>
-<p><a href="https://www.docker.com/">Docker</a></p>
+<p>Para instalar Docker utilizaremos, descargándolo desde aquí: <a href="https://www.docker.com/">Docker Desktop</a></p>
 <p>La instalación de Docker activa el Hyper-V de Windows en "activar y desactivar características de Windows", lo que provoca en ocasiones algún problema si también tenemos VirtualBox.</p>
-<p><img src="image-2.png" alt="Características de Windows"></p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+  <img height="auto" width="40%" src="image-2.png" alt="Características de Windows">
+</div>
 <p>Docker se ejecuta en segundo plano y muestra un icono en la barra de herramientas.</p>
-<h1 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h1>
+<div style="page-break-after:always;"></div>
+<h2 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h2>
 <p>En la mayoría de instalaciones necesitamos varios contenedores para ofrecer servicios en diferentes contenedores pero dependientes entre sí. Por ejemplo, para tener un servicio LAMP deberíamos tener un servidor apache con PHP y otro servidor con mysql.</p>
-<p>En estos casos, es mucho mejor utilizar docker compose. Esta utilidad dispone de un script con extensión yml que configura estos servicios.</p>
+<p>En estos casos, es mucho mejor utilizar <strong>docker compose</strong>. Esta utilidad dispone de un script con extensión <strong>yml</strong> que configura estos servicios.</p>
 <p>Por lo tanto, para instalar cualquier aplicación web con docker realizaremos los siguientes pasos:</p>
 <ol>
 <li><strong>Crear una carpeta</strong> para el proyecto</li>
-<li>Copiar en la carpeta el correspondiente archivo <strong>docker-compose.yml</strong></li>
-<li>Desde el CMD ejecutar el siguiente comando:<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
+<li><strong>Copiar</strong> en la carpeta el correspondiente archivo <strong>docker-compose.yml</strong></li>
+<li>Desde el CMD <strong>ejecutar</strong> el siguiente comando:<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
 </code></pre></li>
-<li>Comprobar en Docker que todo ha ido bien y está el servicio levantado.</li>
+<li><strong>Comprobar</strong> en Docker que todo ha ido bien y está el servicio levantado.</li>
 </ol>
-<h2 id="nextcloud">Nextcloud </h2>
-<pre data-role="codeBlock" data-info="" class="language-text"><code></code></pre><h2 id="moodle">Moodle </h2>
-<pre data-role="codeBlock" data-info="" class="language-text"><code></code></pre><h2 id="wordpress">Wordpress </h2>
-<pre data-role="codeBlock" data-info="" class="language-text"><code></code></pre><h1 id="comandos-de-docker">Comandos de docker </h1>
+<h3 id="ejemplo-de-docker-composeyml">Ejemplo de docker-compose.yml </h3>
+<h4 id="moodle">Moodle </h4>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token comment"># Copyright Broadcom, Inc. All Rights Reserved.</span>
+<span class="token comment"># SPDX-License-Identifier: APACHE-2.0</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mariadb</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/bitnami/mariadb<span class="token punctuation">:</span><span class="token number">11.4</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token comment"># ALLOW_EMPTY_PASSWORD is recommended only for development.</span>
+      <span class="token punctuation">-</span> ALLOW_EMPTY_PASSWORD=yes
+      <span class="token punctuation">-</span> MARIADB_USER=bn_moodle
+      <span class="token punctuation">-</span> MARIADB_DATABASE=bitnami_moodle
+      <span class="token punctuation">-</span> MARIADB_CHARACTER_SET=utf8mb4
+      <span class="token punctuation">-</span> MARIADB_COLLATE=utf8mb4_unicode_ci
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'./mariadb_data:/bitnami/mariadb'</span>
+  <span class="token key atrule">moodle</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.io/bitnami/moodle<span class="token punctuation">:</span><span class="token number">4.5</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'80:8080'</span>
+      <span class="token punctuation">-</span> <span class="token string">'443:8443'</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MOODLE_DATABASE_HOST=mariadb
+      <span class="token punctuation">-</span> MOODLE_DATABASE_PORT_NUMBER=3306
+      <span class="token punctuation">-</span> MOODLE_DATABASE_USER=bn_moodle
+      <span class="token punctuation">-</span> MOODLE_DATABASE_NAME=bitnami_moodle
+      <span class="token comment"># ALLOW_EMPTY_PASSWORD is recommended only for development.</span>
+      <span class="token punctuation">-</span> ALLOW_EMPTY_PASSWORD=yes
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">'./moodle_data:/bitnami/moodle'</span>
+      <span class="token punctuation">-</span> <span class="token string">'./moodledata_data:/bitnami/moodledata'</span>
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> mariadb
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><div style="page-break-after:always;"></div>
+<h4 id="nextcloud">Nextcloud </h4>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mariadb<span class="token punctuation">:</span>latest              <span class="token comment"># Para Raspberry 32 bits cambiar "mariadb:latest" por "yobasystems/alpine-mariadb:latest"</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>transaction<span class="token punctuation">-</span>isolation=READ<span class="token punctuation">-</span>COMMITTED <span class="token punctuation">-</span><span class="token punctuation">-</span>log<span class="token punctuation">-</span>bin=binlog <span class="token punctuation">-</span><span class="token punctuation">-</span>binlog<span class="token punctuation">-</span>format=ROW
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./db<span class="token punctuation">:</span>/var/lib/mysql
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
+      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"33306:3306"</span>
+  <span class="token key atrule">nextcloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nextcloud<span class="token punctuation">:</span>latest
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"8900:80"</span>
+      <span class="token punctuation">-</span> <span class="token string">"8943:443"</span>
+    <span class="token key atrule">links</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> db
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./nextcloud/config<span class="token punctuation">:</span>/var/www/html/config
+      <span class="token punctuation">-</span> ./nextcloud/data<span class="token punctuation">:</span>/var/www/html/data
+      <span class="token punctuation">-</span> ./nextcloud/custom_apps<span class="token punctuation">:</span>/var/www/html/custom_apps
+      <span class="token punctuation">-</span> ./nextcloud/themes<span class="token punctuation">:</span>/var/www/html/themes
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
+      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
+      <span class="token punctuation">-</span> MYSQL_HOST=db
+</code></pre><div style="page-break-after:always;"></div>
+<h1 id="otros-comandos-de-docker">Otros comandos de docker </h1>
 <p><strong>Exportar e importar</strong></p>
 <p>Cuando tenemos un contenedor en el que hemos trabajado configurando servicios, instalando aplicaciones, etc, es muy importante crear una copia para salvar nuestro trabajo. Docker ofrece una utilidad para convertir uno de nuestros contenedores en una imagen. El comando es docker export y creará un archivo comprimido en formato tar.</p>
-<blockquote>
-<p>C:&gt; docker export -o "PATH/ARCHIVO" contenedor</p>
-</blockquote>
-<p>Para cargar esta imagen y tenerla en nuestro repositorio local tendremos que cargarla. Para ello tenemos el comando docker import al que deberemos decir el nombre y el tag.</p>
-<blockquote>
-<p>C:&gt; docker import "PATH/ARCHIVO" nombreimagen:tag</p>
-</blockquote>
-<p>Si deseamos exportar un contenedor para luego importarla en otra máquina o bien simplemente como copia de seguridad, usaremos docker export y docker import</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>C:<span class="token punctuation">\</span><span class="token operator">&gt;</span> <span class="token function">docker</span> <span class="token builtin class-name">export</span> <span class="token parameter variable">-o</span> <span class="token string">"PATH/ARCHIVO"</span> contenedor
+</code></pre><p>Para cargar esta imagen y tenerla en nuestro repositorio local tendremos que cargarla. Para ello tenemos el comando docker import al que deberemos decir el nombre y el tag.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>C:<span class="token punctuation">\</span><span class="token operator">&gt;</span> <span class="token function">docker</span> <span class="token function">import</span> <span class="token string">"PATH/ARCHIVO"</span> nombreimagen:tag
+</code></pre><p>Si deseamos exportar un contenedor para luego importarla en otra máquina o bien simplemente como copia de seguridad, usaremos docker export y docker import</p>
 <p><strong>Crear imagen a partir de contenedor</strong></p>
 <p>Cuando tenemos un contenedor en el que hemos trabajado configurando servicios, instalando aplicaciones, etc, es posible crear una imagen (sin exportar e importar posteriormente) para crear más tarde contenedores similares.</p>
 <p>El comando que permite realizar esta acción es commit:</p>
-<p>C:&gt; docker commit contenedor imagen</p>
-
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>C:<span class="token punctuation">\</span><span class="token operator">&gt;</span> <span class="token function">docker</span> commit contenedor imagen
+</code></pre>
       </div>
       
       
