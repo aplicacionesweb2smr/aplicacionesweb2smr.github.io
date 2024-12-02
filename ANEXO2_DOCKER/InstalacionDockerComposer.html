@@ -94,6 +94,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#introducción-a-docker" class="md-toc-link">
+            <p>Introducción a Docker</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#instalación-de-docker-desktop" class="md-toc-link">
             <p>Instalación de Docker Desktop</p>
 
@@ -136,6 +140,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><a href="./InstalacionDockerComposer.pdf">Descargar estos apuntes</a></p>
 <div style="page-break-after:always;"></div>
 <h1 id="instalación-de-docker">Instalación de Docker </h1>
+<h2 id="introducción-a-docker">Introducción a Docker </h2>
 <p><strong>Docker</strong> es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.</p>
 <p>Docker es una <strong>plataforma de virtualización</strong> a nivel de sistema operativo que permite crear una aplicación y empaquetarla junto con sus dependencias y librerías en un contenedor que será capaz de ejecutarse en cualquier otra máquina que disponga de una capa para la gestión de dichos contenedores.</p>
 <p>Una <strong>imagen</strong> es una especificación <strong>estática</strong> de lo que debería ser el contenedor en tiempo de ejecución, incluido el <strong>código de la aplicación</strong> y las <strong>configuraciones de tiempo de ejecución</strong>.</p>
@@ -144,7 +149,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
   <img height="auto" width="40%" src="image.png" alt="Contenedores Docker">
 </div>
-<p>Hay dos versiones de Docker, una libre y otra comercial. Nosotros trabajaremos con Docker Community Edition, que es la versión libre.</p>
+<p>Hay dos versiones de Docker, una libre y otra comercial. Nosotros trabajaremos con <strong>Docker Community Edition</strong>, que es la versión libre.</p>
 <p>La virtualización clásica permite que sus sistemas operativos (Windows o Linux) se ejecuten simultáneamente en un solo sistema de hardware.</p>
 <p>En la virtualización con contenedores las aplicaciones instaladas <strong>comparten el mismo kernel del sistema operativo</strong> y separan los procesos de las aplicaciones del resto del sistema.</p>
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
@@ -154,27 +159,51 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p>Las máquinas virtuales nos permiten crear sistemas completos totalmente aislados, con mayor control sobre el entorno y mezclando sistemas operativos host y huésped.</p>
 <h2 id="instalación-de-docker-desktop">Instalación de Docker Desktop </h2>
 <p>Para instalar Docker utilizaremos, descargándolo desde aquí: <a href="https://www.docker.com/">Docker Desktop</a></p>
+<p>Ejecutar el instalador y seguir los pasos. Al finalizar la instalación, es posible que se nos pedirá reiniciar el sistema.</p>
 <p>La instalación de Docker activa el Hyper-V de Windows en "activar y desactivar características de Windows", lo que provoca en ocasiones algún problema si también tenemos VirtualBox.</p>
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
   <img height="auto" width="40%" src="image-2.png" alt="Características de Windows">
 </div>
 <p>Docker se ejecuta en segundo plano y muestra un icono en la barra de herramientas.</p>
+<p>Al abrir el programa veremos que tenemos Contenedores, Imágenes, Volúmenes y Redes.</p>
+<p><img src="image-3.png" alt="Contenedores"></p>
 <div style="page-break-after:always;"></div>
 <h2 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h2>
 <p>En la mayoría de instalaciones necesitamos varios contenedores para ofrecer servicios en diferentes contenedores pero dependientes entre sí. Por ejemplo, para tener un servicio LAMP deberíamos tener un servidor apache con PHP y otro servidor con mysql.</p>
 <p>En estos casos, es mucho mejor utilizar <strong>docker compose</strong>. Esta utilidad dispone de un script con extensión <strong>yml</strong> que configura estos servicios.</p>
 <p>Por lo tanto, para instalar cualquier aplicación web con docker realizaremos los siguientes pasos:</p>
 <ol>
-<li><strong>Crear una carpeta</strong> para el proyecto</li>
-<li><strong>Copiar</strong> en la carpeta el correspondiente archivo <strong>docker-compose.yml</strong></li>
-<li>Desde el CMD <strong>ejecutar</strong> el siguiente comando:<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
+<li>
+<p><strong>Crear una carpeta</strong> para el proyecto</p>
+</li>
+<li>
+<p><strong>Copiar</strong> en la carpeta el correspondiente archivo <strong>docker-compose.yml</strong> según la aplicación que queramos instalar.</p>
+</li>
+<li>
+<p>Desde el CMD <strong>ejecutar</strong> el siguiente comando:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
+</code></pre><p>Si el archivo se llama de otra forma, deberemos indicar el nombre del archivo:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> <span class="token parameter variable">-f</span> archivo.yml up <span class="token parameter variable">-d</span>
 </code></pre></li>
-<li><strong>Comprobar</strong> en Docker que todo ha ido bien y está el servicio levantado.</li>
+<li>
+<p><strong>Comprobar</strong> en Docker que todo ha ido bien y está el servicio levantado.</p>
+</li>
 </ol>
+<p><img src="image-4.png" alt="Contenedor corriendo"></p>
+<p>Si el contendedor no se levanta al darle al play, podemos ver los logs desde los 3 puntos de la derecha del contenedor que no está en marcha.</p>
+<p><img src="image-5.png" alt="menú logs"></p>
+<p><img src="image-6.png" alt="Logs"></p>
+<p>Para acceder a la aplicación podemos ver desde aquí la URL con el puerto que está utilizando.</p>
+<p><img src="image-7.png" alt="URL y puerto"></p>
 <h3 id="ejemplo-de-docker-composeyml">Ejemplo de docker-compose.yml </h3>
 <h4 id="moodle">Moodle </h4>
+<p>Por defecto el usuario es user y password bitnami.</p>
 <pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token comment"># Copyright Broadcom, Inc. All Rights Reserved.</span>
 <span class="token comment"># SPDX-License-Identifier: APACHE-2.0</span>
+<span class="token comment"># https://hub.docker.com/r/bitnami/moodle</span>
+<span class="token comment"># Por defecto el usuario es user y password bitnami </span>
+<span class="token comment"># MOODLE_USERNAME	Moodle user name.	user</span>
+<span class="token comment"># MOODLE_PASSWORD	Moodle user password.	bitnami</span>
 
 <span class="token key atrule">services</span><span class="token punctuation">:</span>
   <span class="token key atrule">mariadb</span><span class="token punctuation">:</span>
