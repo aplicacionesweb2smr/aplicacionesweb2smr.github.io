@@ -240,23 +240,37 @@ A veces en la versión de XAMPP podemos encontrar una base de datos más antigua
 <p>Descargar e instalar <strong>Nextcloud Server en ZIP</strong>: Descargar Nextcloud desde su sitio web oficial (<a href="https://nextcloud.com/install/">https://nextcloud.com/install/</a>). Descomprimir el archivo ZIP y mover la carpeta nextcloud a la carpeta htdocs en el directorio donde se instaló XAMPP.</p>
 </li>
 </ol>
-<p><img src="./images/nextcloud_htdocs.png" alt="carpeta nextcloud en htdocs"></p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img width="50%" src="./images/nextcloud_htdocs.png">
+</div>
 <ol start="3">
 <li>Creamos la base de datos para nextcloud</li>
 </ol>
 <p>Creamos la base de datos en MySQL y el usuario que la gestionará.</p>
-<p><img src="./images/DBnextcloud.png" alt="crear base de datos"></p>
-<p><img src="./images/crear_usuario.png" alt="crear usuario con permisos"></p>
-<p>Comprobamos que tenemos la base de datos creada y el usuario con los permisos adecuados.<br>
-<img src="./images/privilegios.png" alt="comprobación permisos"></p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img width="50%" src="./images/DBnextcloud.png">
+</div>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img width="50%" src="./images/./images/crear_usuario.png">
+</div>
+<p>Comprobamos que tenemos la base de datos creada y el usuario con los permisos adecuados.</p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img width="50%" src="./images/privilegios.png">
+</div>
 <ol start="4">
 <li>Configuración en el navegador: Acceder a <strong>localhost/nextcloud</strong> desde el navegador para completar la instalación a través de la interfaz gráfica. Si a la carpeta la hemos llamado de otra forma, accederemos a <strong>localhost/nombre_carpeta</strong>.</li>
 </ol>
-<p><img src="./images/instalacion_usr_admin.png" alt="Pagina inicial configuración"></p>
-<p><img src="./images/config_inicial.png" alt="Configuración inicial"></p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img width="50%" src="./images/instalacion_usr_admin.png">
+</div>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img width="50%" src="./images/config_inicial.png">
+</div>
 <p>Nos pide nombre de usuario y contraseña para el administrador de Nextcloud. En un entorno de pruebas podemos poner <strong>admin</strong> y <strong>admin123</strong>, o cosas similares. Pero en un entorno real, debemos poner una contraseña segura.</p>
 <p>En nuestro caso, si hemos creado una <strong>base de datos</strong> nextcloud, el <strong>usuario de la base de datos</strong> sería alumnado y la <strong>contraseña del usuario de la base de datos</strong> sería alumnado, debemos poner estos datos en la configuración de la base de datos. El <strong>host</strong> será <strong>localhost:443</strong>.</p>
-<p><img src="./images/nuestraConfig.png" alt="Datos de la base de datos"></p>
+<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
+    <img width="50%" src="./images/nuestraConfig.png">
+</div>
 <h2 id="proceso-de-instalación-de-nextcloud-con-docker">Proceso de instalación de NextCloud con Docker </h2>
 <p>Nextcloud también se puede instalar con Docker. Para ello, tienes en el Anexo de Docker una guía de cómo instalar Nextcloud con Docker.</p>
 <h2 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h2>
