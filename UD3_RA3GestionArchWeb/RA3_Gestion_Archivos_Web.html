@@ -195,25 +195,12 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <li>Reproductor de vídeo: los archivos multimedia los podemos encontrar en el gestor, y es una ayuda poder ejecutar el vídeo sin un programa externo.</li>
 <li>Miniatura de imágenes: la presentación de las imágenes en este formato permite realizar de un vistazo una consulta a mucha información visual.</li>
 <li>Navegación dentro de los archivos comprimidos (ZIP, TAR...): sin la necesidad de descomprimir el archivo se puede revisar su contenido.</li>
-<li>Consola del sistema (o intérprete de órdenes): en determinadas ocasiones es necesario acceder al intérprete de órdenes, esta característica evita salir del gestor.</li>
-<li>Transferencia de archivos con otros protocolos (FTP, WebDAV...). El protocolo de transferencia de archivos puede variar.</li>
 <li>Arrastrar y soltar (drag and drop en inglés) es una acción típica que implementan muchas aplicaciones informáticas y consiste en la posibilidad de arrastrar (o transferir) objetos de la ventana de una aplicación a otra aplicación u objeto receptor. Se selecciona el objeto de origen haciendo clic sobre él y, sin dejar de pulsar el botón del ratón, se arrastra hasta el destino, momento en el que se debe dejar de pulsar el botón.</li>
 <li>Visualizar/editar el archivo dentro del gestor mismo. El hecho de no requerir otro programa para determinadas ediciones se valora bastante.</li>
 <li>Barra de navegación que indica en todo momento el camino del archivo o directorio que se está consultando hasta la raíz. Esta característica es de gran ayuda para situar el contexto del contenido.</li>
-<li>Editor HTML (WYSIWYG). Disponer de la característica del WYSIWG se traduce en un ahorro de tiempo. WYSIWYG es el acrónimo de la frase inglesa “What You See Is What You Get” y se refiere al hecho de que lo que se ve durante la edición del contenido se corresponde con lo que se verá en el resultado final.</li>
-<li>Menús contextuales. El acceso rápido y directo a diversas funcionalidades permite mejorar la productividad.</li>
-<li>Teclas de acceso directo. Permiten aumentar la rapidez en determinadas acciones.</li>
-<li>Gestión de la base de datos: algunos permiten la creación de repositorios en bases de datos como MySQL y su gestión. El objetivo es poder almacenar datos del sistema y que los administradores puedan consultarlos a través de la interfaz web del gestor.</li>
-<li>Arquitectura de conectores: ciertos gestores han orientado la arquitectura de la aplicación de manera que pueda ser fácilmente extensible mediante el uso de conectores que se añaden y aumentan sus funcionalidades.</li>
 <li>Control de gestión de versiones: resulta de gran utilidad poder recuperar ediciones antiguas de archivos.</li>
 <li>Creación de categorías: las categorías permitirán ordenar los archivos dependiendo de tus necesidades de una forma personalizada.</li>
-<li>Automatización de procesos: el programa facilita la ejecución de procesos de forma automática.</li>
-<li>Control de tareas: permite gestionar el tiempo y los equipos humanos, de cara a aumentar el rendimiento y la eficacia de la organización.</li>
-<li>Sincronización de tareas: permite que un número controlado de tareas se realicen de forma sincronizada y automatizada, liberando de trabajo al responsable de sistemas y de documentación.</li>
-<li>Gestión de proyectos: la relación entre la documentación y los proyectos (sea cual sea el perfil profesional) se gestiona con facilidad.</li>
 </ul>
-<p>Una vez conocidas las características de los gestores de archivos web ya se puede dar el siguiente paso: evaluar la idoneidad de utilizarlo en un entorno concreto. De cara a tomar la decisión correcta, conviene alinear las necesidades del cliente, las posibilidades del sistema y las características de la aplicación web.</p>
-<p>Las grandes ventajas de las aplicaciones basadas en web son, entre otras, la versatilidad de las aplicaciones, la facilidad de uso, la riqueza visual de las interfaces, y el hecho de que no es necesario instalar software adicional en los ordenadores de los clientes. El único requisito habitual que se pide al cliente es que disponga de un navegador web para acceder al gestor a través de una conexión a Internet. En el mercado hay otros programas que permiten hacer transferencias de archivos, pero la gran mayoría requieren una instalación de software por parte del cliente, y muchos están orientados más a hacer la tarea de transferir los archivos que no a la tarea de administrarlos.</p>
 <p>Hemos hecho una nueva clasificación de las gestores de archivos, en función de si son aplicaciones documentales o no documentales:</p>
 <ul>
 <li><strong>No documentales</strong>: este grupo incluye aquellos gestores de archivos web cuya máxima finalidad es la de emular un gestor de archivos local, como podría ser el Explorador de Windows.</li>
@@ -221,7 +208,6 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 </ul>
 <p>Ejemplos de gestores de archivos web documentales son <strong>NextCloud</strong>, Dropbox, OpenKM, Alfresco, Nuxeo, o Knowledge Tree, entre otros.</p>
 <h1 id="instalación-de-gestores-de-archivos-web-nextcloud">Instalación de gestores de archivos web: NextCloud </h1>
-<p>La gestión de la información es un aspecto de creciente importancia a medida que se extiende el uso de Internet. El volumen de datos de los usuarios aumenta, hasta el punto que puede convertirse en una necesidad poder acceder de una manera remota y compartida; en este sentido, hacerlo desde un navegador es cada vez más común.</p>
 <div class="admonition info">
 <p class="admonition-title">gestor de archivos web</p>
 <p>Un <strong>gestor de archivos web</strong> es una aplicación web que permite consultar y manipular un sistema de archivos remoto.</p>
@@ -237,13 +223,8 @@ h) Se ha comprobado la seguridad del gestor de archivos.</p>
 <p>Los gestores de archivos web imitan a los gestores de archivos locales en el sentido que ofrecen funcionalidades muy similares accesibles a través de Internet para poder gestionar remotamente nuestros archivos.</p>
 <p>Una de las grandes ventajas de trabajar con una interfaz web es que no es necesario instalar ninguna aplicación del lado del cliente.</p>
 <h2 id="proceso-de-instalación-de-nextcloud-con-xampp">Proceso de instalación de NextCloud con Xampp </h2>
-<p>Requisitos previos para la instalación de Nextcloud en Windows:</p>
-<ul>
-<li><strong>Servidor web</strong>: En Windows, utilizaremos <strong>XAMPP</strong>, un paquete que incluye Apache, PHP y MySQL.</li>
-<li><strong>Base de datos</strong>: MySQL, incluido en XAMPP, será la base de datos para almacenar la información de Nextcloud.</li>
-<li><strong>PHP</strong>: El lenguaje de programación necesario para ejecutar Nextcloud, incluido en XAMPP.</li>
-</ul>
-<p>Pasos de instalación:</p>
+<p>Tal y cómo hemos visto en la instalación de WordPress, se puede instalar NextCloud en un entorno local con Xampp. Descargando nexcloud, descomprimiendo el archivo y moviendo la carpeta a la carpeta htdocs de Xampp.</p>
+<p>Pasos de instalación con Xampp:</p>
 <ol>
 <li>
 <p>Descargar e instalar XAMPP, y MariaDB.<br>
@@ -276,8 +257,8 @@ A veces en la versión de XAMPP podemos encontrar una base de datos más antigua
 <p>Nos pide nombre de usuario y contraseña para el administrador de Nextcloud. En un entorno de pruebas podemos poner <strong>admin</strong> y <strong>admin123</strong>, o cosas similares. Pero en un entorno real, debemos poner una contraseña segura.</p>
 <p>En nuestro caso, si hemos creado una <strong>base de datos</strong> nextcloud, el <strong>usuario de la base de datos</strong> sería alumnado y la <strong>contraseña del usuario de la base de datos</strong> sería alumnado, debemos poner estos datos en la configuración de la base de datos. El <strong>host</strong> será <strong>localhost:443</strong>.</p>
 <p><img src="./images/nuestraConfig.png" alt="Datos de la base de datos"></p>
-<p>Admin_123</p>
 <h2 id="proceso-de-instalación-de-nextcloud-con-docker">Proceso de instalación de NextCloud con Docker </h2>
+<p>Nextcloud también se puede instalar con Docker. Para ello, tienes en el Anexo de Docker una guía de cómo instalar Nextcloud con Docker.</p>
 <h2 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h2>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
 <ul>
@@ -297,34 +278,16 @@ A veces en la versión de XAMPP podemos encontrar una base de datos más antigua
 <ul>
 <li>Administrador: Tiene acceso completo a todas las configuraciones del sistema. Puede crear, eliminar y modificar usuarios y grupos, así como definir permisos.</li>
 <li>Usuario estándar: Puede gestionar sus propios archivos y los que se le compartan. No tiene permisos administrativos.</li>
-<li>Usuario invitado: Tiene acceso limitado y solo puede visualizar o editar archivos que se le compartan, dependiendo de los permisos.<br>
-Los distintos permisos de usuario en Nextcloud son:</li>
+<li>Usuario invitado: Tiene acceso limitado y solo puede visualizar o editar archivos que se le compartan, dependiendo de los permisos.</li>
+</ul>
+<p>Los distintos permisos de usuario en Nextcloud son:</p>
+<ul>
 <li>Solo lectura: El usuario solo puede ver los archivos, pero no modificarlos.</li>
 <li>Lectura y escritura: Permite que el usuario modifique o elimine archivos y carpetas.</li>
 <li>Administrador de carpetas compartidas: Puede modificar permisos para otros usuarios en carpetas específicas.</li>
 </ul>
 <h2 id="gestión-de-archivos-y-directorios">Gestión de Archivos y Directorios </h2>
-<p>Las operaciones básicas en la gestión de archivos son:</p>
-<ul>
-<li>
-<p>Subir archivos: Los usuarios pueden cargar archivos individuales o múltiples a través de la interfaz web o aplicaciones de sincronización.</p>
-</li>
-<li>
-<p>Crear carpetas: Las carpetas se utilizan para organizar y clasificar los archivos de manera eficiente.</p>
-</li>
-<li>
-<p>Mover y renombrar archivos: Los usuarios pueden reorganizar archivos dentro de diferentes carpetas y cambiar sus nombres para facilitar su identificación.</p>
-</li>
-<li>
-<p>Clasificación por tipo de archivo: Organizar archivos en carpetas basadas en su tipo (documentos, imágenes, videos, etc.).</p>
-</li>
-<li>
-<p>Etiquetado: Asignar etiquetas relevantes a los archivos para facilitar su búsqueda.</p>
-</li>
-<li>
-<p>Metadatos: Incluir información adicional como autor, fecha de creación, o categoría.</p>
-</li>
-</ul>
+<p>Las operaciones básicas en la gestión de archivos son las que hemos visto anteriormente: subir archivos, crear carpetas, mover y renombrar archivos, etiquetado, etc.</p>
 <p>Es importante definir una estructura de directorios clara y coherente. Esto facilita el acceso y la organización de la información. Por ejemplo, se pueden crear carpetas por proyectos, departamentos o tipos de archivo (documentos, imágenes, videos).</p>
 <h2 id="creación-de-recursos-compartidos">Creación de Recursos Compartidos </h2>
 <p>Las opciones de compartición en Nextcloud son:</p>
@@ -350,9 +313,9 @@ Los distintos permisos de usuario en Nextcloud son:</li>
 <li>Eventos de seguridad: Registros de intentos de inicio de sesión fallidos y otras actividades de seguridad.</li>
 </ul>
 <h2 id="seguridad-en-nextcloud">Seguridad en Nextcloud </h2>
-<p>Vamos a ver como aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante <strong>HTTPS</strong>, <strong>autenticación de dos factores (2FA)</strong> y el <strong>cifrado de archivos</strong>.</p>
+<p>Se pueden aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante <strong>HTTPS</strong>, <strong>autenticación de dos factores (2FA)</strong> y el <strong>cifrado de archivos</strong>.</p>
 <div class="admonition info">
-<p class="admonition-title">Podéis encontrar en un Anexo cómo configurar HTTPS en Xampp</p>
+<p class="admonition-title">Podéis encontrar en cómo configurar HTTPS en Xampp</p>
 </div>
 <p><strong>Configuración de la Autenticación de Dos Factores (2FA)</strong></p>
 <p>Se puede añadir en NextCloud una capa adicional de seguridad al requerir un segundo factor (normalmente un código generado en una aplicación móvil) para acceder a la cuenta.</p>
