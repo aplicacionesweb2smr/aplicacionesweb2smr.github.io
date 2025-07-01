@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
       
       
       
@@ -21,7 +21,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
   font-family: 'Catamaran';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/catamaran/v27/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
 }
 .markdown-preview.markdown-preview p {
   text-align: justify;
@@ -87,27 +87,27 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <h1 id="gestión-de-archivos-web">Gestión de archivos web </h1>
 
 <div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#actividades" class="md-toc-link">
+            <p>Actividades</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#actividades" class="md-toc-link"><p>Actividades</p>
+          <a href="#actividad-instalación-y-configuración-de-nextcloud-con-docker-en-carpeta-local" class="md-toc-link"><p>Actividad: Instalación y configuración de Nextcloud con Docker en carpeta local</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#instalación-de-nextcloud-con-docker" class="md-toc-link">
-            <p>Instalación de Nextcloud con Docker</p>
+          <a href="#instrucciones-paso-a-paso" class="md-toc-link">
+            <p>Instrucciones paso a paso</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#gestión-de-usuarios-y-permisos-en-nextcloud" class="md-toc-link">
-            <p>Gestión de Usuarios y Permisos en Nextcloud</p>
+          <a href="#entrega" class="md-toc-link">
+            <p>Entrega</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#gestión-de-archivos-y-directorios" class="md-toc-link">
-            <p>Gestión de Archivos y Directorios</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#gestión-de-recursos-compartidos" class="md-toc-link">
-            <p>Gestión de Recursos compartidos</p>
+          <a href="#evaluación" class="md-toc-link">
+            <p>Evaluación</p>
 
           </a></div>
         </div>
@@ -115,21 +115,177 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     
 </div>
 <br>
-<p><a href="./RA3_ACTIVIDADES.pdf">Descargar estos apuntes</a></p>
+<p><a href="./RA3_ACTIVIDADES.pdf">Descargar este documento</a></p>
 <div style="page-break-after:always;"></div>
 <h1 id="actividades">Actividades </h1>
-<h2 id="instalación-de-nextcloud-con-docker">Instalación de Nextcloud con Docker </h2>
-<p>Siguiendo el anexo de Docker, instala Nextcloud en tu servidor local. Asegúrate de que la instalación se realiza correctamente y que puedes acceder a la plataforma desde tu navegador web.</p>
-<h2 id="gestión-de-usuarios-y-permisos-en-nextcloud">Gestión de Usuarios y Permisos en Nextcloud </h2>
-<p>Crea una estructura de usuarios en Nextcloud, asignando roles de administrador, usuario estándar e invitado. Configura los permisos para cada uno y prueba la creación de carpetas con permisos específicos.</p>
-<h2 id="gestión-de-archivos-y-directorios">Gestión de Archivos y Directorios </h2>
-<p>Crea una estructura de carpetas dentro de Nextcloud para organizar diferentes tipos de archivos (por ejemplo: “Documentos”, “Imágenes”, “Proyectos”). Prueba a mover, copiar y renombrar archivos dentro de esta estructura.</p>
-<p><strong>INVESTIGA:</strong> ¿Cómo añado los metadatos? ¿Cómo puedo buscar archivos por metadatos?<br>
-Sube un archivo de metadatos (por ejemplo, un archivo JSON o TXT con descripciones) junto con un archivo principal. Añade etiquetas y comentarios a los archivos subidos.</p>
-<p>Comprueba que los archivos se pueden buscar y acceder fácilmente utilizando los criterios de indexación.</p>
-<p>Asegúrate de que la información adicional y los metadatos sean accesibles y útiles.</p>
-<h2 id="gestión-de-recursos-compartidos">Gestión de Recursos compartidos </h2>
-<p>Comparte una carpeta con otro usuario en Nextcloud y configura diferentes niveles de permisos (solo lectura, lectura/escritura). También comparte un archivo mediante enlace público con protección por contraseña.</p>
+<p>Aquí tienes una <strong>actividad competencial en formato Markdown</strong> basada en la instalación de <strong>Nextcloud con Docker</strong>, siguiendo el RA3, criterios de evaluación y contenidos aportados. Esta actividad está diseñada para que los archivos se almacenen en una carpeta local (no en volúmenes de Docker), facilitando así su copia a una memoria USB:</p>
+<hr>
+<h1 id="actividad-instalación-y-configuración-de-nextcloud-con-docker-en-carpeta-local">Actividad: Instalación y configuración de Nextcloud con Docker en carpeta local </h1>
+<p>Vas a desplegar un servicio web de gestión de archivos utilizando <strong>Nextcloud</strong> sobre <strong>Docker</strong>, de forma que los datos se almacenen en una <strong>carpeta local del sistema de archivos</strong>, sin usar volúmenes Docker. El objetivo es que toda la instancia (aplicación y datos) pueda ser transportada fácilmente mediante un <strong>dispositivo USB</strong>.</p>
+<p>Además de la instalación, configurarás usuarios, gestionarás archivos, probarás funcionalidades de compartición y aplicarás medidas básicas de seguridad.</p>
+<h2 id="instrucciones-paso-a-paso">Instrucciones paso a paso </h2>
+<ol>
+<li>
+<p><strong>Prepara el entorno:</strong></p>
+<ul>
+<li>Crea una carpeta llamada <code>nextcloud_usb</code> en tu sistema.</li>
+<li>Dentro de esta carpeta, crea dos subcarpetas: <code>app</code> y <code>data</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Crea el archivo <code>docker-compose.yml</code>:</strong></p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mariadb
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nextcloud_db
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token key atrule">MYSQL_ROOT_PASSWORD</span><span class="token punctuation">:</span> root
+      <span class="token key atrule">MYSQL_PASSWORD</span><span class="token punctuation">:</span> nextcloud
+      <span class="token key atrule">MYSQL_DATABASE</span><span class="token punctuation">:</span> nextcloud
+      <span class="token key atrule">MYSQL_USER</span><span class="token punctuation">:</span> nextcloud
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./data/db<span class="token punctuation">:</span>/var/lib/mysql
+
+  <span class="token key atrule">app</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nextcloud
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> nextcloud_app
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8080<span class="token punctuation">:</span><span class="token number">80</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./data/nextcloud<span class="token punctuation">:</span>/var/www/html
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> db
+</code></pre><ol start="3">
+<li>
+<p><strong>Ejecuta Nextcloud:</strong></p>
+<ul>
+<li>Sitúate en la carpeta <code>nextcloud_usb</code>.</li>
+<li>Lanza el comando: <code>docker-compose up -d</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Accede a la aplicación:</strong></p>
+<ul>
+<li>
+<p>En tu navegador, abre: <code>http://localhost:8080</code>.</p>
+</li>
+<li>
+<p>Crea el usuario administrador.</p>
+</li>
+<li>
+<p>Configura la base de datos con:</p>
+<ul>
+<li>Servidor: <code>db</code></li>
+<li>Usuario: <code>nextcloud</code></li>
+<li>Contraseña: <code>nextcloud</code></li>
+<li>Base de datos: <code>nextcloud</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Configura y explora:</strong></p>
+<ul>
+<li>Crea usuarios con distintos roles y permisos.</li>
+<li>Sube archivos, crea carpetas, clasifica y organiza.</li>
+<li>Comparte una carpeta entre usuarios.</li>
+<li>Prueba funciones como etiquetas, favoritos o búsquedas.</li>
+</ul>
+</li>
+<li>
+<p><strong>Aplica medidas de seguridad:</strong></p>
+<ul>
+<li>Activa cifrado de archivos desde la administración.</li>
+<li>Simula 2FA y explica su funcionamiento.</li>
+<li>Indica cómo implementar HTTPS si se expone externamente.</li>
+</ul>
+</li>
+</ol>
+<h2 id="entrega">Entrega </h2>
+<p>Entrega un documento comprimido (<code>nextcloud_usb.zip</code>) que contenga la instalación de Nextcloud y un docuemnto pdf con capturas y explicaciones de los pasos realizados. El documento debe incluir:</p>
+<ul>
+<li>Justificación de la utilidad de Nextcloud.</li>
+<li>Comparativa con otro gestor web.</li>
+<li>Relación de cuentas creadas y permisos asignados.</li>
+<li>Justificación de medidas de organización.</li>
+<li>Simulación de medidas de seguridad.</li>
+</ul>
+<h2 id="evaluación">Evaluación </h2>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Nivel Excelente (9-10)</strong></th>
+<th><strong>Nivel Adecuado (7-8)</strong></th>
+<th><strong>Nivel Básico (5-6)</strong></th>
+<th><strong>Nivel Insuficiente (0-4)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RA3 a) Utilidad</strong></td>
+<td>Explica con ejemplos claros su utilidad en diferentes contextos (personal, empresarial, educativo)</td>
+<td>Describe la utilidad general del gestor con claridad</td>
+<td>Menciona su utilidad sin argumentación</td>
+<td>No justifica su utilidad</td>
+</tr>
+<tr>
+<td><strong>RA3 b) Descrito diferentes</strong></td>
+<td>Presenta comparativa detallada con ventajas y desventajas justificadas</td>
+<td>Realiza una comparación general con al menos una alternativa</td>
+<td>Menciona otra aplicación sin profundizar</td>
+<td>No realiza comparación</td>
+</tr>
+<tr>
+<td><strong>RA3 c) Instalado y adaptado</strong></td>
+<td>Instala y configura correctamente en carpeta local sin errores y documenta correctamente el proceso</td>
+<td>Instala y configura Nextcloud con ayuda puntual y documentación suficiente</td>
+<td>La instalación funciona parcialmente o hay errores sin justificar</td>
+<td>No logra completar la instalación</td>
+</tr>
+<tr>
+<td><strong>RA3 d) Cuentas de usuario en función de sus permisos</strong></td>
+<td>Crea varios usuarios bien clasificados y aplica permisos adecuados y justificados y documenta correctamente el proceso</td>
+<td>Crea usuarios diferenciando al menos 2 tipos de permisos</td>
+<td>Crea usuarios sin aplicar permisos o sin justificación</td>
+<td>No crea usuarios o hay errores graves</td>
+</tr>
+<tr>
+<td><strong>RA3 e) Gestionado archivos y directorios.</strong></td>
+<td>Organiza archivos en estructura lógica, y documenta correctamente el proceso</td>
+<td>Organiza adecuadamente los archivos y carpetas</td>
+<td>Sube archivos sin organizar o clasificar</td>
+<td>No gestiona archivos o la estructura es caótica</td>
+</tr>
+<tr>
+<td><strong>RA3 f) Archivos de información adicional</strong></td>
+<td>Utiliza funcionalidades como etiquetas, favoritos, comentarios o versiones</td>
+<td>Usa alguna funcionalidad adicional de organización</td>
+<td>Menciona pero no utiliza funciones de metadatos</td>
+<td>No muestra uso de funciones adicionales</td>
+</tr>
+<tr>
+<td><strong>RA3 g)  Criterios de indexación</strong></td>
+<td>Justifica y aplica un sistema de organización claro, reutilizable y eficiente</td>
+<td>Aplica una estructura comprensible y funcional</td>
+<td>La estructura es poco clara o mal justificada</td>
+<td>No hay lógica en la estructura creada</td>
+</tr>
+<tr>
+<td><strong>RA3 h) Seguridad</strong></td>
+<td>Aplica cifrado, explica 2FA, analiza riesgos y propone mejoras</td>
+<td>Aplica al menos una medida de seguridad con explicación</td>
+<td>Menciona pero no implementa ninguna medida</td>
+<td>No considera ningún aspecto de seguridad</td>
+</tr>
+</tbody>
+</table>
 
       </div>
       
