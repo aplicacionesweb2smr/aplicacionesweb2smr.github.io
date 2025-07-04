@@ -93,28 +93,29 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 
           </a></div><details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#instalación-de-gestores-de-archivos-web-nextcloud" class="md-toc-link"><p>Instalación de gestores de archivos web: NextCloud</p>
+          <a href="#instalación-de-gestores-de-archivos-web" class="md-toc-link"><p>Instalación de gestores de archivos web</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#proceso-de-instalación-de-nextcloud-con-xampp" class="md-toc-link">
-            <p>Proceso de instalación de NextCloud con Xampp</p>
+          <a href="#instalación-de-tinyfilemanager" class="md-toc-link">
+            <p>Instalación de TinyFileManager</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#nextcloud" class="md-toc-link"><p>NextCloud</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#proceso-de-instalación-de-nextcloud" class="md-toc-link">
+            <p>Proceso de instalación de NextCloud</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#proceso-de-instalación-de-nextcloud-con-docker" class="md-toc-link">
-            <p>Proceso de instalación de NextCloud con Docker</p>
+          <a href="#configuración-básica-de-nextcloud" class="md-toc-link">
+            <p>Configuración Básica de Nextcloud</p>
 
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#configuración-básica-de-nextcloud" class="md-toc-link"><p>Configuración Básica de Nextcloud</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#gestión-de-usuarios-y-permisos-en-nextcloud" class="md-toc-link">
             <p>Gestión de Usuarios y Permisos en Nextcloud</p>
 
@@ -135,6 +136,9 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
             <p>Seguridad en Nextcloud</p>
 
           </a></div>
+        </div>
+      </details>
+    
         </div>
       </details>
     <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
@@ -180,8 +184,9 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li><strong>No documentales</strong>: este grupo incluye aquellos gestores de archivos web cuya máxima finalidad es la de emular un gestor de archivos local, como podría ser el Explorador de Windows.</li>
 <li><strong>Documentales</strong>: los gestores de archivos web de este grupo no solamente se limitan a la administración de archivos, sino que les dan una semántica, permiten relacionarlos entre sí, y hacer un seguimiento de todo el ciclo de vida del documento.</li>
 </ul>
-<p>Ejemplos de gestores de archivos web documentales son <strong>NextCloud</strong>, Dropbox, OpenKM, Alfresco, Nuxeo, o Knowledge Tree, entre otros.</p>
-<h1 id="instalación-de-gestores-de-archivos-web-nextcloud">Instalación de gestores de archivos web: NextCloud </h1>
+<p>Ejemplos de gestores de archivos web documentales son <strong>TinyFileManager</strong>*, <strong>NextCloud</strong>,  Dropbox, OpenKM, Alfresco, Nuxeo, o Knowledge Tree, entre otros.</p>
+<p>Por sencillez, vamos a centrarnos en <strong>TinyFileManager</strong>. Pero para que aquellos que quieran ampliar y ver NextCloud, al final del documento tienes un apartado donde se explica cómo instalarlo y configurarlo.</p>
+<h1 id="instalación-de-gestores-de-archivos-web">Instalación de gestores de archivos web </h1>
 <div class="admonition info">
 <p class="admonition-title">Gestor de archivos web</p>
 <p>Un <strong>gestor de archivos web</strong> es una aplicación web que permite consultar y manipular un sistema de archivos remoto.</p>
@@ -197,56 +202,27 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p>Este conjunto de características que hemos visto relativas a los gestores de archivos son aplicables también a los gestores de archivos web. Todos los gestores de archivos web permiten hacer de una manera u otra cargas de archivos al servidor (si no, se perdería el sentido de gestión remota), y para hacerlo, en última instancia del proceso, acaban llamando al gestor local (suele haber siempre un botón que dice navegar) para que el usuario pueda explorar el sistema de archivos y seleccionar los que quiere cargar al servidor.</p>
 <p>Los gestores de archivos web imitan a los gestores de archivos locales en el sentido que ofrecen funcionalidades muy similares accesibles a través de Internet para poder gestionar remotamente nuestros archivos.</p>
 <p>Una de las grandes ventajas de trabajar con una interfaz web es que no es necesario instalar ninguna aplicación del lado del cliente.</p>
-<h2 id="proceso-de-instalación-de-nextcloud-con-xampp">Proceso de instalación de NextCloud con Xampp </h2>
-<p>Se puede instalar NextCloud en un entorno local con Xampp.</p>
-<p>Pasos de instalación con Xampp:</p>
+<h2 id="instalación-de-tinyfilemanager">Instalación de TinyFileManager </h2>
+<p>TinyFileManager es un gestor de archivos web sencillo y ligero que permite gestionar archivos y directorios a través de una interfaz web. Es ideal para entornos donde se necesita una solución rápida y fácil de usar.</p>
+<p>Para instalar TinyFileManager, sigue estos pasos:</p>
 <ol>
 <li>
-<p>Descargar e instalar XAMPP. Tenéis un instalación más guiada de Xampp en el <strong>Anexo de Xampp</strong>.</p>
+<p><strong>Descargar TinyFileManager</strong>: Ve a la página oficial de GitHub de TinyFileManager (<a href="https://github.com/prasathmani/tinyfilemanager">https://github.com/prasathmani/tinyfilemanager</a>).</p>
 </li>
 <li>
-<p>Iniciar XAMPP y activar los servicios de Apache y MySQL. Configurar MySQL <strong>creando una base de datos para Nextcloud</strong></p>
+<p>Descarga el archivo tinyfilemanager.php y guárdalo en el directorio xampp/htdocs de tu servidor web local. Por ejemplo, si estás utilizando XAMPP, la ruta sería algo así como C:\xampp\htdocs\gestor\tinyfilemanager.php.</p>
 </li>
 <li>
-<p>Descargar e instalar <strong>Nextcloud Server en ZIP</strong>: Descargar Nextcloud desde su sitio web oficial (<a href="https://nextcloud.com/install/">https://nextcloud.com/install/</a>). Descomprimir el archivo ZIP y mover la carpeta nextcloud a la carpeta htdocs en el directorio donde se instaló XAMPP.</p>
+<p><strong>Configurar TinyFileManager</strong>: Abre el archivo tinyfilemanager.php en un editor de texto y configura las opciones según tus necesidades. Puedes establecer el nombre de usuario y la contraseña para acceder al gestor, así como otras configuraciones como el directorio raíz, permisos, etc.</p>
+</li>
+<li>
+<p><strong>Acceder a TinyFileManager</strong>: Abre tu navegador web y accede a la URL donde has guardado el archivo tinyfilemanager.php. Por ejemplo, si lo has guardado en C:\xampp\htdocs\gestor\tinyfilemanager.php, la URL sería <a href="http://localhost/gestor/tinyfilemanager.php">http://localhost/gestor/tinyfilemanager.php</a>.</p>
 </li>
 </ol>
-<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img width="50%" src="./images/nextcloud_htdocs.png">
-</div>
-<ol start="4">
-<li>
-<p>Creamos la base de datos para nextcloud.</p>
-<p>Creamos la base de datos en MySQL y el usuario que la gestionará.</p>
- <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-     <img width="50%" src="./images/DBnextcloud.png">
- </div>
- <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-     <img width="50%" src="./images/crear_usuario.png">
- </div>
-<p>Comprobamos que tenemos la base de datos creada y el usuario con los permisos adecuados.</p>
- <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-     <img width="50%" src="./images/privilegios.png">
- </div>
-</li>
-<li>
-<p>Configuración en el navegador: Acceder a <strong>localhost/nextcloud</strong> desde el navegador para completar la instalación a través de la interfaz gráfica. Si a la carpeta la hemos llamado de otra forma, accederemos a <strong>localhost/nombre_carpeta</strong>.</p>
-</li>
-</ol>
-<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img width="50%" src="./images/instalacion_usr_admin.png">
-</div>
-<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img width="50%" src="./images/config_inicial.png">
-</div>
-<p>Nos pide nombre de usuario y contraseña para el administrador de Nextcloud. En un entorno de pruebas podemos poner <strong>admin</strong> y <strong>admin123</strong>, o cosas similares. Pero en un entorno real, debemos poner una contraseña segura.</p>
-<p>No debemos confundir el usuario de administración con el de la base de datos. En nuestro caso, si hemos creado una <strong>base de datos</strong> nextcloud, el <strong>usuario de la base de datos</strong> sería alumnado y la <strong>contraseña del usuario de la base de datos</strong> sería alumnado, debemos poner estos datos en la configuración de la base de datos. El <strong>host</strong> será <strong>localhost:443</strong>.</p>
-<div style="display: flex; justify-content: center; align-items: center; margin-top: 15px; margin-bottom: 15px">
-    <img width="50%" src="./images/nuestraConfig.png">
-</div>
-<h2 id="proceso-de-instalación-de-nextcloud-con-docker">Proceso de instalación de NextCloud con Docker </h2>
-<p>Nextcloud también se puede instalar con Docker. Para ello, tienes en el <strong>Anexo de Docker</strong> una guía de cómo instalar Nextcloud con Docker.</p>
-<h1 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h1>
+<h2 id="nextcloud">NextCloud </h2>
+<h3 id="proceso-de-instalación-de-nextcloud">Proceso de instalación de NextCloud </h3>
+<p>Podemos instalar Nextcloud en un servidor web local o remoto. Para instalarlo en local podemos realizarlo con XAMPP o con Docker.</p>
+<h3 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h3>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
 <ul>
 <li><strong>Tablero principal</strong>: Contiene accesos rápidos a archivos, fotos, aplicaciones, y administración del sistema.</li>
@@ -260,7 +236,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li><strong>Configuraciones básicas</strong>: Establecer ajustes como el idioma, la zona horaria y otros detalles generales para asegurar un uso adecuado de la plataforma.</li>
 <li><strong>Exploración de la interfaz</strong>: Los usuarios deben familiarizarse con las diferentes secciones de la interfaz, como la sección de archivos, el área de administración, etc.</li>
 </ul>
-<h2 id="gestión-de-usuarios-y-permisos-en-nextcloud">Gestión de Usuarios y Permisos en Nextcloud </h2>
+<h3 id="gestión-de-usuarios-y-permisos-en-nextcloud">Gestión de Usuarios y Permisos en Nextcloud </h3>
 <p>Los diferentes <strong>tipos de usuarios</strong> en Nextcloud son:</p>
 <ul>
 <li><strong>Administrador</strong>: Tiene acceso completo a todas las configuraciones del sistema. Puede crear, eliminar y modificar usuarios y grupos, así como definir permisos.</li>
@@ -273,11 +249,11 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li><strong>Lectura y escritura</strong>: Permite que el usuario modifique o elimine archivos y carpetas.</li>
 <li><strong>Administrador de carpetas compartidas</strong>: Puede modificar permisos para otros usuarios en carpetas específicas.</li>
 </ul>
-<h2 id="gestión-de-archivos-y-directorios">Gestión de Archivos y Directorios </h2>
+<h3 id="gestión-de-archivos-y-directorios">Gestión de Archivos y Directorios </h3>
 <p>Las operaciones básicas en la gestión de archivos son las que hemos visto anteriormente: subir archivos, crear carpetas, mover y renombrar archivos, etiquetado, etc.</p>
 <p>Es importante definir una estructura de directorios clara y coherente. Esto facilita el acceso y la organización de la información. Por ejemplo, se pueden crear carpetas por proyectos, departamentos o tipos de archivo (documentos, imágenes, videos).</p>
 <div style="page-break-after:always;"></div>
-<h2 id="creación-de-recursos-compartidos">Creación de Recursos Compartidos </h2>
+<h3 id="creación-de-recursos-compartidos">Creación de Recursos Compartidos </h3>
 <p>Las opciones de compartición en Nextcloud son:</p>
 <ul>
 <li><strong>Compartir archivos o carpetas mediante enlaces públicos</strong>: Se puede generar un enlace para compartir archivos o carpetas con usuarios externos, con opciones de protección mediante contraseña y caducidad del enlace.</li>
@@ -289,7 +265,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li><strong>Lectura y escritura</strong>: Permite a los usuarios modificar o eliminar archivos compartidos.</li>
 <li><strong>Protección con contraseña</strong>: Los enlaces compartidos se pueden proteger con una contraseña para mayor seguridad.</li>
 </ul>
-<h2 id="informes-y-auditoría-en-nextcloud">Informes y Auditoría en Nextcloud </h2>
+<h3 id="informes-y-auditoría-en-nextcloud">Informes y Auditoría en Nextcloud </h3>
 <p>La auditoría y seguimiento en Nextcloud incluyen:</p>
 <ul>
 <li><strong>Registro de actividad</strong>: Nextcloud permite rastrear todas las actividades dentro del sistema, como quién subió o modificó archivos, y cuándo se realizaron esas acciones.</li>
@@ -300,7 +276,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li>Acceso y modificación de archivos: Se puede rastrear quién accedió o modificó un archivo específico.</li>
 <li>Eventos de seguridad: Registros de intentos de inicio de sesión fallidos y otras actividades de seguridad.</li>
 </ul>
-<h2 id="seguridad-en-nextcloud">Seguridad en Nextcloud </h2>
+<h3 id="seguridad-en-nextcloud">Seguridad en Nextcloud </h3>
 <p>Se pueden aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante <strong>HTTPS</strong>, <strong>autenticación de dos factores (2FA)</strong> y el <strong>cifrado de archivos</strong>.</p>
 <p><strong>Configuración de la Autenticación de Dos Factores (2FA)</strong></p>
 <p>Se puede añadir en NextCloud una capa adicional de seguridad al requerir un segundo factor (normalmente un código generado en una aplicación móvil) para acceder a la cuenta.</p>
@@ -317,6 +293,7 @@ Una vez activado el módulo, ve a <strong>Configuración &gt; Administración &g
 <p class="admonition-title">Aspectos importantes</p>
 <ul>
 <li>Los gestores de archivos web permiten gestionar archivos y carpetas de manera remota a través de una interfaz web.</li>
+<li>TinyFileManager es un gestor de archivos web sencillo y ligero, ideal para entornos donde se necesita una solución rápida y fácil de usar.</li>
 <li>Nextcloud es un gestor de archivos web popular que ofrece funcionalidades avanzadas como compartición de archivos, gestión de usuarios y permisos, y auditoría de actividades.</li>
 <li>La seguridad en Nextcloud se puede mejorar mediante la autenticación de dos factores y el cifrado de archivos.</li>
 <li>La instalación y configuración de Nextcloud se puede realizar fácilmente en un entorno local o en un servidor remoto.</li>
