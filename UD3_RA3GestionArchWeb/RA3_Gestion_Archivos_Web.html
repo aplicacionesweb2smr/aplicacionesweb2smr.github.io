@@ -103,21 +103,21 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 
           </a></div><details style="padding:0;;padding-left:24px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#nextcloud" class="md-toc-link"><p>NextCloud</p>
+          <a href="#nextcloud-server" class="md-toc-link"><p>NextCloud Server</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#proceso-de-instalación-de-nextcloud" class="md-toc-link">
-            <p>Proceso de instalación de NextCloud</p>
+          <a href="#proceso-de-instalación-de-nextcloud-server" class="md-toc-link">
+            <p>Proceso de instalación de NextCloud Server</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#configuración-básica-de-nextcloud" class="md-toc-link">
-            <p>Configuración Básica de Nextcloud</p>
+          <a href="#configuración-básica-de-nextcloud-server" class="md-toc-link">
+            <p>Configuración Básica de Nextcloud Server</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#gestión-de-usuarios-y-permisos-en-nextcloud" class="md-toc-link">
-            <p>Gestión de Usuarios y Permisos en Nextcloud</p>
+          <a href="#gestión-de-usuarios-y-permisos-en-nextcloud-server" class="md-toc-link">
+            <p>Gestión de Usuarios y Permisos en Nextcloud Server</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#gestión-de-archivos-y-directorios" class="md-toc-link">
@@ -128,12 +128,12 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
             <p>Creación de Recursos Compartidos</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#informes-y-auditoría-en-nextcloud" class="md-toc-link">
-            <p>Informes y Auditoría en Nextcloud</p>
+          <a href="#informes-y-auditoría-en-nextcloud-server" class="md-toc-link">
+            <p>Informes y Auditoría en Nextcloud Server</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#seguridad-en-nextcloud" class="md-toc-link">
-            <p>Seguridad en Nextcloud</p>
+          <a href="#seguridad-en-nextcloud-server" class="md-toc-link">
+            <p>Seguridad en Nextcloud Server</p>
 
           </a></div>
         </div>
@@ -152,6 +152,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <div style="page-break-after:always;"></div>
 <h1 id="introducción">Introducción </h1>
 <p>Desde la aparición de los primeros sistemas de archivos, los sistemas operativos han necesitado una herramienta que permitiera a los usuarios trabajar con el sistema de archivos y que mostrara el contenido del disco duro de una manera amigable y fácil de gestionar. Esta herramienta es el gestor de archivos, que se encarga de hacer de intermediario entre los datos del sistema y nosotros.</p>
+<p><img src="image-2.png" alt="gestor archivos"></p>
 <p>Con la aparición de las redes de ordenadores se creó un protocolo capaz de transferir archivos basado en una arquitectura cliente-servidor, el <strong>FTP (del inglés File Transfer Protocol, Protocolo de transferencia de archivos)</strong>. A pesar de ello, este mecanismo de transferencia (que todavía se utiliza hoy en día), resulta de cierta complicación para los usuarios que no tienen conocimientos técnicos en informática.</p>
 <p>Cuando se produjo la gran expansión comercial de Internet, hacia mediados de los años noventa del siglo XX, la necesidad de disponer de los archivos pasó de ser una necesidad local a una necesidad global, es decir, de poder disponer de nuestros archivos a través de Internet desde cualquier parte del mundo.</p>
 <p>Este conjunto de hechos impulsó el nacimiento de aplicaciones web que permitieran tener acceso a los archivos de manera remota y sencilla, los gestores de archivos web.</p>
@@ -222,10 +223,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><strong>Acceder a TinyFileManager</strong>: Abre tu navegador web y accede a la URL donde has guardado el archivo tinyfilemanager.php. Por ejemplo, si lo has guardado en C:\xampp\htdocs\gestor\tinyfilemanager.php, la URL sería <a href="http://localhost/gestor/tinyfilemanager.php">http://localhost/gestor/tinyfilemanager.php</a>.</p>
 </li>
 </ol>
-<h2 id="nextcloud">NextCloud </h2>
-<h3 id="proceso-de-instalación-de-nextcloud">Proceso de instalación de NextCloud </h3>
+<h2 id="nextcloud-server">NextCloud Server </h2>
+<h3 id="proceso-de-instalación-de-nextcloud-server">Proceso de instalación de NextCloud Server </h3>
 <p>Podemos instalar Nextcloud en un servidor web local o remoto. Para instalarlo en local podemos realizarlo con XAMPP o con Docker.</p>
-<h3 id="configuración-básica-de-nextcloud">Configuración Básica de Nextcloud </h3>
+<h3 id="configuración-básica-de-nextcloud-server">Configuración Básica de Nextcloud Server </h3>
 <p>La interfaz de usuario de Nextcloud esta formada por diferentes secciones:</p>
 <ul>
 <li><strong>Tablero principal</strong>: Contiene accesos rápidos a archivos, fotos, aplicaciones, y administración del sistema.</li>
@@ -239,7 +240,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li><strong>Configuraciones básicas</strong>: Establecer ajustes como el idioma, la zona horaria y otros detalles generales para asegurar un uso adecuado de la plataforma.</li>
 <li><strong>Exploración de la interfaz</strong>: Los usuarios deben familiarizarse con las diferentes secciones de la interfaz, como la sección de archivos, el área de administración, etc.</li>
 </ul>
-<h3 id="gestión-de-usuarios-y-permisos-en-nextcloud">Gestión de Usuarios y Permisos en Nextcloud </h3>
+<h3 id="gestión-de-usuarios-y-permisos-en-nextcloud-server">Gestión de Usuarios y Permisos en Nextcloud Server </h3>
 <p>Los diferentes <strong>tipos de usuarios</strong> en Nextcloud son:</p>
 <ul>
 <li><strong>Administrador</strong>: Tiene acceso completo a todas las configuraciones del sistema. Puede crear, eliminar y modificar usuarios y grupos, así como definir permisos.</li>
@@ -268,7 +269,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li><strong>Lectura y escritura</strong>: Permite a los usuarios modificar o eliminar archivos compartidos.</li>
 <li><strong>Protección con contraseña</strong>: Los enlaces compartidos se pueden proteger con una contraseña para mayor seguridad.</li>
 </ul>
-<h3 id="informes-y-auditoría-en-nextcloud">Informes y Auditoría en Nextcloud </h3>
+<h3 id="informes-y-auditoría-en-nextcloud-server">Informes y Auditoría en Nextcloud Server </h3>
 <p>La auditoría y seguimiento en Nextcloud incluyen:</p>
 <ul>
 <li><strong>Registro de actividad</strong>: Nextcloud permite rastrear todas las actividades dentro del sistema, como quién subió o modificó archivos, y cuándo se realizaron esas acciones.</li>
@@ -279,7 +280,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li>Acceso y modificación de archivos: Se puede rastrear quién accedió o modificó un archivo específico.</li>
 <li>Eventos de seguridad: Registros de intentos de inicio de sesión fallidos y otras actividades de seguridad.</li>
 </ul>
-<h3 id="seguridad-en-nextcloud">Seguridad en Nextcloud </h3>
+<h3 id="seguridad-en-nextcloud-server">Seguridad en Nextcloud Server </h3>
 <p>Se pueden aplicar y verificar medidas de seguridad en un entorno de gestión de archivos web como Nextcloud. Se tratan los temas relacionados con la protección de datos mediante <strong>HTTPS</strong>, <strong>autenticación de dos factores (2FA)</strong> y el <strong>cifrado de archivos</strong>.</p>
 <p><strong>Configuración de la Autenticación de Dos Factores (2FA)</strong></p>
 <p>Se puede añadir en NextCloud una capa adicional de seguridad al requerir un segundo factor (normalmente un código generado en una aplicación móvil) para acceder a la cuenta.</p>

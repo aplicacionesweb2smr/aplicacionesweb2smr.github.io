@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
       
       
       
@@ -21,7 +21,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
   font-family: 'Catamaran';
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/catamaran/v19/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/catamaran/v28/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
 }
 .markdown-preview.markdown-preview p {
   text-align: justify;
@@ -114,12 +114,12 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#moodle" class="md-toc-link">
-            <p>Moodle</p>
+          <a href="#nextcloud-server" class="md-toc-link">
+            <p>Nextcloud Server</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#nextcloud" class="md-toc-link">
-            <p>Nextcloud</p>
+          <a href="#moodle" class="md-toc-link">
+            <p>Moodle</p>
 
           </a></div>
         </div>
@@ -166,6 +166,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </div>
 <p>Docker se ejecuta en segundo plano y muestra un icono en la barra de herramientas.</p>
 <p>Al abrir el programa veremos que tenemos Contenedores, Imágenes, Volúmenes y Redes.</p>
+<p>En <strong>contenedores</strong> veremos los contenedores que tenemos creados y si están en marcha o no.</p>
+<p>En <strong>imágenes</strong> veremos las imágenes que tenemos descargadas en nuestro repositorio local.</p>
+<p>En <strong>volúmenes</strong> veremos los volúmenes que tenemos creados para guardar datos de los contenedores.</p>
+<p>En <strong>redes</strong> veremos las redes creadas para que los contenedores puedan comunicarse entre sí.</p>
 <p><img src="image-3.png" alt="Contenedores"></p>
 <div style="page-break-after:always;"></div>
 <h2 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h2>
@@ -177,25 +181,61 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><strong>Crear una carpeta</strong> para el proyecto</p>
 </li>
 <li>
-<p><strong>Copiar</strong> en la carpeta el correspondiente archivo <strong>docker-compose.yml</strong> según la aplicación que queramos instalar.</p>
+<p><strong>Copiar en la carpeta</strong> el correspondiente archivo <strong>docker-compose.yml</strong> según la aplicación que queramos instalar.</p>
 </li>
 <li>
-<p>Desde el CMD <strong>ejecutar</strong> el siguiente comando:</p>
+<p>Desde el CMD estándo ubicados en la carpeta del proyecto,  <strong>ejecutar</strong> el siguiente comando:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
 </code></pre><p>Si el archivo se llama de otra forma, deberemos indicar el nombre del archivo:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> <span class="token parameter variable">-f</span> archivo.yml up <span class="token parameter variable">-d</span>
 </code></pre></li>
 <li>
-<p><strong>Comprobar</strong> en Docker que todo ha ido bien y está el servicio levantado.</p>
+<p><strong>Comprobar</strong> en Docker que todo ha ido bien y está el servicio en marcha.</p>
 </li>
 </ol>
 <p><img src="image-4.png" alt="Contenedor corriendo"></p>
-<p>Si el contendedor no se levanta al darle al play, podemos ver los logs desde los 3 puntos de la derecha del contenedor que no está en marcha.</p>
-<p><img src="image-5.png" alt="menú logs"></p>
-<p><img src="image-6.png" alt="Logs"></p>
-<p>Para acceder a la aplicación podemos ver desde aquí la URL con el puerto que está utilizando.</p>
+<p>Para <strong>acceder a la aplicación</strong> podemos ver desde aquí la URL con el puerto que está utilizando. Normalmente será localhost:puerto.</p>
 <p><img src="image-7.png" alt="URL y puerto"></p>
+<p>Si el contendedor no está en marcha al darle al play, podemos ver los logs desde los 3 puntos de la derecha del contenedor.</p>
+<p><img src="image-5.png" alt="menú logs"></p>
+<p>Veremos en el log que error ha habido si no ha arrancado correctamente.</p>
+<p><img src="image-6.png" alt="Logs"></p>
 <h3 id="ejemplo-de-docker-composeyml">Ejemplo de docker-compose.yml </h3>
+<h4 id="nextcloud-server">Nextcloud Server </h4>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mariadb<span class="token punctuation">:</span>latest              <span class="token comment"># Para Raspberry 32 bits cambiar "mariadb:latest" por "yobasystems/alpine-mariadb:latest"</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>transaction<span class="token punctuation">-</span>isolation=READ<span class="token punctuation">-</span>COMMITTED <span class="token punctuation">-</span><span class="token punctuation">-</span>log<span class="token punctuation">-</span>bin=binlog <span class="token punctuation">-</span><span class="token punctuation">-</span>binlog<span class="token punctuation">-</span>format=ROW
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./db<span class="token punctuation">:</span>/var/lib/mysql
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
+      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"33306:3306"</span>
+  <span class="token key atrule">nextcloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nextcloud<span class="token punctuation">:</span>latest
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"8900:80"</span>
+      <span class="token punctuation">-</span> <span class="token string">"8943:443"</span>
+    <span class="token key atrule">links</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> db
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./nextcloud/config<span class="token punctuation">:</span>/var/www/html/config
+      <span class="token punctuation">-</span> ./nextcloud/data<span class="token punctuation">:</span>/var/www/html/data
+      <span class="token punctuation">-</span> ./nextcloud/custom_apps<span class="token punctuation">:</span>/var/www/html/custom_apps
+      <span class="token punctuation">-</span> ./nextcloud/themes<span class="token punctuation">:</span>/var/www/html/themes
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
+      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
+      <span class="token punctuation">-</span> MYSQL_HOST=db
+</code></pre><div style="page-break-after:always;"></div>
 <h4 id="moodle">Moodle </h4>
 <p>Por defecto el usuario es user y password bitnami.</p>
 <pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token comment"># Copyright Broadcom, Inc. All Rights Reserved.</span>
@@ -235,41 +275,6 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> mariadb
 <span class="token key atrule">volumes</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-</code></pre><div style="page-break-after:always;"></div>
-<h4 id="nextcloud">Nextcloud </h4>
-<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
-
-  <span class="token key atrule">db</span><span class="token punctuation">:</span>
-    <span class="token key atrule">image</span><span class="token punctuation">:</span> mariadb<span class="token punctuation">:</span>latest              <span class="token comment"># Para Raspberry 32 bits cambiar "mariadb:latest" por "yobasystems/alpine-mariadb:latest"</span>
-    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
-    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>transaction<span class="token punctuation">-</span>isolation=READ<span class="token punctuation">-</span>COMMITTED <span class="token punctuation">-</span><span class="token punctuation">-</span>log<span class="token punctuation">-</span>bin=binlog <span class="token punctuation">-</span><span class="token punctuation">-</span>binlog<span class="token punctuation">-</span>format=ROW
-    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> ./db<span class="token punctuation">:</span>/var/lib/mysql
-    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=nextcloud
-      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
-      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
-      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
-    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token string">"33306:3306"</span>
-  <span class="token key atrule">nextcloud</span><span class="token punctuation">:</span>
-    <span class="token key atrule">image</span><span class="token punctuation">:</span> nextcloud<span class="token punctuation">:</span>latest
-    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
-    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token string">"8900:80"</span>
-      <span class="token punctuation">-</span> <span class="token string">"8943:443"</span>
-    <span class="token key atrule">links</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> db
-    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> ./nextcloud/config<span class="token punctuation">:</span>/var/www/html/config
-      <span class="token punctuation">-</span> ./nextcloud/data<span class="token punctuation">:</span>/var/www/html/data
-      <span class="token punctuation">-</span> ./nextcloud/custom_apps<span class="token punctuation">:</span>/var/www/html/custom_apps
-      <span class="token punctuation">-</span> ./nextcloud/themes<span class="token punctuation">:</span>/var/www/html/themes
-    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
-      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
-      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
-      <span class="token punctuation">-</span> MYSQL_HOST=db
 </code></pre><div style="page-break-after:always;"></div>
 <h1 id="otros-comandos-de-docker">Otros comandos de docker </h1>
 <p><strong>Exportar e importar</strong></p>
