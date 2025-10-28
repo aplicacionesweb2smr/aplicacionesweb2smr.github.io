@@ -170,16 +170,6 @@ extension=tidy</p>
 <p class="admonition-title">Problemas de instalación</p>
 <p>Si da problemas para poder instalar un CMS, debemos ajustar el tiempo máximo de ejecución de un script de php. Se debe configurar el valor por defecto de la variable <strong>max_execution_time</strong> en php.ini. Si hace falta, se puede incrementar el valor de la variable <strong>max_execution_time</strong> a 300 segundos.</p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">Sodium</p>
-<p>La libreria Sodium es una librería de criptografía que proporciona funciones para cifrado, descifrado, firmas digitales y otras operaciones criptográficas. Es una librería moderna y segura que se utiliza en muchas aplicaciones web para proteger datos sensibles.</p>
-<p>En algunas instalaciones puede ser necesario activar la extensión sodium en php.ini y copiar el archivo libsodium.dll en la carpeta apache/bin. Para ello, debemos hacer lo siguiente:<br>
-Descomentar la línea en php.ini:<br>
-extension=sodium<br>
-Copiar el archivo libsodium.dll<br>
-Copiar el archivo xampp/php/libsodium.dll a xampp/apache/bin/libsodium.dll<br>
-Reiniciar el servidor web Apache.</p>
-</div>
 <h2 id="creación-de-un-proyecto-en-xampp">Creación de un proyecto en XAMPP </h2>
 <p>En la carpeta <strong>C:\xampp\htdocs</strong>, creamos una carpeta con el nombre del proyecto para cada proyecto que tengamos, por ejemplo, <em>primerwordpress</em>. Podemos tener tantas carpetas como proyectos queramos tener en nuestro servidor local.</p>
 

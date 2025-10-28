@@ -131,10 +131,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p>Pulsamos en "Activar Plataforma de Pruebas".</p>
 <p><img src="image-8.png" alt="alt text"></p>
 <p>Debemos introducir un dominio, que debe ser <strong>único</strong>.</p>
-<p>Podemos poner por ejemplo, 2smr[A|B]AW_[NIA].com, donde [A|B] es el grupo y [NIA] nuestro NIA.</p>
+<p>Podemos poner por ejemplo, <strong>2smr[A|B]<em>AW</em>[NIA].com</strong>, donde [A|B] es el grupo y [NIA] nuestro NIA.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Al dominio se le añadirá automáticamente el sufijo <code>..alias.net</code>, por lo que la URL final será algo así como <code>2smrAAW_123456.alias.net</code>.</p>
+<p>Al dominio se le añadirá automáticamente el sufijo <code>.alias.net</code>, por lo que la URL final será algo así como <code>2smrA_AW_12345678.alias.net</code>.</p>
 </div>
 <p><img src="image-9.png" alt="alt text"></p>
 <p>Nos dirá que ya tenemos la plataforma de pruebas activada:</p>
@@ -154,17 +154,24 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li>Usuario MySQL: Para acceder a las bases de datos.</li>
 <li>Usuario FTP: Para acceder a los archivos.</li>
 </ul>
-<p>Tenemos además la opción de instalar aplicaciones web como WordPress, Joomla, etc. Pulsamos en "Aplicaciones" y seleccionamos WordPress.</p>
+<p>Tenemos además la opción de instalar aplicaciones web como WordPress, Joomla, etc.</p>
+<p>Pulsamos en <strong>"Aplicaciones"</strong> y seleccionamos <strong>WordPress</strong>.</p>
 <p><strong>Aceptamos las políticas y condiciones.</strong></p>
 <p>En la ruta de instalación, tenemos dos opciones:</p>
 <ul>
 <li>pondremos <code>/</code> para que se instale en la raíz del dominio.</li>
-<li>pondremos carpeta personalizada, por ejemplo <code>wordpress</code>, para que se instale en <code>midominio.com/wordpress</code>.</li>
+<li>pondremos carpeta personalizada, por ejemplo <strong><code>wordpress</code></strong>, para que se instale en <code>midominio.com/wordpress</code>.</li>
 </ul>
 <p>Una vez instalado, podremos acceder a WordPress desde la URL <code>midominio.com/wp-admin</code> o <code>midominio.com/wordpress/wp-admin</code>, según la ruta de instalación que hayamos elegido.</p>
-<p>El usuario y contraseña de WordPress son los que se muestran en la siguiente imagen:</p>
+<p>Por ejemplo, si hemos instalado WordPress en la <strong>raíz del dominio</strong>, accederemos a:<br>
+<code>2smrA_AW_12345678.alias.net/wp-admin</code></p>
+<p>y si lo hemos instalado en la <strong>carpeta <code>wordpress</code></strong>, accederemos a:<br>
+<code>2smrA_AW_12345678.alias.net/wordpress/wp-admin</code></p>
+<p>El usuario y contraseña de WordPress son los que se muestran en la siguiente imagen, a la que se accede desde Aplicaciones-&gt;Wordpress:</p>
 <p><img src="image-14.png" alt="alt text"></p>
-<p>Os recomiendo crearos un usuario administrador nuevo, con usuario y contraseña fácil de recordar.</p>
+<div class="admonition note">
+<p class="admonition-title">Os recomiendo crearos un usuario administrador nuevo, con usuario y contraseña fácil de recordar.</p>
+</div>
 
       </div>
       
