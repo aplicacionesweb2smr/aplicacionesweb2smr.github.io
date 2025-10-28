@@ -103,33 +103,56 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
             <p>¿Qué puede bloquear realmente Windows Defender y los proxies?</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#qué-hacer-en-windows-defender" class="md-toc-link">
-            <p>¿Qué hacer en <strong>Windows Defender</strong>?</p>
+          <a href="#desactivar-temporalmente-el-control-de-acceso-a-carpetas" class="md-toc-link">
+            <p>Desactivar temporalmente el “Control de acceso a carpetas”</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#qué-hacer-con-el-proxy-del-aula" class="md-toc-link"><p>¿Qué hacer con el <strong>proxy del aula</strong>?</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#a-excluir-localhost-y-127001-del-proxy-del-sistema" class="md-toc-link">
+            <p>A. Excluir <code>localhost</code> y <code>127.0.0.1</code> del proxy del sistema</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#qué-hacer-con-el-proxy-del-aula" class="md-toc-link">
-            <p>¿Qué hacer con el <strong>proxy del aula</strong>?</p>
+          <a href="#b-en-navegadores-con-proxy-propio-chrome--edge" class="md-toc-link">
+            <p>B. En navegadores con proxy propio (Chrome / Edge)</p>
 
           </a></div>
+        </div>
+      </details>
+    
         </div>
       </details>
     <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
           <a href="#cómo-comprobar-el-registro-de-errores-de-php-de-xampp" class="md-toc-link">
             <p>Cómo comprobar el registro de errores de PHP de XAMPP</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#causas-y-soluciones-más-habituales-de-errores" class="md-toc-link">
+            <p>Causas y soluciones más habituales de errores</p>
+
           </a></div><details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#causas-y-soluciones-más-habituales-de-errores" class="md-toc-link"><p>Causas y soluciones más habituales de errores</p>
+          <a href="#ajustes-en-las-instalaciones-iniciales-de-xampp-avanzado" class="md-toc-link"><p>Ajustes en las instalaciones iniciales de Xampp (Avanzado)</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#cambiar-los-puertos-por-defecto-del-xampp" class="md-toc-link"><p>Cambiar los puertos por defecto del Xampp</p>
 </a>
           </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#ajustes-en-las-instalaciones-iniciales-de-xampp" class="md-toc-link">
-            <p>Ajustes en las instalaciones iniciales de Xampp</p>
+          <a href="#apache--8080--8443" class="md-toc-link">
+            <p>Apache → 8080 / 8443</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#cambiar-los-puertos-por-defecto-del-xampp" class="md-toc-link">
-            <p>Cambiar los puertos por defecto del Xampp</p>
+          <a href="#mysql--3307" class="md-toc-link">
+            <p>MySQL → 3307</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#otros-ajustes-en-mysql-para-la-velocidad-y-seguridad" class="md-toc-link">
@@ -139,19 +162,13 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
         </div>
       </details>
     
+        </div>
+      </details>
+    
 </div>
 <hr>
 <h2 id="permisos-y-carpetas-de-windows">Permisos y carpetas de Windows </h2>
-<ol>
-<li>
-<p>Crea carpeta temporal:</p>
-<pre data-role="codeBlock" data-info="" class="language-text"><code>C:\SERVIDORES\xampp\
-</code></pre></li>
-<li>
-<p>Asegúrate de que el usuario tiene <strong>control total</strong> sobre la carpeta (clic derecho → Propiedades → Seguridad → Editar → Control total).<br>
-.</p>
-</li>
-</ol>
+<p>Asegúrate de que el usuario tiene <strong>control total</strong> sobre la carpeta C:\SERVIDORES\xampp\ (clic derecho → Propiedades → Seguridad → Editar → Control total).</p>
 <h2 id="qué-puede-bloquear-realmente-windows-defender-y-los-proxies">¿Qué puede bloquear realmente Windows Defender y los proxies? </h2>
 <table>
 <thead>
@@ -179,9 +196,39 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </tr>
 </tbody>
 </table>
-<hr>
-<h2 id="qué-hacer-en-windows-defender">¿Qué hacer en <strong>Windows Defender</strong>? </h2>
-<h3 id="a-excluir-carpetas-y-procesos-del-análisis">A. Excluir carpetas y procesos del análisis </h3>
+<p>Para realizar muchas de las configuraciones de este apartado, necesitarás abrir una consola de PowerShell como administrador.</p>
+<p>Ejecuta el siguiente comando para comprobar si tienes los cmdlets necesarios para modificar las preferencias de Windows Defender:</p>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token function">Get-Command</span> <span class="token function">Add-MpPreference</span>
+</code></pre><p>Si devuelve información → puedes usarlo.</p>
+<p>Copia y pega las líneas siguientes:</p>
+<ul>
+<li>Para añadir exclusiones en Microsoft Defender</li>
+</ul>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionPath <span class="token string">"C:\SERVIDORES\xampp"</span>
+<span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionPath <span class="token string">"C:\SERVIDORES\xampp\mysql"</span>
+<span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionPath <span class="token string">"C:\SERVIDORES\xampp\apache"</span>
+<span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionPath <span class="token string">"C:\SERVIDORES\xampp\htdocs"</span>
+<span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionProcess <span class="token string">"C:\SERVIDORES\xampp\apache\bin\httpd.exe"</span>
+<span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionProcess <span class="token string">"C:\SERVIDORES\xampp\mysql\bin\mysqld.exe"</span>
+<span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionProcess <span class="token string">"C:\SERVIDORES\xampp\php\php.exe"</span>
+<span class="token function">Add-MpPreference</span> <span class="token operator">-</span>ExclusionProcess <span class="token string">"C:\SERVIDORES\xampp\xampp-control.exe"</span>
+</code></pre><ul>
+<li>Para crear reglas de ENTRADA y SALIDA en el Firewall de Windows</li>
+</ul>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token comment"># --- REGLAS FIREWALL (ENTRADA) ---</span>
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ Apache XAMPP (Entrada)"</span> <span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\apache\bin\httpd.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ MySQL XAMPP (Entrada)"</span>  <span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\mysql\bin\mysqld.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ PHP XAMPP (Entrada)"</span>    <span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\php\php.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ XAMPP Control (Entrada)"</span><span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\xampp-control.exe"</span> <span class="token operator">-</span>Action Allow
+
+<span class="token comment"># --- REGLAS FIREWALL (SALIDA) ---</span>
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ Apache XAMPP (Salida)"</span> <span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\apache\bin\httpd.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ MySQL XAMPP (Salida)"</span>  <span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\mysql\bin\mysqld.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ PHP XAMPP (Salida)"</span>    <span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\php\php.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ XAMPP Control (Salida)"</span><span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\xampp-control.exe"</span> <span class="token operator">-</span>Action Allow
+</code></pre><p><strong>¿Qué hacen estos comandos en <strong>Windows Defender</strong>?</strong></p>
+<p>Por si prefieres hacerlo manualmente, aquí tienes los pasos detallados.</p>
+<p><strong>A. Excluir carpetas y procesos del análisis</strong></p>
 <p>Así evitarás que Defender escanee constantemente los ficheros de MySQL o Apache.</p>
 <p>1️⃣ Abre <strong>Inicio → Seguridad de Windows → Protección antivirus y contra amenazas</strong><br>
 2️⃣ Clic en <strong>Configuración de antivirus y amenazas → Administrar configuración</strong><br>
@@ -198,21 +245,7 @@ mysqld.exe
 php.exe
 xampp-control.exe
 </code></pre><p>💡 Esto evita bloqueos del motor de base de datos o lentitud al abrir phpMyAdmin.</p>
-<hr>
-<h3 id="b-desactivar-temporalmente-el-control-de-acceso-a-carpetas">B. Desactivar temporalmente el “Control de acceso a carpetas” </h3>
-<p>Si lo tienes activado (modo <em>Controlled Folder Access</em>), puede impedir que MySQL escriba en <code>mysql\data</code>.</p>
-<p>1️⃣ En <strong>Protección antivirus y contra amenazas → Protección contra ransomware</strong><br>
-<img src="image-2.png" alt="alt text"><br>
-2️⃣ Entra en <strong>Control de acceso a carpetas</strong><br>
-3️⃣ Si está activado, pulsa <strong>Permitir una aplicación a través del control de acceso a carpetas</strong><br>
-<img src="image-3.png" alt="alt text"><br>
-4️⃣ Agrega las siguientes rutas:</p>
-<pre data-role="codeBlock" data-info="" class="language-text"><code>C:\SERVIDORES\xampp\mysql\bin\mysqld.exe
-C:\SERVIDORES\xampp\apache\bin\httpd.exe
-C:\SERVIDORES\xampp\php\php.exe
-</code></pre><p>💬 <em>Si prefieres no tocarlo, puedes desactivarlo mientras estás con xampp y reactivarlo después.</em></p>
-<hr>
-<h3 id="c-permitir-apache-y-mysql-en-el-firewall-de-windows">C. Permitir Apache y MySQL en el <strong>Firewall de Windows</strong> </h3>
+<p><strong>B. Permitir Apache y MySQL en el Firewall de Windows</strong></p>
 <p>Para que puedan abrir los puertos localmente (aunque uses proxy del aula).</p>
 <p>1️⃣ Abre <strong>Inicio → Windows Defender Firewall con seguridad avanzada</strong><br>
 2️⃣ Clic en <strong>Reglas de entrada → Nueva regla</strong><br>
@@ -234,7 +267,18 @@ C:\SERVIDORES\xampp\php\php.exe
 </ul>
 <p>3️⃣ Repite en <strong>Reglas de salida</strong>.</p>
 <p>✅ Apache y MySQL podrán escuchar en 127.0.0.1 y puerto 8080 / 3306 sin bloqueos.</p>
-<hr>
+<h2 id="desactivar-temporalmente-el-control-de-acceso-a-carpetas">Desactivar temporalmente el “Control de acceso a carpetas” </h2>
+<p>Si lo tienes activado (modo <em>Controlled Folder Access</em>), puede impedir que MySQL escriba en <code>mysql\data</code>.</p>
+<p>1️⃣ En <strong>Protección antivirus y contra amenazas → Protección contra ransomware</strong><br>
+<img src="image-2.png" alt="alt text"><br>
+2️⃣ Entra en <strong>Control de acceso a carpetas</strong><br>
+3️⃣ Si está activado, pulsa <strong>Permitir una aplicación a través del control de acceso a carpetas</strong><br>
+<img src="image-3.png" alt="alt text"><br>
+4️⃣ Agrega las siguientes rutas:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>C:\SERVIDORES\xampp\mysql\bin\mysqld.exe
+C:\SERVIDORES\xampp\apache\bin\httpd.exe
+C:\SERVIDORES\xampp\php\php.exe
+</code></pre><p>💬 <em>Si prefieres no tocarlo, puedes desactivarlo mientras estás con xampp y reactivarlo después.</em></p>
 <h2 id="qué-hacer-con-el-proxy-del-aula">¿Qué hacer con el <strong>proxy del aula</strong>? </h2>
 <p>Muchos centros usan proxies que pueden interferir con <strong>localhost</strong>.</p>
 <h3 id="a-excluir-localhost-y-127001-del-proxy-del-sistema">A. Excluir <code>localhost</code> y <code>127.0.0.1</code> del proxy del sistema </h3>
@@ -349,7 +393,7 @@ En Firefox:<br>
 </div>
 </li>
 </ol>
-<h2 id="ajustes-en-las-instalaciones-iniciales-de-xampp">Ajustes en las instalaciones iniciales de Xampp </h2>
+<h1 id="ajustes-en-las-instalaciones-iniciales-de-xampp-avanzado">Ajustes en las instalaciones iniciales de Xampp (Avanzado) </h1>
 <div class="admonition warning">
 <p class="admonition-title"><strong>Importante</strong></p>
 <p>Antes de realizar cualquier cambio en los ficheros de configuración de XAMPP, es recomendable hacer una copia de seguridad de los ficheros originales para poder restaurarlos en caso de que algo salga mal. Y realizar estos cambios con XAMPP cerrado, y antes de cualquier instalación o creación de bases de datos.</p>
@@ -426,7 +470,7 @@ En Firefox:<br>
 <span class="token variable">$cfg</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'Servers'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token variable">$i</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'auth_type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'config'</span><span class="token punctuation">;</span>
 
 <span class="token delimiter important">?&gt;</span></span>
-</code></pre><h2 id="otros-ajustes-en-mysql-para-la-velocidad-y-seguridad">Otros ajustes en MySQL para la velocidad y seguridad </h2>
+</code></pre><h3 id="otros-ajustes-en-mysql-para-la-velocidad-y-seguridad">Otros ajustes en MySQL para la velocidad y seguridad </h3>
 <p>Abre <code>xampp\mysql\bin\my.ini</code> y añade al final:</p>
 <pre data-role="codeBlock" data-info="ini" class="language-ini ini"><code><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">mysqld</span><span class="token punctuation">]</span></span>
 skip-name-resolve
