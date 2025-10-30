@@ -132,6 +132,11 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </div>
 <p>Una vez ejecutado el setup_xampp podemos probar a arrancar Xampp desde <strong>xampp-control</strong> y arrancar el servidor Apache y MySQL y comprobar que todo funciona correctamente.</p>
 <p><img src="./images/servicios.png" alt="Servicios arrancados"></p>
+<div class="admonition info">
+<p class="admonition-title">Si alguno de los servicios no arranca...</p>
+<p>Si alguno de los servicios no arranca, podemos intentar lanzarlo desde los archivos <strong>apache_start.bat</strong> o <strong>mysql_start.bat</strong> que se encuentran en la carpeta <strong>xampp</strong>. Esto nos permite ver los mensajes de error que se producen al intentar arrancar los servicios.<br>
+Además, disponemos de scripts para parar los servicios: <strong>apache_stop.bat</strong> y <strong>mysql_stop.bat</strong>, por si necesitamos parar los servicios desde la línea de comandos.</p>
+</div>
 <p>Para ello, abrimos un navegador web y accedemos a la <strong>URL <a href="http://localhost">http://localhost</a></strong>. Si todo funciona correctamente, deberíamos ver la página de inicio de XAMPP.</p>
 <p><img src="./images/localhost.png" alt="Localhost página de inicio de Xampp"></p>
 <p>Cuando cerramos Xampp, por defecto, se queda en segundo plano. Para cerrarlo completamente, debemos hacer clic en <strong>Stop</strong> en todos los servicios y en el botón <strong>Salir</strong> o <strong>Quit</strong> de la ventana de control de Xampp.</p>
