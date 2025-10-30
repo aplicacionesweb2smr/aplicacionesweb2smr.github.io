@@ -117,8 +117,8 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
             <p>A. Excluir <code>localhost</code> y <code>127.0.0.1</code> del proxy del sistema</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#b-en-navegadores-con-proxy-propio-chrome--edge" class="md-toc-link">
-            <p>B. En navegadores con proxy propio (Chrome / Edge)</p>
+          <a href="#b-en-navegadores-con-proxy-propio" class="md-toc-link">
+            <p>B. En navegadores con proxy propio</p>
 
           </a></div>
         </div>
@@ -216,16 +216,38 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li>Para crear reglas de ENTRADA y SALIDA en el Firewall de Windows</li>
 </ul>
 <pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token comment"># --- REGLAS FIREWALL (ENTRADA) ---</span>
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ Apache XAMPP (Entrada)"</span> <span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\apache\bin\httpd.exe"</span> <span class="token operator">-</span>Action Allow
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ MySQL XAMPP (Entrada)"</span>  <span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\mysql\bin\mysqld.exe"</span> <span class="token operator">-</span>Action Allow
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ PHP XAMPP (Entrada)"</span>    <span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\php\php.exe"</span> <span class="token operator">-</span>Action Allow
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ XAMPP Control (Entrada)"</span><span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\xampp-control.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ Apache XAMPP (Entrada)"</span> 
+<span class="token operator">-</span>Direction Inbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\apache\bin\httpd.exe"</span> <span class="token operator">-</span>Action Allow
+
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ MySQL XAMPP (Entrada)"</span>  
+<span class="token operator">-</span>Direction Inbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\mysql\bin\mysqld.exe"</span> <span class="token operator">-</span>Action Allow
+
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ PHP XAMPP (Entrada)"</span>    
+<span class="token operator">-</span>Direction Inbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\php\php.exe"</span> <span class="token operator">-</span>Action Allow
+
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ XAMPP Control (Entrada)"</span>
+<span class="token operator">-</span>Direction Inbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\xampp-control.exe"</span> <span class="token operator">-</span>Action Allow
 
 <span class="token comment"># --- REGLAS FIREWALL (SALIDA) ---</span>
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ Apache XAMPP (Salida)"</span> <span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\apache\bin\httpd.exe"</span> <span class="token operator">-</span>Action Allow
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ MySQL XAMPP (Salida)"</span>  <span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\mysql\bin\mysqld.exe"</span> <span class="token operator">-</span>Action Allow
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ PHP XAMPP (Salida)"</span>    <span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\php\php.exe"</span> <span class="token operator">-</span>Action Allow
-<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ XAMPP Control (Salida)"</span><span class="token operator">-</span>Direction Outbound <span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\xampp-control.exe"</span> <span class="token operator">-</span>Action Allow
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ Apache XAMPP (Salida)"</span> 
+<span class="token operator">-</span>Direction Outbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\apache\bin\httpd.exe"</span> <span class="token operator">-</span>Action Allow
+
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ MySQL XAMPP (Salida)"</span>  
+<span class="token operator">-</span>Direction Outbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\mysql\bin\mysqld.exe"</span> <span class="token operator">-</span>Action Allow
+
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ PHP XAMPP (Salida)"</span>    
+<span class="token operator">-</span>Direction Outbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\php\php.exe"</span> <span class="token operator">-</span>Action Allow
+
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>DisplayName <span class="token string">"ZZ XAMPP Control (Salida)"</span> 
+<span class="token operator">-</span>Direction Outbound 
+<span class="token operator">-</span>Program <span class="token string">"C:\SERVIDORES\xampp\xampp-control.exe"</span> <span class="token operator">-</span>Action Allow
 </code></pre><p><strong>¿Qué hacen estos comandos en <strong>Windows Defender</strong>?</strong></p>
 <p>Por si prefieres hacerlo manualmente, aquí tienes los pasos detallados.</p>
 <p><strong>A. Excluir carpetas y procesos del análisis</strong></p>
@@ -306,7 +328,7 @@ Host: localhost:8080</p>
 <p>Esto asegura que las llamadas a <code>http://localhost</code> o <code>127.0.0.1</code> <strong>no pasen por el proxy del centro</strong>, lo que mejora la velocidad al abrir phpMyAdmin o proyectos.</p>
 </blockquote>
 <hr>
-<h3 id="b-en-navegadores-con-proxy-propio-chrome--edge">B. En navegadores con proxy propio (Chrome / Edge) </h3>
+<h3 id="b-en-navegadores-con-proxy-propio">B. En navegadores con proxy propio </h3>
 <p>Abren la configuración de Windows, así que la exclusión anterior ya aplica.<br>
 En Firefox:<br>
 1️⃣ Menú ≡ → Configuración → General → Configuración de red<br>
