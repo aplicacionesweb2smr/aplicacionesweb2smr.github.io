@@ -280,7 +280,22 @@ C:\SERVIDORES\xampp\apache\bin\httpd.exe
 C:\SERVIDORES\xampp\php\php.exe
 </code></pre><p>💬 <em>Si prefieres no tocarlo, puedes desactivarlo mientras estás con xampp y reactivarlo después.</em></p>
 <h2 id="qué-hacer-con-el-proxy-del-aula">¿Qué hacer con el <strong>proxy del aula</strong>? </h2>
-<p>Muchos centros usan proxies que pueden interferir con <strong>localhost</strong>.</p>
+<p>¿Puede el proxy del aula afectar?<br>
+⚠️ Sí, si el navegador o Windows envían todo al proxy.<br>
+Para comprobar si el proxy está interfiriendo, abre PowerShell o CMD:</p>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code>curl <span class="token operator">-</span>v http:<span class="token operator">/</span><span class="token operator">/</span>localhost:8080
+</code></pre><p>Si ves una línea como:</p>
+<blockquote>
+<p>CONNECT proxy_aula:3128 HTTP/1.1</p>
+</blockquote>
+<p>➡️ el tráfico está pasando por el proxy ❌<br>
+(y debes añadir la exclusión).</p>
+<p>Si en cambio ves:</p>
+<blockquote>
+<p>GET / HTTP/1.1<br>
+Host: localhost:8080</p>
+</blockquote>
+<p>➡️ el tráfico va directo ✅</p>
 <h3 id="a-excluir-localhost-y-127001-del-proxy-del-sistema">A. Excluir <code>localhost</code> y <code>127.0.0.1</code> del proxy del sistema </h3>
 <p>1️⃣ Abre <strong>Panel de control → Opciones de Internet → Conexiones → Configuración de LAN</strong><br>
 2️⃣ Si está marcada la opción <strong>“Usar un servidor proxy”</strong>, pulsa <strong>Avanzada</strong><br>
@@ -297,19 +312,6 @@ En Firefox:<br>
 1️⃣ Menú ≡ → Configuración → General → Configuración de red<br>
 2️⃣ Marca <strong>Sin proxy</strong> o <strong>No usar proxy para: localhost, 127.0.0.1</strong></p>
 <h1 id="cómo-comprobar-el-registro-de-errores-de-php-de-xampp">Cómo comprobar el registro de errores de PHP de XAMPP </h1>
-<p>Si no puedes conseguir que el servicio se inicie, tu primer paso debería ser comprobar tus registros de error. Esto puede indicarte la causa del problema.</p>
-<p>Si sabes por qué se produce el problema, deberías ser capaz de resolverlo mucho más rápido que solucionarlo por prueba y error. El acceso a los registros se realiza a través de diferentes rutas, dependiendo del sistema operativo y de la versión. Afortunadamente, hay una manera sencilla de encontrar la ruta para su configuración.</p>
-<p>Puedes acceder al registro de errores pulsando el botón <strong>Logs</strong> junto al botón Apache Config.</p>
-<p><img src="./images/logs.png" alt="Logs"></p>
-<p>Para localizar tus registros de <strong>errores de PHP</strong>, abre el panel de control de XAMPP escribiendo <a href="http://localhost">http://localhost</a> en la barra de direcciones de tu navegador. Allí, haz clic en <strong>PHPInfo</strong> en la parte superior de la pantalla:</p>
-<p>A continuación, busca <strong>error_log</strong>. Esto revelará la ruta que debe introducir en tu barra de direcciones para ver el registro.</p>
-<p>Normalmente el <strong>error más común</strong> es que el <strong>puerto está ocupado</strong> por otro servicio. Si haces clic en el botón <strong>Netstat</strong> en el panel de control de XAMPP, debería mostrarte todos los puertos que están actualmente en uso, y qué aplicaciones los están utilizando.</p>
-<p><img src="./images/netstat.png" alt="netstat"></p>
-<p>Los podemos ordenar pulsando en el encabezado de la columna <strong>Port</strong>. Si ves que el puerto <strong>80</strong> está ocupado o el <strong>443</strong>, es probable que Apache no pueda iniciarse.</p>
-<p>En el caso de la imagen está ocupado porque hemos arrancado nuestro propio servidor Apache de Xampp. <strong>No debe aparecer ocupado si no hemos arrancado ningún servidor.</strong></p>
-<p><img src="./images/ports.png" alt="puertos"></p>
-<p>Si sabes qué programa es el problema y puedes desbloquear el puerto eliminando la aplicación que estorba, esto resolverá el problema inmediatamente.</p>
-<h3 id="cómo-comprobar-el-registro-de-errores-de-php-de-xampp-1">Cómo comprobar el registro de errores de PHP de XAMPP </h3>
 <p>Si no puedes conseguir que el servicio se inicie, tu primer paso debería ser comprobar tus registros de error. Esto puede indicarte la causa del problema.</p>
 <p>Si sabes por qué se produce el problema, deberías ser capaz de resolverlo mucho más rápido que solucionarlo por prueba y error. El acceso a los registros se realiza a través de diferentes rutas, dependiendo del sistema operativo y de la versión. Afortunadamente, hay una manera sencilla de encontrar la ruta para su configuración.</p>
 <p>Puedes acceder al registro de errores pulsando el botón <strong>Logs</strong> junto al botón Apache Config.</p>
@@ -477,8 +479,9 @@ skip-name-resolve
 <span class="token key attr-name">bind-address</span><span class="token punctuation">=</span><span class="token value attr-value">127.0.0.1</span>
 <span class="token key attr-name">innodb_buffer_pool_size</span><span class="token punctuation">=</span><span class="token value attr-value">64M</span>
 <span class="token key attr-name">innodb_log_file_size</span><span class="token punctuation">=</span><span class="token value attr-value">32M</span>
-<span class="token key attr-name">character-set-server</span><span class="token punctuation">=</span><span class="token value attr-value">utf8mb4</span>
+</code></pre><pre data-role="codeBlock" data-info="ini" class="language-ini ini"><code>Descomentamos estas líneas para usar UTF-8 por defecto: 
 <span class="token key attr-name">collation-server</span><span class="token punctuation">=</span><span class="token value attr-value">utf8mb4_unicode_ci</span>
+<span class="token key attr-name">character-set-server</span><span class="token punctuation">=</span><span class="token value attr-value">utf8mb4</span>
 </code></pre><p>💡 <em>Esto mejora velocidad, evita esperas por DNS y asegura compatibilidad UTF-8.</em></p>
 
       </div>
