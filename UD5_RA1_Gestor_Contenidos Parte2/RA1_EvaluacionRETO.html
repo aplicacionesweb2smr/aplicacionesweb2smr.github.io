@@ -1,0 +1,416 @@
+<!DOCTYPE html><html><head>
+      <title>Evaluación del Proyecto Web con Scrum</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css);
+code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+@font-face {
+  font-family: 'Catamaran';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/catamaran/v27/o-0bIpQoyXQa2RxT7-5B6Ryxs2E_6n1iPHjd5a7dvg.ttf) format('truetype');
+}
+.markdown-preview.markdown-preview p {
+  text-align: justify;
+}
+.markdown-preview.markdown-preview h1,
+.markdown-preview.markdown-preview h2,
+.markdown-preview.markdown-preview h3,
+.markdown-preview.markdown-preview h4,
+.markdown-preview.markdown-preview h5,
+.markdown-preview.markdown-preview h6 {
+  color: blue;
+}
+.markdown-preview.markdown-preview .flotante {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: column;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante {
+    flex-direction: row;
+  }
+}
+.markdown-preview.markdown-preview .flotante_izq {
+  margin-right: 15px;
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_izq {
+    width: auto;
+  }
+}
+@media (max-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: 100%;
+  }
+}
+@media (min-width: 550px) {
+  .markdown-preview.markdown-preview .flotante_der {
+    width: auto;
+  }
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      <div>
+<h1 id="evaluación-del-proyecto-web-con-scrum">Evaluación del Proyecto Web con Scrum </h1>
+<p><a href="./RA1_EvaluacionRETO.pdf">Descargar estos apuntes</a></p>
+<div style="page-break-after:always;"></div>
+<h3 id="1-instalación-del-cms-y-gestión-técnica-25"><strong>1. Instalación del CMS y Gestión Técnica (25%)</strong> </h3>
+<h4 id="11-instalación-del-cms-online-wordpress-10"><strong>1.1 Instalación del CMS online (WordPress) (10%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Lista de Cotejo</strong>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> WordPress instalado y accesible.</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Configuración básica realizada (nombre del sitio, idioma, etc.).</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-gestión-de-usuarios-con-roles-diferentes-5"><strong>1.2 Gestión de Usuarios con Roles Diferentes (5%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Lista de Cotejo</strong>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Usuario administrador creado correctamente.</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Otros usuarios creados correctamente.</li>
+</ul>
+</li>
+</ul>
+<h4 id="13-realización-de-copias-de-seguridad-y-restauración-en-local-10"><strong>1.3 Realización de Copias de Seguridad y Restauración en Local (10%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Evaluación de la Documentación mostrando una prueba técnica (6 puntos)</strong>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Copia de seguridad realizada correctamente (3 puntos).</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Restauración en local realizada sin problemas (3 puntos).</li>
+</ul>
+</li>
+<li><strong>Documentación Técnica</strong> (puntúa hasta 4 puntos):
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Documentación clara y precisa explicación del proceso de copia de seguridad (2 puntos).</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Instrucciones detalladas para la explicación del proceso de restauración (2 puntos).</li>
+</ul>
+</li>
+</ul>
+<div style="page-break-after:always;"></div>
+<h3 id="2-personalización-y-diseño-del-portal-25"><strong>2. Personalización y Diseño del Portal (25%)</strong> </h3>
+<h4 id="21-personalización-de-la-interfaz-10"><strong>2.1 Personalización de la Interfaz (10%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Rúbrica de Evaluación del Diseño (máx. 10 puntos)</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Excelente (10)</strong></th>
+<th><strong>Bueno (7-9)</strong></th>
+<th><strong>Adecuado (5-6)</strong></th>
+<th><strong>Insuficiente (&lt;5)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coherencia estética y diseño</strong></td>
+<td>Diseño atractivo, uso excelente de colores y fuentes coherentes con la identidad del club.</td>
+<td>Diseño visualmente adecuado, pero con algunos fallos menores en coherencia.</td>
+<td>Diseño funcional pero poco atractivo o incoherente en algunos elementos.</td>
+<td>Diseño descuidado, con problemas evidentes de coherencia o estética.</td>
+</tr>
+<tr>
+<td><strong>Estructura de menús y navegación</strong></td>
+<td>Navegación clara e intuitiva, menús bien estructurados.</td>
+<td>Navegación adecuada, aunque con leves problemas de claridad.</td>
+<td>Menús funcionales pero con dificultades en la navegación.</td>
+<td>Navegación confusa o ineficiente.</td>
+</tr>
+<tr>
+<td><strong>Uso de widgets</strong></td>
+<td>Widgets útiles y bien integrados, mejorando funcionalidad y estética.</td>
+<td>Widgets adecuados, aunque podrían mejorarse.</td>
+<td>Integración básica de widgets, con funcionalidades limitadas.</td>
+<td>Falta de widgets o mal uso de ellos.</td>
+</tr>
+<tr>
+<td><strong>Uso de plugins</strong></td>
+<td>Plugins útiles y bien integrados, mejorando funcionalidad y estética.</td>
+<td>Plugins adecuados, aunque podrían mejorarse.</td>
+<td>Integración básica de plugins, con funcionalidades limitadas.</td>
+<td>Falta de plugins o mal uso de ellos.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after:always;"></div>
+<h4 id="22-páginas-y-entradas-personalizadas-15"><strong>2.2 Páginas y Entradas Personalizadas (15%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Rúbrica de Evaluación de Páginas y Contenidos</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Excelente (10)</strong></th>
+<th><strong>Bueno (7-9)</strong></th>
+<th><strong>Adecuado (5-6)</strong></th>
+<th><strong>Insuficiente (&lt;5)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Página de inicio</strong></td>
+<td>Información clara y atractiva, diseño visual destacado.</td>
+<td>Información adecuada, diseño agradable pero mejorable.</td>
+<td>Información clara pero con un diseño pobre.</td>
+<td>Página incompleta o mal organizada.</td>
+</tr>
+<tr>
+<td><strong>Páginas de cada categoria</strong></td>
+<td>Información detallada y estructurada para cada deporte.</td>
+<td>Información adecuada pero falta detalle o estructura.</td>
+<td>Información básica o mal organizada.</td>
+<td>Páginas incompletas o faltantes.</td>
+</tr>
+<tr>
+<td><strong>Entradas del blog</strong></td>
+<td>Contenido relevante y bien redactado.</td>
+<td>Contenido adecuado pero falta profundidad o estilo.</td>
+<td>Contenido funcional pero con problemas gramaticales o de formato.</td>
+<td>Entradas irrelevantes o incompletas.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after:always;"></div>
+<h3 id="3-funcionalidades-adicionales-15"><strong>3. Funcionalidades Adicionales (15%)</strong> </h3>
+<h4 id="31-formularios-y-páginas-de-interacción-10"><strong>3.1 Formularios y Páginas de Interacción (10%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Rúbrica de Evaluación de Formularios y Páginas de Interacción</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Excelente (10)</strong></th>
+<th><strong>Bueno (7-9)</strong></th>
+<th><strong>Adecuado (5-6)</strong></th>
+<th><strong>Insuficiente (&lt;5)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Formulario de inscripción</strong></td>
+<td>Funcional, fácil de usar, con diseño atractivo.</td>
+<td>Funcional pero con algunos problemas de usabilidad o diseño.</td>
+<td>Funciona correctamente pero es poco intuitivo.</td>
+<td>Formulario mal implementado o con errores.</td>
+</tr>
+<tr>
+<td><strong>Página de contacto (con Google Maps)</strong></td>
+<td>Información completa, mapa bien integrado, contacto claro.</td>
+<td>Información adecuada, pero con fallos menores en el mapa o contacto.</td>
+<td>Mapa integrado pero con problemas de visualización o información incompleta.</td>
+<td>Página incompleta o mal estructurada.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="32-galería-de-fotos-5"><strong>3.2 Galería de Fotos (5%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Lista de Cotejo</strong>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Galería funcional.</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Imágenes relevantes, bien organizadas.</li>
+</ul>
+</li>
+</ul>
+<div style="page-break-after:always;"></div>
+<h3 id="4-tienda-online-y-gestión-de-pedidos-25"><strong>4. Tienda Online y Gestión de Pedidos (25%)</strong> </h3>
+<h4 id="41-creación-y-configuración-de-la-tienda-online-woocommerce-15"><strong>4.1 Creación y Configuración de la Tienda Online (WooCommerce) (15%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Documentación con Prueba Técnica y Evaluación de la experiencia de usuario</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Excelente (10)</strong></th>
+<th><strong>Bueno (7-9)</strong></th>
+<th><strong>Adecuado (5-6)</strong></th>
+<th><strong>Insuficiente (&lt;5)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Configuración WooCommerce</strong></td>
+<td>Correcta instalación y configuración de la tienda.</td>
+<td>Instalación y configuración correcta pero con errores menores.</td>
+<td>Instalación funcional pero con problemas técnicos.</td>
+<td>Configuración incompleta o con errores.</td>
+</tr>
+<tr>
+<td><strong>Gestión de productos y pagos</strong></td>
+<td>Productos bien organizados y métodos de pago configurados correctamente.</td>
+<td>Productos añadidos pero falta claridad en pagos o presentación.</td>
+<td>Productos añadidos pero con problemas en los métodos de pago o estructura.</td>
+<td>Productos o pagos mal configurados.</td>
+</tr>
+<tr>
+<td><strong>Experiencia de usuario (UX)</strong></td>
+<td>Navegación intuitiva, proceso de compra claro y sin fricciones.</td>
+<td>Proceso de compra adecuado, aunque con áreas de mejora.</td>
+<td>Funciona, pero el proceso es poco intuitivo.</td>
+<td>Proceso de compra confuso o difícil.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="42-prueba-de-pedidos-y-gestión-de-envíos-10"><strong>4.2 Prueba de Pedidos y Gestión de Envíos (10%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Documentación con Prueba Técnica</strong>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Pedidos de prueba de poco importe en cada zona (local, nacional, internacional) realizado correctamente <strong>con gastos de envío correspondientes</strong>.</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Pedido de prueba de mucho importe en zona local <strong>sin gastos de envío</strong> realizado correctamente.</li>
+</ul>
+</li>
+</ul>
+<div style="page-break-after:always;"></div>
+<h3 id="5-evaluación-del-proceso-10"><strong>5. Evaluación del Proceso (10%)</strong> </h3>
+<h4 id="51-autoevaluación-y-coevaluación-10"><strong>5.1 Autoevaluación y Coevaluación (10%)</strong> </h4>
+<ul>
+<li><strong>Instrumento: Lista de cotejo para Autoevaluación y Coevaluación por parte de los miembros del equipo.</strong></li>
+</ul>
+<p><strong>Lista de Cotejo:</strong></p>
+<p>Cada criterio se desglosa en ítems que deben ser revisados y marcados durante la evaluación de cada Sprint.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Criterio</strong></th>
+<th><strong>Ítem de Cotejo</strong></th>
+<th><strong>Sí</strong></th>
+<th><strong>No</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cumplimiento de Objetivos</strong></td>
+<td>Se completaron todos los ítems del Sprint Backlog asignados.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Los entregables cumplen con los requisitos especificados.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Calidad del Trabajo</strong></td>
+<td>La documentación es clara, completa y organizada.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Se realizaron pruebas funcionales y se documentaron los resultados.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Colaboración y Comunicación</strong></td>
+<td>Se realizaron reuniones diarias de Scrum (Daily Scrum).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>La comunicación entre los miembros del equipo fue efectiva y respetuosa.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Seguimiento del Proceso Scrum</strong></td>
+<td>Se participó en la planificación del Sprint.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Se llevó a cabo la revisión del Sprint (Sprint Review).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Resolución de Impedimentos</strong></td>
+<td>Los impedimentos fueron identificados y reportados en tiempo y forma.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Se tomaron acciones efectivas para resolver los impedimentos.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Autonomía y Proactividad</strong></td>
+<td>El equipo mostró iniciativa y autonomía en la realización de tareas.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Se propusieron mejoras y soluciones durante el Sprint.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Retroalimentación y Mejora</strong></td>
+<td>Se llevó a cabo la retrospectiva del Sprint (Sprint Retrospective).</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Se identificaron áreas de mejora y se implementaron acciones para el siguiente Sprint.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
