@@ -14,6 +14,10 @@
 
     <p>Este es un texto.<br>Con un salto de línea.</p>
 
+    <p id="unico">Este párrafo tiene un id único.</p>
+<p class="comun">Este párrafo pertenece a una clase común.</p>
+<p class="comun">Este es otro párrafo de la misma clase común.</p>
+
     <!-- Ejemplo de encabezados HTML -->
     <h1>Encabezado 1</h1>
     <h2>Encabezado 2</h2>
@@ -36,6 +40,17 @@
   <li>Segundo elemento</li>
 </ol>
 
+<h2>Listas encabezadas</h2>
+<ul>
+<li> Mamíferos </li>
+<li> Peces </li>
+<ul>
+<li> Sardinas </li>
+<li> Bacalao </li>
+</ul>
+<li> Aves </li>
+</ul>
+
 <h2>Tabla básica de ejemplo</h2>
 <table border="1">
   <tr>
@@ -51,12 +66,12 @@
 <h2>Tabla avanzada con secciones</h2>
 <table>
     <caption>Tabla de ejemplo</caption>
-    <theader>
+    <thead>
         <tr>
             <th>Encabezado 1</th>
             <th>Encabezado 2</th>
         </tr>
-    </theader>
+    </thead>
     <tbody>
         <tr>
             <td>Dato 1</td>
@@ -71,16 +86,27 @@
     </tfoot>
 </table>
 
-<h2>Tabla con celdas que abarcan varias filas y columnas</h2>
-<table border="1">
+<h2>Tabla con celdas combinadas</h2>
+<table>
   <tr>
-    <td colspan="2">Celda 1</td>
-    <td>Celda 2</td>
+    <td colspan="2">Celda 1_1</td>
+    <!-- <td>Celda 1_2</td> no hace falta 
+        porque la primera ocupa 2 columnas -->
+    <td>Celda 1_3</td>
+       
+
   </tr>
   <tr>
-    <td rowspan="2">Celda 3</td>
-    <td>Celda 4</td>
-    <td>Celda 5</td>
+    <td>Celda 2_1</td>
+    <td>Celda 2_2</td>
+    <td rowspan="2">Celda 2_3</td>   
+  </tr>
+
+   <tr>
+    <td>Celda 3_1</td>
+    <td>Celda 3_2</td>
+    <!-- <td>Celda 3_3</td> no hace falta 
+        porque la anterior ocupa 2 filas -->  
   </tr>
 </table>
 
