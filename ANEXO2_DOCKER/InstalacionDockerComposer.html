@@ -101,9 +101,13 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
           <a href="#instalación-de-docker-desktop" class="md-toc-link">
             <p>Instalación de Docker Desktop</p>
 
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#automatizar-instalaciones-con-archivos-de-docker-composeyml" class="md-toc-link">
+            <p>Automatizar instalaciones con archivos de docker-compose.yml</p>
+
           </a></div><details style="padding:0;;padding-left:24px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#automatizar-instalaciones-con-archivos-de-docker-composeyml" class="md-toc-link"><p>Automatizar instalaciones con archivos de docker-compose.yml</p>
+          <a href="#como-trabajar-con-docker-en-varios-ordenadores-con-wsl2" class="md-toc-link"><p>Como trabajar con Docker en varios ordenadores con WSL2</p>
 </a>
           </summary>
         <div>
@@ -127,18 +131,14 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     
         </div>
       </details>
-    
-        </div>
-      </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#como-trabajar-con-docker-en-varios-ordenadores" class="md-toc-link">
-            <p>Como trabajar con Docker en varios ordenadores</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
-          <a href="#otros-comandos-de-docker" class="md-toc-link">
-            <p>Otros comandos de docker</p>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ver-logs-de-un-contenedor" class="md-toc-link">
+            <p>Ver logs de un contenedor</p>
 
           </a></div>
+        </div>
+      </details>
+    
 </div>
 <br>
 <p><a href="./InstalacionDockerComposer.pdf">Descargar estos apuntes</a></p>
@@ -177,6 +177,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><img src="image-3.png" alt="Contenedores"></p>
 <div style="page-break-after:always;"></div>
 <h2 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h2>
+<div class="admonition warning">
+<p class="admonition-title">Mejor usar WSL2</p>
+<p>Es recomendable utilizar WSL2 para trabajar con Docker en Windows, ya que ofrece un mejor rendimiento y compatibilidad con las herramientas de desarrollo basadas en Linux. Se explica más adelante en este mismo documento.</p>
+</div>
 <p>En la mayoría de instalaciones necesitamos varios contenedores para ofrecer servicios en diferentes contenedores pero dependientes entre sí. Por ejemplo, para tener un servicio LAMP deberíamos tener un servidor apache con PHP y otro servidor con mysql.</p>
 <p>En estos casos, es mucho mejor utilizar <strong>docker compose</strong>. Esta utilidad dispone de un script con extensión <strong>yml</strong> que configura estos servicios.</p>
 <p>Por lo tanto, para instalar cualquier aplicación web con docker realizaremos los siguientes pasos:</p>
@@ -185,10 +189,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><strong>Crear una carpeta</strong> para el proyecto</p>
 </li>
 <li>
-<p><strong>Copiar en la carpeta</strong> el correspondiente archivo <strong>docker-compose.yml</strong> según la aplicación que queramos instalar.</p>
+<p><strong>Copiar en la carpeta</strong> el correspondiente archivo <strong>docker-compose.yml</strong> según la aplicación que queramos instalar. Es posible que necesitemos crear alguna carpeta adicional para guardar los datos persistentes de la aplicación (bases de datos, archivos subidos, etc). Estas carpetas deben estar indicadas en el archivo docker-compose.yml. También puede ser necesario crear un archivo <strong>.env</strong> para definir variables de entorno.</p>
 </li>
 <li>
-<p>Desde el CMD estándo ubicados en la carpeta del proyecto,  <strong>ejecutar</strong> el siguiente comando:</p>
+<p>Desde el terminal estando ubicados en la carpeta del proyecto donde esta ubicado docker-compose.yml,  <strong>ejecutar</strong> el siguiente comando:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
 </code></pre><p>Si el archivo se llama de otra forma, deberemos indicar el nombre del archivo:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> <span class="token parameter variable">-f</span> archivo.yml up <span class="token parameter variable">-d</span>
@@ -200,10 +204,57 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p><img src="image-4.png" alt="Contenedor corriendo"></p>
 <p>Para <strong>acceder a la aplicación</strong> podemos ver desde aquí la URL con el puerto que está utilizando. Normalmente será localhost:puerto.</p>
 <p><img src="image-7.png" alt="URL y puerto"></p>
-<p>Si el contendedor no está en marcha al darle al play, podemos ver los logs desde los 3 puntos de la derecha del contenedor.</p>
-<p><img src="image-5.png" alt="menú logs"></p>
-<p>Veremos en el log que error ha habido si no ha arrancado correctamente.</p>
-<p><img src="image-6.png" alt="Logs"></p>
+<div style="page-break-after:always;"></div>
+<h2 id="como-trabajar-con-docker-en-varios-ordenadores-con-wsl2">Como trabajar con Docker en varios ordenadores con WSL2 </h2>
+<p>🚫 PROHIBIDO</p>
+<ul>
+<li>❌ Trabajar desde USB</li>
+<li>❌ Borrar carpetas dentro de <code>data</code></li>
+<li>❌ Apagar PC sin <code>docker compose down</code></li>
+<li>❌ Cerrar Docker Desktop con Moodle activo</li>
+</ul>
+<p><strong>✅ Pasos en WSL con Ubuntu</strong></p>
+<p>Abrir Powershell y ejecutar:</p>
+<ul>
+<li>Comprobamos si Ubuntu está instalado:</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>wsl <span class="token parameter variable">--list</span> <span class="token parameter variable">--verbose</span>
+</code></pre><ul>
+<li>Si no está instalado, lo instalamos:</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>wsl <span class="token parameter variable">--install</span> <span class="token parameter variable">-d</span> Ubuntu
+</code></pre><p>Al abrir <strong>Ubuntu</strong> por primera vez nos pedirá usuario y contraseña (solo para WSL)</p>
+<p>Una vez instalado, podemos abrir Ubuntu desde el menú inicio de windows.</p>
+<p>Suponemos que en C: tenemos la carpeta <strong>MoodlePortable</strong> con todo lo necesario para ejecutar Moodle en Docker:</p>
+<ul>
+<li><strong>docker-compose.yml</strong></li>
+<li>Carpeta <strong>data</strong> para guardar los datos, con las <strong>subcarpetas db, moodle y databd</strong> vacías inicialmente.</li>
+<li>archivo <strong>.env</strong> con las variables de entorno</li>
+</ul>
+<p><img src="image-8.png" alt="alt text"></p>
+<p><img src="image-9.png" alt="alt text"></p>
+<p>Copiamos la carpeta MoodlePortable desde C: a nuestra carpeta de usuario en Ubuntu( modificarlo si las rutas son diferentes):</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">mkdir</span> ~/Moodle
+<span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span> /mnt/c/MoodlePortable/* ~/Moodle/
+</code></pre><p>Nos movemos a la carpeta Moodle:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> ~/Moodle
+</code></pre><p>Comprobamos que tenemos todos los archivos con ls -la, y debe aparecer el docker-compose.yml, el archivo .env y la carpeta data.</p>
+<p>Si no ha creado el archivo .env, lo creamos con <strong>nano .env</strong> y pegamos su contenido.</p>
+<p>Y arrancamos los contenedores:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> compose up <span class="token parameter variable">-d</span>
+</code></pre><p>Trabajamos con Moodle desde el navegador en la URL <strong>localhost:8080</strong> o el puerto que hayamos indicado.</p>
+<p>Cuando hayamos terminado de trabajar, paramos los contenedores:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> compose down
+</code></pre><p>Y copiamos la carpeta MoodlePortable desde Ubuntu a <strong>C:</strong> para guardar los datos:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">rsync</span> <span class="token parameter variable">-av</span> <span class="token parameter variable">--progress</span> ~/Moodle/ /mnt/c/MoodlePortable/
+</code></pre><p>El uso de rsync es recomendable porque solo copiará los archivos que hayan cambiado, haciendo la copia mucho más rápida. Muestra el progreso de la copia, y es más robusto ante interrupciones.</p>
+<p>Si no tienes rsync instalado, puedes instalarlo con:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> update
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">rsync</span>
+</code></pre><div class="admonition warning">
+<p class="admonition-title">Cuidado con las rutas</p>
+<p>Estas rutas pueden variar según la instalación de WSL y la ubicación de las carpetas. Fijaos bien en la unidad donde estáis trabajando y las rutas correctas.</p>
+</div>
 <h3 id="ejemplo-de-docker-composeyml">Ejemplo de docker-compose.yml </h3>
 <h4 id="nextcloud-server">Nextcloud Server </h4>
 <pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
@@ -305,68 +356,12 @@ MOODLE_ADMIN_USER=admin
 MOODLE_ADMIN_PASS=Admin1234!
 MOODLE_ADMIN_EMAIL=admin@example.com
 </code></pre><div style="page-break-after:always;"></div>
-<h1 id="como-trabajar-con-docker-en-varios-ordenadores">Como trabajar con Docker en varios ordenadores </h1>
-<p>🚫 PROHIBIDO</p>
-<ul>
-<li>❌ Trabajar desde USB</li>
-<li>❌ Borrar carpetas dentro de <code>data</code></li>
-<li>❌ Apagar PC sin <code>docker compose down</code></li>
-<li>❌ Cerrar Docker Desktop con Moodle activo</li>
-</ul>
-<p><strong>✅ Pasos en WSL con Ubuntu (No usar Windows directamente)</strong></p>
-<p>Abrir Powershell y ejecutar:</p>
-<ul>
-<li>Comprobamos si Ubuntu está instalado:</li>
-</ul>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>wsl <span class="token parameter variable">--list</span> <span class="token parameter variable">--verbose</span>
-</code></pre><ul>
-<li>Si no está instalado, lo instalamos:</li>
-</ul>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>wsl <span class="token parameter variable">--install</span> <span class="token parameter variable">-d</span> Ubuntu
-</code></pre><p>Al abrir <strong>Ubuntu</strong> por primera vez nos pedirá usuario y contraseña (solo para WSL)</p>
-<p>Una vez instalado, podemos abrir Ubuntu desde el menú inicio de windows.</p>
-<p>Suponemos que en C: tenemos la carpeta <strong>MoodlePortable</strong> con todo lo necesario para ejecutar Moodle en Docker:</p>
-<ul>
-<li><strong>docker-compose.yml</strong></li>
-<li>Carpeta <strong>data</strong> para guardar los datos, con las <strong>subcarpetas db, moodle y databd</strong> vacías inicialmente.</li>
-<li>archivo <strong>.env</strong> con las variables de entorno</li>
-</ul>
-<p><img src="image-8.png" alt="alt text"></p>
-<p><img src="image-9.png" alt="alt text"></p>
-<p>Copiamos la carpeta MoodlePortable desde C: a nuestra carpeta de usuario en Ubuntu( modificarlo si las rutas son diferentes):</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">mkdir</span> ~/Moodle
-<span class="token function">sudo</span> <span class="token function">cp</span> <span class="token parameter variable">-r</span> /mnt/c/MoodlePortable/* ~/Moodle/
-</code></pre><p>Nos movemos a la carpeta Moodle:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> ~/Moodle
-</code></pre><p>Comprobamos que tenemos todos los archivos con ls -la, y debe aparecer el docker-compose.yml, el archivo .env y la carpeta data.</p>
-<p>Si no ha creado el archivo .env, lo creamos con <strong>nano .env</strong> y pegamos su contenido.</p>
-<p>Y arrancamos los contenedores:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> compose up <span class="token parameter variable">-d</span>
-</code></pre><p>Trabajamos con Moodle desde el navegador en la URL <strong>localhost:8080</strong> o el puerto que hayamos indicado.</p>
-<p>Cuando hayamos terminado de trabajar, paramos los contenedores:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> compose down
-</code></pre><p>Y copiamos la carpeta MoodlePortable desde Ubuntu a <strong>C:</strong> para guardar los datos:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">rsync</span> <span class="token parameter variable">-av</span> <span class="token parameter variable">--progress</span> ~/Moodle/ /mnt/c/MoodlePortable/
-</code></pre><p>El uso de rsync es recomendable porque solo copiará los archivos que hayan cambiado, haciendo la copia mucho más rápida. Muestra el progreso de la copia, y es más robusto ante interrupciones.</p>
-<p>Si no tienes rsync instalado, puedes instalarlo con:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> update
-<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">rsync</span>
-</code></pre><div class="admonition warning">
-<p class="admonition-title">Cuidado con las rutas</p>
-<p>Estas rutas pueden variar según la instalación de WSL y la ubicación de las carpetas. Fijaos bien en la unidad donde estáis trabajando y las rutas correctas.</p>
-</div>
-<h1 id="otros-comandos-de-docker">Otros comandos de docker </h1>
-<p><strong>Exportar e importar</strong></p>
-<p>Cuando tenemos un contenedor en el que hemos trabajado configurando servicios, instalando aplicaciones, etc, es muy importante crear una copia para salvar nuestro trabajo. Docker ofrece una utilidad para convertir uno de nuestros contenedores en una imagen. El comando es docker export y creará un archivo comprimido en formato tar.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>C:<span class="token punctuation">\</span><span class="token operator">&gt;</span> <span class="token function">docker</span> <span class="token builtin class-name">export</span> <span class="token parameter variable">-o</span> <span class="token string">"PATH/ARCHIVO"</span> contenedor
-</code></pre><p>Para cargar esta imagen y tenerla en nuestro repositorio local tendremos que cargarla. Para ello tenemos el comando docker import al que deberemos decir el nombre y el tag.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>C:<span class="token punctuation">\</span><span class="token operator">&gt;</span> <span class="token function">docker</span> <span class="token function">import</span> <span class="token string">"PATH/ARCHIVO"</span> nombreimagen:tag
-</code></pre><p>Si deseamos exportar un contenedor para luego importarla en otra máquina o bien simplemente como copia de seguridad, usaremos docker export y docker import</p>
-<p><strong>Crear imagen a partir de contenedor</strong></p>
-<p>Cuando tenemos un contenedor en el que hemos trabajado configurando servicios, instalando aplicaciones, etc, es posible crear una imagen (sin exportar e importar posteriormente) para crear más tarde contenedores similares.</p>
-<p>El comando que permite realizar esta acción es commit:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>C:<span class="token punctuation">\</span><span class="token operator">&gt;</span> <span class="token function">docker</span> commit contenedor imagen
-</code></pre>
+<h2 id="ver-logs-de-un-contenedor">Ver logs de un contenedor </h2>
+<p>Si el contendedor no está en marcha al darle al play, podemos ver los logs desde los 3 puntos de la derecha del contenedor.</p>
+<p><img src="image-5.png" alt="menú logs"></p>
+<p>Veremos en el log que error ha habido si no ha arrancado correctamente.</p>
+<p><img src="image-6.png" alt="Logs"></p>
+
       </div>
       
       
