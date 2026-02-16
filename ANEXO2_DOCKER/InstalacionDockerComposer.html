@@ -107,7 +107,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 
           </a></div><details style="padding:0;;padding-left:24px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#como-trabajar-con-docker-en-varios-ordenadores-con-wsl2" class="md-toc-link"><p>Como trabajar con Docker en varios ordenadores con WSL2</p>
+          <a href="#como-trabajar-con-docker-con-wsl2" class="md-toc-link"><p>Como trabajar con Docker con WSL2</p>
 </a>
           </summary>
         <div>
@@ -179,11 +179,11 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <h2 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h2>
 <div class="admonition warning">
 <p class="admonition-title">Mejor usar WSL2</p>
-<p>Es recomendable utilizar WSL2 para trabajar con Docker en Windows, ya que ofrece un mejor rendimiento y compatibilidad con las herramientas de desarrollo basadas en Linux. Se explica más adelante en este mismo documento.</p>
+<p><strong>Es MUY recomendable</strong> utilizar WSL2 para trabajar con Docker en Windows, ya que ofrece un mejor rendimiento y compatibilidad con las herramientas de desarrollo basadas en Linux. Se explica más adelante en este mismo documento.</p>
 </div>
 <p>En la mayoría de instalaciones necesitamos varios contenedores para ofrecer servicios en diferentes contenedores pero dependientes entre sí. Por ejemplo, para tener un servicio LAMP deberíamos tener un servidor apache con PHP y otro servidor con mysql.</p>
 <p>En estos casos, es mucho mejor utilizar <strong>docker compose</strong>. Esta utilidad dispone de un script con extensión <strong>yml</strong> que configura estos servicios.</p>
-<p>Por lo tanto, para instalar cualquier aplicación web con docker realizaremos los siguientes pasos:</p>
+<p>Por lo tanto, para instalar cualquier aplicación web (<strong>VER SIGUIENTE APARTADO ANTES DE HACER NADA</strong>) con docker realizaremos los siguientes pasos:</p>
 <ol>
 <li>
 <p><strong>Crear una carpeta</strong> para el proyecto</p>
@@ -205,7 +205,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p>Para <strong>acceder a la aplicación</strong> podemos ver desde aquí la URL con el puerto que está utilizando. Normalmente será localhost:puerto.</p>
 <p><img src="image-7.png" alt="URL y puerto"></p>
 <div style="page-break-after:always;"></div>
-<h2 id="como-trabajar-con-docker-en-varios-ordenadores-con-wsl2">Como trabajar con Docker en varios ordenadores con WSL2 </h2>
+<h2 id="como-trabajar-con-docker-con-wsl2">Como trabajar con Docker con WSL2 </h2>
 <p>🚫 PROHIBIDO</p>
 <ul>
 <li>❌ Trabajar desde USB</li>
@@ -245,12 +245,33 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </code></pre><p>Trabajamos con Moodle desde el navegador en la URL <strong>localhost:8080</strong> o el puerto que hayamos indicado.</p>
 <p>Cuando hayamos terminado de trabajar, paramos los contenedores:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> compose down
-</code></pre><p>Y copiamos la carpeta MoodlePortable desde Ubuntu a <strong>C:</strong> para guardar los datos:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">rsync</span> <span class="token parameter variable">-av</span> <span class="token parameter variable">--progress</span> ~/Moodle/ /mnt/c/MoodlePortable/
-</code></pre><p>El uso de rsync es recomendable porque solo copiará los archivos que hayan cambiado, haciendo la copia mucho más rápida. Muestra el progreso de la copia, y es más robusto ante interrupciones.</p>
-<p>Si no tienes rsync instalado, puedes instalarlo con:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> update
-<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> <span class="token function">rsync</span>
+</code></pre><p>Comprimimos y copiamos la carpeta <strong>MoodlePortable</strong> desde Ubuntu a <strong>C:</strong> para guardar los datos:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">tar</span> <span class="token parameter variable">-cf</span> MoodlePortable.tar MoodlePortable
+<span class="token function">cp</span> MoodlePortable.tar /mnt/c/
+</code></pre><p>Ese archivo tar lo podemos guardar en un USB o donde queramos para tener una copia de seguridad de los datos.</p>
+<p>Al trabajar en otro equipo, copiamos el archivo tar a ese equipo (en el ejemplo mi USB es la unidad D), y lo descomprimimos.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">cp</span> /mnt/d/MoodlePortable.tar ~/
+<span class="token function">tar</span> <span class="token parameter variable">-xf</span> ~/MoodlePortable.tar <span class="token parameter variable">-C</span> ~/
+</code></pre><p>Ahora ya tienes</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>~/MoodlePortable
+</code></pre><p>Ya puedes entrar a esa carpeta y arrancar los contenedores con docker compose up -d, y tendrás tu Moodle funcionando con todos los datos que tenías en el otro equipo.</p>
+<p><strong>RESUMEN DE COMANDOS</strong></p>
+<p>Pasos cada vez que quiera arrancar Moodle en un equipo nuevo con WSL2, cuando lo tengo grabado en el USB:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Copiar el archivo tar desde el USB a Ubuntu</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> /mnt/d/MoodlePortable.tar ~/
+<span class="token comment"># Descomprimir el archivo tar en la carpeta de usuario</span>
+<span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-xf</span> ~/MoodlePortable.tar <span class="token parameter variable">-C</span> ~/
+<span class="token comment"># Entrar a la carpeta del proyecto</span>
+<span class="token builtin class-name">cd</span> ~/MoodlePortable
+<span class="token comment"># Arrancar los contenedores</span>
+<span class="token function">sudo</span> <span class="token function">docker</span> compose up <span class="token parameter variable">-d</span>
+</code></pre><p>Pasos al terminar de trabajar y querer guardar los datos en el USB:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Parar los contenedores</span>
+<span class="token function">sudo</span> <span class="token function">docker</span> compose down
+<span class="token comment"># Comprimir la carpeta del proyecto en un archivo tar</span>
+<span class="token function">sudo</span> <span class="token function">tar</span> <span class="token parameter variable">-cf</span> MoodlePortable.tar MoodlePortable
+<span class="token comment"># Copiar el archivo tar al USB, o a una carpeta donde tengas permisos, por ejemplo a Documentos</span>
+<span class="token function">cp</span> MoodlePortable.tar /mnt/d/
 </code></pre><div class="admonition warning">
 <p class="admonition-title">Cuidado con las rutas</p>
 <p>Estas rutas pueden variar según la instalación de WSL y la ubicación de las carpetas. Fijaos bien en la unidad donde estáis trabajando y las rutas correctas.</p>
