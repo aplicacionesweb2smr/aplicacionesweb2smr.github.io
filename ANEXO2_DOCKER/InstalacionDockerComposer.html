@@ -208,13 +208,13 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <h2 id="como-trabajar-con-docker-con-wsl2">Como trabajar con Docker con WSL2 </h2>
 <p>🚫 PROHIBIDO</p>
 <ul>
-<li>❌ Trabajar desde USB</li>
-<li>❌ Borrar carpetas dentro de <code>data</code></li>
-<li>❌ Apagar PC sin <code>docker compose down</code></li>
-<li>❌ Cerrar Docker Desktop con Moodle activo</li>
+<li>❌ NO trabajar desde USB</li>
+<li>❌ NO borrar carpetas dentro de <code>data</code></li>
+<li>❌ NO apagar PC sin <code>docker compose down</code></li>
+<li>❌ NO cerrar Docker Desktop con Moodle activo</li>
 </ul>
 <p><strong>✅ Pasos en WSL con Ubuntu</strong></p>
-<p>Abrir Powershell y ejecutar:</p>
+<p>Abrir <strong>Powershell</strong> y ejecutar:</p>
 <ul>
 <li>Comprobamos si Ubuntu está instalado:</li>
 </ul>
@@ -223,7 +223,8 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li>Si no está instalado, lo instalamos:</li>
 </ul>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>wsl <span class="token parameter variable">--install</span> <span class="token parameter variable">-d</span> Ubuntu
-</code></pre><p>Al abrir <strong>Ubuntu</strong> por primera vez nos pedirá usuario y contraseña (solo para WSL)</p>
+</code></pre><p>También se puede instalar desde la Microsoft Store buscando "Ubuntu" y eligiendo la versión que queramos.</p>
+<p>Al abrir <strong>Ubuntu</strong> por primera vez nos pedirá usuario y contraseña (solo para WSL)</p>
 <p>Una vez instalado, podemos abrir Ubuntu desde el menú inicio de windows.</p>
 <p>Suponemos que en C: tenemos la carpeta <strong>MoodlePortable</strong> con todo lo necesario para ejecutar Moodle en Docker:</p>
 <ul>
@@ -240,23 +241,31 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> ~/Moodle
 </code></pre><p>Comprobamos que tenemos todos los archivos con ls -la, y debe aparecer el docker-compose.yml, el archivo .env y la carpeta data.</p>
 <p>Si no ha creado el archivo .env, lo creamos con <strong>nano .env</strong> y pegamos su contenido.</p>
-<p>Y arrancamos los contenedores:</p>
+<p>Una vez tenemos todo listo,nos aseguramos de que Docker Desktop está abierto y funcionando.</p>
+<p>Además nos aseguramos de que WSL2 está utilizando Docker Desktop, para ello en Docker Desktop vamos a <strong>Settings &gt; Resources &gt; WSL Integration</strong> y activamos la integración con nuestra distribución de Ubuntu.</p>
+<p><img src="image-10.png" alt="alt text"></p>
+<p><strong>Desde la carpeta donde tenemos el docker-compose.yml</strong>, arrancamos los contenedores:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> compose up <span class="token parameter variable">-d</span>
-</code></pre><p>Trabajamos con Moodle desde el navegador en la URL <strong>localhost:8080</strong> o el puerto que hayamos indicado.</p>
+</code></pre><div class="admonition info">
+<p class="admonition-title">Este comando debemos lanzarlo siempre desde la carpeta donde tenemos el docker-compose.yml, ya que es ahí donde se encuentran las instrucciones para crear los contenedores y montar los volúmenes.</p>
+</div>
+<p>La primera vez que lo lancemos, Docker descargará las imágenes necesarias para crear los contenedores, lo que puede tardar un poco dependiendo de la velocidad de tu conexión a internet. Podemos ver el log, para ver cómo va la instalación, desde la sección de logs, explicada más adelante.</p>
+<p>Trabajamos con Moodle desde el navegador en la URL <strong>localhost:8080</strong> o el puerto que hayamos indicado.</p>
 <p>Cuando hayamos terminado de trabajar, paramos los contenedores:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">docker</span> compose down
-</code></pre><p>Comprimimos y copiamos la carpeta <strong>MoodlePortable</strong> desde Ubuntu a <strong>C:</strong> para guardar los datos:</p>
+</code></pre><p>También lo podemos hacer desde Docker Desktop, pero es mejor hacerlo desde la terminal para asegurarnos de que se para todo correctamente.</p>
+<p>Comprimimos y copiamos la carpeta <strong>MoodlePortable</strong> desde Ubuntu a <strong>C:</strong> para guardar los datos:</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">tar</span> <span class="token parameter variable">-cf</span> MoodlePortable.tar MoodlePortable
 <span class="token function">cp</span> MoodlePortable.tar /mnt/c/
 </code></pre><p>Ese archivo tar lo podemos guardar en un USB o donde queramos para tener una copia de seguridad de los datos.</p>
-<p>Al trabajar en otro equipo, copiamos el archivo tar a ese equipo (en el ejemplo mi USB es la unidad D), y lo descomprimimos.</p>
+<p>Para seguir trabajando en otro equipo, copiamos el archivo tar a ese equipo (en el ejemplo mi USB es la unidad D), y lo descomprimimos.</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">cp</span> /mnt/d/MoodlePortable.tar ~/
 <span class="token function">tar</span> <span class="token parameter variable">-xf</span> ~/MoodlePortable.tar <span class="token parameter variable">-C</span> ~/
-</code></pre><p>Ahora ya tienes</p>
+</code></pre><p>Ahora ya tienes la carpeta MoodlePortable con todo lo necesario para arrancar los contenedores y seguir trabajando con Moodle en ese equipo.</p>
 <pre data-role="codeBlock" data-info="" class="language-text"><code>~/MoodlePortable
-</code></pre><p>Ya puedes entrar a esa carpeta y arrancar los contenedores con docker compose up -d, y tendrás tu Moodle funcionando con todos los datos que tenías en el otro equipo.</p>
+</code></pre><p>Ya puedes entrar a esa carpeta y arrancar los contenedores con <em>docker compose up -d</em>, y tendrás tu Moodle funcionando con todos los datos que tenías en el otro equipo.</p>
 <p><strong>RESUMEN DE COMANDOS</strong></p>
-<p>Pasos cada vez que quiera arrancar Moodle en un equipo nuevo con WSL2, cuando lo tengo grabado en el USB:</p>
+<p>Pasos cada vez que quiera arrancar Moodle en un equipo nuevo con WSL2, cuando lo tengo grabado en el USB (unidad D):</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Copiar el archivo tar desde el USB a Ubuntu</span>
 <span class="token function">sudo</span> <span class="token function">cp</span> /mnt/d/MoodlePortable.tar ~/
 <span class="token comment"># Descomprimir el archivo tar en la carpeta de usuario</span>
