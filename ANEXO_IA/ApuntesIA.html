@@ -155,6 +155,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <li>¿Cómo se puede verificar? Establecer métodos y criterios de contraste.</li>
 </ul>
 <h2 id="actividades-prácticas">Actividades prácticas </h2>
+<p>Ante una actividad usando IA es muy recomendable entregar <strong>evidencias del proceso que se ha seguido</strong>: prompt final e iteraciones, fuentes consultadas, decisiones tomadas y reflexión sobre límites de la IA.</p>
 <ul>
 <li>
 <p><strong>Comparación de modelos</strong>: Plantear la misma pregunta a dos IAs, por ejemplo, Copilot y Gemini. Analizar diferencias, justificar cuál resulta más fiable y por qué.</p>
@@ -193,6 +194,59 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <h2 id="metodología-de-trabajo">Metodología de trabajo </h2>
 <p>El modelo VESS, originado en Project Zero de Harvard, impulsa una cultura de pensamiento para formar personas capaces de vivir una vida equilibrada, con sentido y sabiduría.</p>
 <p><img src="image-1.png" alt="alt text"></p>
+<hr>
+<p>Transformación de la Evidencia Competencial sin Modificar los Resultados de Aprendizaje¶<br>
+La normativa del CNCP establece que los Resultados de Aprendizaje son los descriptores de lo que el alumnado debe ser capaz de hacer, saber y comprender. Estos rara vez requieren modificación formal. Sin embargo, la irrupción de la IAGen cambia profundamente la naturaleza de la evidencia competencial requerida para demostrar la consecución de dichos RA.</p>
+<p>La clave no es redefinir "qué" se aprende, sino "cómo" se demuestra ese aprendizaje, integrando las nuevas herramientas y metodologías que la IAGen posibilita. La evidencia competencial debe reflejar el uso crítico, ético y eficiente de la IA, no meramente su existencia.</p>
+<p>Principios para la adaptación de la evidencia competencial:</p>
+<p>Enfoque en la Curación y Validación:</p>
+<p>Anterior: El alumno genera el 100% del artefacto (código, script, informe).<br>
+Con IAGen: El alumno colabora con la IAGen en la generación del artefacto. La evidencia se traslada a la capacidad de:<br>
+Formular prompts adecuados y precisos.<br>
+Evaluar críticamente la salida de la IA (precisión, eficiencia, seguridad, cumplimiento de requisitos).<br>
+Depurar, refactorizar y mejorar el artefacto generado por la IA.<br>
+Justificar las decisiones de aceptación o modificación.<br>
+Meta-Cognición y Proceso:</p>
+<p>Anterior: Énfasis en el resultado final del aprendizaje.<br>
+Con IAGen: Mayor énfasis en el proceso de resolución de problemas, incluyendo la interacción con la IA. La evidencia incluirá:<br>
+Registro de los prompts utilizados.<br>
+Análisis de las diferentes iteraciones y resultados de la IA.<br>
+Reflexión sobre la eficacia de la IAGen en diferentes fases del proyecto.<br>
+Documentación de las limitaciones y riesgos asociados al uso de la IAGen.<br>
+Habilidad para Co-Crear con la IA:</p>
+<p>Anterior: Dominio de herramientas y lenguajes para la creación directa.<br>
+Con IAGen: Dominio de herramientas y lenguajes para interactuar con la IA y para adaptar sus salidas. La evidencia demostrará la capacidad de:<br>
+Integrar soluciones generadas por IA con componentes manuales.<br>
+Utilizar la IA para explorar múltiples soluciones o enfoques.<br>
+Personalizar y entrenar (en su caso) modelos de IA para tareas específicas.<br>
+Pensamiento Crítico y Ética:</p>
+<p>Anterior: Aplicación de principios éticos generales.<br>
+Con IAGen: Aplicación específica de principios éticos al uso de la IA (sesgos, privacidad, accountability). La evidencia contemplará:<br>
+Identificación de posibles sesgos en los resultados de la IAGen.<br>
+Garantía de la privacidad y seguridad de los datos utilizados o generados por la IA.<br>
+Consideraciones sobre la autoría y la responsabilidad en productos co-creados.<br>
+Comunicación y Explicabilidad (XAI):</p>
+<p>Anterior: Documentación tradicional.<br>
+Con IAGen: Capacidad de explicar el funcionamiento y las decisiones de los sistemas basados en IA (incluso si la IA los generó). La evidencia incluirá:<br>
+Explicaciones sobre cómo la IAGen contribuyó a la solución.<br>
+Análisis de la robustez y fiabilidad de las soluciones asistidas por IA.<br>
+Ejemplo Concreto de Adaptación de Evidencia Competencial (UC0228_3: "Programar en entornos de cuarta generación y herramientas CASE, utilizando tecnologías web.")¶<br>
+RA1: Programa, comprobando los resultados, la funcionalidad prevista de las aplicaciones informáticas, para incorporar elementos software nuevos o actualizar los existentes.<br>
+CE1.1: Se han utilizado herramientas específicas de entornos de programación siguiendo los criterios establecidos.<br>
+CE1.2: Se ha comprobado la calidad y eficiencia del código mediante los sistemas de verificación adecuados.<br>
+CE1.3: Se han documentado las aplicaciones informáticas según la normativa aplicable.</p>
+<p>Adaptación de la evidencia sin modificar los RA/CE:</p>
+<p>Contexto tradicional para el RA1: El alumno desarrolla un módulo de aplicación web que gestiona la autenticación de usuarios. La evidencia incluye el código fuente del módulo, tests unitarios manuales y documentación técnica elaborada por el alumno.</p>
+<p>Contexto con IAGen para el RA1: El alumno utiliza una IAGen para generar el boilerplate de un módulo de autenticación para una aplicación web.</p>
+<p>Evidencia del CE1.1 (Uso de herramientas):<br>
+Antes: Uso directo del IDE, compilador, etc.<br>
+Ahora: Registro de los prompts utilizados en el AI-Code Assistant (ej., "Genera un componente de autenticación de usuarios en React con gestión de JWT para un backend Node.js"), configuración del entorno para integrar la salida de la IA, y justificación de la elección de la IAGen específica para esa tarea.</p>
+<p>Evidencia del CE1.2 (Calidad y eficiencia):</p>
+<p>Antes: El alumno realiza revisiones de código, refactoriza y ejecuta tests manuales.<br>
+Ahora: El alumno evalúa el código generado por la IAGen identificando posibles vulnerabilidades (ej., inyección SQL, manejo incorrecto de tokens), ineficiencias o no conformidades con los estándares de codificación del proyecto. Modifica el código generado para corregir estos problemas. Ejecuta tests unitarios y de integración (algunos generados por IAGen, otros desarrollados por el alumno) y justifica las modificaciones realizadas al código original de la IAGen para mejorar su calidad y eficiencia. Presenta informe de validación del código.</p>
+<p>Evidencia del CE1.3 (Documentación):</p>
+<p>Antes: El alumno redacta la documentación técnica de la aplicación, incluyendo estructura, funcionamiento, APIs, etc.<br>
+Ahora: El alumno utiliza la IAGen para generar secciones de la documentación técnica (ej., explicación de funciones, diagramas de clase en base al código refactorizado), pero la evidencia se centra en la capacidad del alumno para revisar, corregir, ampliar y contextualizar esa documentación. Se requiere que el alumno justifique la información generada por la IA, añada detalles específicos del proyecto, garantice la coherencia con otros apartados de la documentación y demuestre completa comprensión del sistema, independientemente de que la IAGen haya contribuido a la redacción. Debe ser capaz de detectar y corregir inconsistencias o hallucinations de la IAGen.</p>
 
       </div>
       

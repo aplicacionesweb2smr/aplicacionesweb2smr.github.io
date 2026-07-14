@@ -335,14 +335,15 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
       <span class="token comment"># Base de datos persistente dentro del proyecto</span>
       <span class="token punctuation">-</span> ./data/db<span class="token punctuation">:</span>/var/lib/mysql
-    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">&gt;</span><span class="token scalar string">
-      --innodb_buffer_pool_size=256M
-      --innodb_log_file_size=64M
-      --innodb_flush_log_at_trx_commit=2
-      --skip-name-resolve</span>
+    <span class="token comment">#command: &gt;</span><span class="token scalar string">
+    #  --innodb_buffer_pool_size=256M
+    #  --innodb_log_file_size=64M
+    #  --innodb_flush_log_at_trx_commit=2
+    #  --skip-name-resolve</span>
 
   <span class="token key atrule">moodle</span><span class="token punctuation">:</span>
-    <span class="token key atrule">image</span><span class="token punctuation">:</span> bitnamilegacy/moodle<span class="token punctuation">:</span>latest
+    <span class="token comment">#image: bitnamilegacy/moodle:latest</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> erseco/alpine<span class="token punctuation">-</span>moodle<span class="token punctuation">:</span>v5.1.0
     <span class="token key atrule">container_name</span><span class="token punctuation">:</span> moodle_app
     <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
     <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
@@ -364,10 +365,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
       <span class="token key atrule">MOODLE_EMAIL</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span>MOODLE_ADMIN_EMAIL<span class="token punctuation">}</span>
 
       <span class="token comment"># Ajustes conservadores (equipos lentos)</span>
-      <span class="token key atrule">PHP_MEMORY_LIMIT</span><span class="token punctuation">:</span> 384M
-      <span class="token key atrule">PHP_MAX_EXECUTION_TIME</span><span class="token punctuation">:</span> <span class="token number">300</span>
-      <span class="token key atrule">PHP_POST_MAX_SIZE</span><span class="token punctuation">:</span> 64M
-      <span class="token key atrule">PHP_UPLOAD_MAX_FILESIZE</span><span class="token punctuation">:</span> 64M
+      <span class="token comment">#PHP_MEMORY_LIMIT: 384M</span>
+      <span class="token comment">#PHP_MAX_EXECUTION_TIME: 300</span>
+      <span class="token comment">#PHP_POST_MAX_SIZE: 64M</span>
+      <span class="token comment">#PHP_UPLOAD_MAX_FILESIZE: 64M</span>
 
     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
       <span class="token comment"># Moodle y moodledata dentro del proyecto</span>
