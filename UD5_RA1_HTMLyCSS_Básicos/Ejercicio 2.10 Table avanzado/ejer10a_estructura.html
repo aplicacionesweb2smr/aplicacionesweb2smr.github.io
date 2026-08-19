@@ -1,0 +1,112 @@
+<!-- Actividad 2_10 
+
+Añade todas las propiedades y valores de CSS necesarias para que el resultado sea como se muestra en la imagen adjunta: actividad2_10.png
+Extrae en un archivo externo CSS denominado estilo10a.css el contenido interno de la etiqueta <style> y sustitúyelo por la etiqueta <link>
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tablas Avanzadas</title>
+<style>
+/* --------------------- */
+/* Estilos por etiquetas */
+/* --------------------- */
+	table {
+		FUENTE-TEXTO :Verdana;
+	}
+	thead {
+		COLOR-TEXTO: blanco;
+		COLOR-FONDO: marrón-oscuro;
+	}
+	tbody {
+		COLOR-TEXTO: blue;
+	}
+	tfoot {
+		COLOR-TEXTO: marrón-oscuro ;
+		COLOR-FONDO: naranja-claro;
+	}
+
+	table, th, td {
+		BORDER: 1px linea-continua color-negro;
+		MARGEN-INTERIOR: 5px;
+	}
+
+	th {
+		GROSOR-FUENTE:normal; // Por defecto es bold y center
+    }
+	
+	td {
+		ALINEACIÓN-DEL-TEXTO: derecha; // Para las cantidades en euros
+	}
+
+/* --------------------- */
+/* Estilos por clases */
+/* --------------------- */
+	.primeraColumna {
+		ALINEACIÓN-DEL-TEXTO: centrado;
+		COLOR: negro;
+		GROSOR-FUENTE: negrita;
+	}
+	
+</style>
+</head>
+<body>
+
+<table border="1" style="border-collapse:collapse; width:400px; margin:0 auto;">
+  <!-- Estilos de columnas  -->
+  <colgroup>
+    <col style="COOR-FONDO: amarillo; ANCHURA:40%;">
+    <col span="2" style="COLOR-FONDO: gris-claro; ANCHURA:30%;">
+  </colgroup>  
+  <!-- TÍTULO  -->
+  <caption>
+	<h3>Ingresos y gastos diarios</h3>
+  </caption>
+  <!-- CABECERA  -->
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Ingresos</th>
+      <th>Gastos</th>
+    </tr>
+  </thead>
+  <!-- CUERPO  -->
+  <tbody>
+    <tr>
+      <td class="primeraColumna">03/10/2017</td>
+      <td>1000 &euro;</td>
+      <td>830 &euro;</td>
+    </tr>
+    <tr>
+      <td class="primeraColumna">04/10/2017</td>
+      <td>1150 &euro;</td>
+      <td>920 &euro;</td>
+    </tr>
+    <tr>
+      <td class="primeraColumna">05/10/2017</td>
+      <td>984 &euro;</td>
+      <td>763 &euro;</td>
+    </tr>
+  </tbody>
+  <!-- PIE DE TABLA  -->
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td>3134 &euro;</td>
+      <td>2513 &euro;</td>
+    </tr>
+    <tr style="font-weight:bold">
+      <td colspan="2">Beneficios</td>
+      <td>621 &euro;</td>
+    </tr>
+  </tfoot>
+  
+</table>
+
+
+
+  <!-- FIN DE TU CÓDIGO HTML  -->
+</body>
+</html>

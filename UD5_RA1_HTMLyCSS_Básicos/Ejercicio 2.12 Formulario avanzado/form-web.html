@@ -1,0 +1,218 @@
+<!-- Actividad 2_12 
+
+A partir de estos archivos debes obtener un formulario para solicitar una cita médica como el de la imagen centromedico.png.
+Al pulsar Enviar debe mostrar una imagen con los nombres que aparecen en datosrecibidos.png 
+
+Añade los textos y los campos necesarios (con sus identificadores y nombres) para crear el formulario. 
+Revisa las etiquetas (label) asociadas a los campos, que al pinchar en ellas, accedan a cada uno de los campos.
+
+Los campos que deseamos añadir son:
+- Nombre/Apellidos:	anchura=250px, número máximo de caracteres=50
+- Teléfono móvil: anchura=80px, número máximo de caracteres=9
+- Email: anchura=250px, número máximo de caracteres=70
+- Fecha
+- Hora: anchura=80px
+- Especialidad
+	ALERGOLOGÍA
+	CARDIOLOGÍA
+	DERMATOLOGÍA
+	DIGESTIVO
+	NEUROLOGÍA
+	OFTALMOLOGÍA
+- Motivo de la cita: Debe haber un área de texto con al menos 6 filas
+- Solicita mensaje (con 3 opciones de botón): SMS, Whatsapp, Email.
+
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Formulario</title>
+  <link rel="stylesheet" type="text/css" href="form-estilo.css"> 
+  <link rel="stylesheet" type="text/css" href="form-estilo-colores.css"> 
+</head>
+<body>
+<!-- COMPROBAR ESTADO -->
+
+<div class="formulario">
+	<div class="formulario-interno">
+	
+	
+	
+	  <form 
+			id="idFormulario" 
+			name="nFormulario" 
+			method="GET" 
+			action="form-resul.html">
+		
+		<div class="form_description">
+			<h2>Título del Form</h2>
+			<p>Descripción del formulario.</p>
+		</div>						
+
+		<!-- TEXTO -->
+		<div class="caja">
+			<div class="caja-label">
+				<label for="idTexto1">Texto </label>
+			</div>
+			
+			<div class="caja-input">
+				<input 
+					id="idTexto1" 
+					name="nTexto1"
+					
+						type="text" 
+						maxlength="255" 
+						value=""
+					/> 
+			</div>
+		</div> 
+
+		<!-- PASSWORD -->
+		<div class="caja">
+			<div class="caja-label">
+				<label for="idTexto2">Contraseña </label>
+			</div>
+			
+			<div class="caja-input">
+				<input 
+					id="idTexto2" 
+					name="nTexto2"
+					
+						type="password" 
+						maxlength="20" 
+						value=""
+					/> 
+			</div>
+		</div> 		
+
+		<!-- FICHERO -->
+		<div class="caja">
+			<div class="caja-label">
+				<label for="idTexto3">Fichero </label>
+			</div>
+			
+			<div class="caja-input">
+				<input 
+					id="idFile" 
+					name="nFile"
+					
+						type="file" 
+						maxlength="20" 
+						value=""
+					/> 
+			</div>
+		</div> 	
+		
+		<!-- FECHA -->
+		<div class="caja">
+			<div class="caja-label">
+				<label for="idTexto4">Fecha </label>
+			</div>
+			
+			<div class="caja-input">
+				<input 
+					id="idFecha" 
+					name="nFecha"
+					
+						type="date" 
+						maxlength="10" 
+						value=""
+					/> 
+			</div>
+		</div> 			
+		
+		<!-- ÁREA TEXTO -->
+		<div class="caja" >
+			<div class="caja-label-textarea">
+				<label for="idAreaTexto">Área Texto </label>
+			</div>
+			
+			<div class="caja-input-textarea">
+				<textarea 
+					id="idAreaTexto" 
+					name="nAreaTexto"
+					
+						rows="5" 
+					></textarea> 
+			</div>
+		</div> 
+		
+	
+		<!-- BOTONES RADIO -->
+		<div class="caja" >
+			<div class="caja-label">
+				<label for="idRadio1">Botones Radio</label>
+			</div>
+			
+			<div class="caja-input">
+				<input 
+					id="idRadio1" 
+					name="nRadio"
+						type="radio" 
+						value="1"
+					/> 
+				<label for="idRadio1">SI</label>
+				<input 
+					id="idRadio2" 
+					name="nRadio"
+						type="radio" 
+						value="2"
+					/> 
+				<label for="idRadio2">NO</label>
+								
+			</div>
+		</div> 
+
+		<!-- BOTÓN CHECK -->
+		<div class="caja" >
+			<div class="caja-label">
+				<label for="idCheck">Botón Check</label>
+			</div>
+			
+			<div class="caja-input">
+				<input 
+					id="idCheck" 
+					name="nCheck"
+						type="checkbox" 
+						value="on"
+					/> 
+			</div>
+		</div> 
+
+		
+		<!-- SELECT -->
+		<div class="caja" >
+			<div class="caja-label">
+				<label for="idSelect">Selección</label>
+			</div>
+			
+			<div class="caja-input">
+				<select 
+					id="idSelect" 
+					name="nSelect"> 
+					<option value="1">UNO</option>
+					<option value="2">DOS</option>
+					<option value="3">TRES</option>
+					<option value="4">CUATRO</option>
+					<option value="5">CINCO</option>
+				</select>
+			</div>
+		</div> 		
+		
+		<!-- BOTÓN GRABAR -->
+		<div class="caja-botonera">
+			<input 
+				id="idGrabar"
+				name="btnGrabar"
+				type="submit"  
+				value="Enviar" />
+		</div>
+
+	  </form>	
+	</div>
+</div>
+
+<!-- FIN DE TU CÓDIGO HTML  -->
+</body>
+</html>

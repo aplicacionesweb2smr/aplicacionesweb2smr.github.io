@@ -1,0 +1,103 @@
+<!-- Actividad 10b
+Añade todas las propiedades y valores de CSS necesarias para que el resultado sea como se muestra en la imagen actividad_10b.png
+Añade las etiquetas de tabla avanzadas que falten (caption, thead, tbody, tfoot)
+Añade los atributos rowspan y colspan que sean necesarios para realizar las combinaciones de celdas.
+Extrae en un archivo externo CSS denominado estilo10b.css el contenido interno de la etiqueta <style> y sustitúyelo por la etiqueta <link>
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tablas Avanzadas</title>
+<style>
+/* --------------------- */
+/* Estilos por etiquetas */
+/* --------------------- */
+	table {
+		FUENTE-TEXTO :Verdana;
+	}
+	thead {
+		COLOR-TEXTO: blanco;
+		COLOR-FONDO: marrón-oscuro;
+	}
+	tbody {
+		COLOR-TEXTO: blue;
+	}
+	tfoot {
+		COLOR-TEXTO: marrón-oscuro ;
+		COLOR-FONDO: naranja-claro;
+	}
+
+	table, th, td {
+		BORDER: 1px linea-continua color-negro;
+		MARGEN-INTERIOR: 5px;
+	}
+
+	th {
+		GROSOR-FUENTE:normal; /* Por defecto la etiqueta TH es bold y center */
+    }
+	
+	td {
+		ALINEACIÓN-DEL-TEXTO: derecha; /* Para las cantidades en euros y resto de celdas */
+	}
+
+</style>
+</head>
+<body>
+
+<table border="1" style="border-collapse:collapse; width:500px; margin:0 auto;">
+  <!-- TÍTULO  -->
+
+  <!-- CABECERA  -->
+    <tr>
+      <th>Tienda</th>
+      <th>Fecha</th>
+      <th>Ingresos</th>
+      <th>Gastos</th>
+    </tr>
+  <!-- CUERPO  -->
+    <tr>
+      <td>ALICANTE</td>
+      <td>03/10/2017</td>
+      <td>1000 &euro;</td>
+      <td>830 &euro;</td>
+    </tr>
+    <tr>
+      <td>ALICANTE</td>
+      <td>04/10/2017</td>
+      <td>1150 &euro;</td>
+      <td>920 &euro;</td>
+    </tr>
+    <tr>
+      <td>MADRID</td>
+      <td>03/10/2017</td>
+      <td>2500 &euro;</td>
+      <td>1410 &euro;</td>
+    </tr>
+    <tr>
+      <td>MADRID</td>
+      <td>05/10/2017</td>
+      <td>984 &euro;</td>
+      <td>763 &euro;</td>
+    </tr>
+  <!-- PIE DE TABLA  -->
+    <tr>
+      <td>Total</td>
+      <td>Total</td>
+      <td>5634 &euro;</td>
+      <td>3923 &euro;</td>
+    </tr>
+    <tr style="font-weight:bold">
+      <td>Beneficios</td>
+      <td>Beneficios</td>
+      <td>Beneficios</td>
+      <td>1711 &euro;</td>
+    </tr>
+</table>
+
+
+
+  <!-- FIN DE TU CÓDIGO HTML  -->
+</body>
+</html>
