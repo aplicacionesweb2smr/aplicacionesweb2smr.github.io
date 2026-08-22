@@ -96,7 +96,7 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
   <a href="#restauración-de-la-copia-de-seguridad-hosting-o-local" class="md-toc-link">Restauración de la copia de seguridad (hosting o local)</a>
 </div>
 <div class="md-toc-link-wrapper" data-level="0">
-  <a href="#restauración-de-un-duplicator-en-cdmon" class="md-toc-link">Restauración de un Duplicator en CDMOn</a>
+  <a href="#restauración-de-un-duplicator-en-cdmon" class="md-toc-link">Restauración de un Duplicator en CDMON</a>
 </div>
 </div>
 <br>
@@ -118,23 +118,23 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 </ul>
 </li>
 </ol>
-<p><img src="images/image.png" alt="Datos FTP CDMON"></p>
+<p><img src="images/cdmon/image.png" alt="Datos FTP CDMON"></p>
 <ol start="4">
 <li>Haz clic en <strong>Conectar</strong> para acceder a tu servidor.</li>
 <li>En la ventana de la derecha, <strong>navega hasta la carpeta</strong> donde está instalado WordPress en tu hosting.</li>
 <li><strong>Selecciona todos los archivos</strong> y carpetas de WordPress y haz clic derecho en ellos.</li>
 <li>Selecciona <strong>Descargar</strong> para copiar los archivos a tu ordenador. Puedes elegir la carpeta de destino en tu PC o crear una nueva. También puedes hacerlo arrastrando y soltando los archivos (<strong>sin seleccionar la carpeta ".."</strong>).<br>
-<img src="images/image-1.png" alt="Crear directorio desde Filezilla"></li>
+<img src="images/cdmon/image-1.png" alt="Crear directorio desde Filezilla"></li>
 </ol>
-<p><img src="images/image-2.png" alt="Arrastrar y soltar"></p>
+<p><img src="images/cdmon/image-2.png" alt="Arrastrar y soltar"></p>
 <p>Toda esta parte también se puede hacer desde el <strong>panel de control de CDMon</strong>, en la sección de <strong>Gestor de Archivos</strong>, pero es recomendable hacerlo con un Cliente FTP como FileZilla.</p>
 <p><strong>2. Exportar la Base de Datos</strong></p>
 <p>Para exportar la base de datos de tu sitio en CDMon, sigue estos pasos:</p>
 <ol>
 <li><strong>Accede al panel de control de CDMon</strong> y ve a <strong>Bases de Datos &gt; phpMyAdmin</strong>.</li>
 </ol>
-<p><img src="images/image-3.png" alt="Acceso phpMyAdmin"></p>
-<p><img src="images/image-4.png" alt="USuario y contraseña CDMON de BBDD"></p>
+<p><img src="images/cdmon/image-3.png" alt="Acceso phpMyAdmin"></p>
+<p><img src="images/cdmon/image-4.png" alt="USuario y contraseña CDMON de BBDD"></p>
 <ol start="2">
 <li><strong>Selecciona la base de datos</strong> de tu sitio en el panel de la izquierda.</li>
 <li>Haz clic en <strong>Exportar</strong> en la parte superior de la pantalla.</li>
@@ -181,10 +181,10 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <p>Para importar la base de datos en un nuevo entorno, sea local o en otro hosting, sigue estos pasos:</p>
 <p><strong>2.1. Crea una nueva base de datos</strong></p>
 <p>Desde la sección de base de datos de CDMON no me permite crear la base de datos desde ohomyadmin, por lo que se debe hacer desde el panel de control de CDMon, MySQL.</p>
-<p><img src="images/image-5.png" alt="panel base de datos"></p>
-<p><img src="images/image-6.png" alt="crear base de datos"></p>
+<p><img src="images/cdmon/image-5.png" alt="panel base de datos"></p>
+<p><img src="images/cdmon/image-6.png" alt="crear base de datos"></p>
 <p>La ponemos nombre de la base de datos y uft8 y pulsamos crear.</p>
-<p><img src="images/image-7.png" alt="nombre base de datos"></p>
+<p><img src="images/cdmon/image-7.png" alt="nombre base de datos"></p>
 <div class="admonition info">
 <p class="admonition-title">Si la restauración es en Xampp, crea una base de datos desde phpmyadmin directamente.</p>
 </div>
@@ -221,18 +221,18 @@ Si usas un plugin de caché, <strong>elimina la caché</strong> para que el siti
 <ul>
 <li>Revisa los <strong>logs de errores</strong>: Puedes ver los errores en el archivo de logs de tu servidor o en el panel de control de CDMon. O cambiar parámetros de PHP que necesitemos.</li>
 </ul>
-<p><img src="images/image-9.png" alt="Servidor"></p>
+<p><img src="images/cdmon/image-9.png" alt="Servidor"></p>
 <ul>
 <li><strong>Firewall</strong>: Asegúrate de que el firewall no está bloqueando la conexión.<br>
 Desde CDMon, en la sección de <strong>Seguridad</strong>, puedes ver si hay algún bloqueo. Puedes desactivar el firewall si es necesario para la restauración, y luego volver a activarlo.</li>
 </ul>
-<p><img src="images/image-8.png" alt="seguridad"></p>
+<p><img src="images/cdmon/image-8.png" alt="seguridad"></p>
 <ul>
 <li><strong>Permisos de Archivos</strong>: Comprueba que los archivos y carpetas tienen los permisos correctos.</li>
 <li>Comprueba que el archivo <strong>wp-config.php</strong> tiene los datos correctos.</li>
 <li><strong>Enlaces Permanentes</strong>: Si los enlaces no funcionan, regenera el archivo .htaccess en Ajustes &gt; Enlaces permanentes. O renombra el archivo .htaccess a .htaccess_old.</li>
 </ul>
-<h2 id="restauración-de-un-duplicator-en-cdmon">Restauración de un Duplicator en CDMOn </h2>
+<h2 id="restauración-de-un-duplicator-en-cdmon">Restauración de un Duplicator en CDMON </h2>
 <p>Para restaurar un duplicator en CDMon, deberás copiar a través de FTP los archivos del duplicator, el installer.php y el archivo .zip generado por Duplicator.</p>
 <ol>
 <li><strong>Sube los archivos</strong> del duplicator a la carpeta raíz de tu hosting.</li>
