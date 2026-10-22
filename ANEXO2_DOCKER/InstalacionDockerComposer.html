@@ -95,8 +95,15 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 <div class="md-toc-link-wrapper" data-level="1">
   <a href="#instalación-de-docker-desktop" class="md-toc-link">Instalación de Docker Desktop</a>
 </div>
+<div class="md-toc-link-wrapper" data-level="1">
+  <a href="#ver-logs-de-un-contenedor" class="md-toc-link">Ver logs de un contenedor</a>
+</div>
+</details>
+<div class="md-toc-link-wrapper" data-level="0">
+  <a href="#mover-contenedores-a-otro-equipo" class="md-toc-link">Mover contenedores a otro equipo</a>
+</div>
 <details open="" class="md-toc-details">
-<summary class="md-toc-link-wrapper" data-level="1">
+<summary class="md-toc-link-wrapper" data-level="0">
   <a href="#automatizar-instalaciones-con-archivos-de-docker-composeyml" class="md-toc-link">Automatizar instalaciones con archivos de docker-compose.yml</a>
 </summary>
 <details open="" class="md-toc-details">
@@ -104,16 +111,15 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
   <a href="#ejemplos-de-docker-composeyml" class="md-toc-link">Ejemplos de docker-compose.yml</a>
 </summary>
 <div class="md-toc-link-wrapper" data-level="3">
-  <a href="#nextcloud-server" class="md-toc-link">Nextcloud Server</a>
+  <a href="#nextcloud-server-con-mariadb-para-más-de-4-o-5-usuarios-concurrentes" class="md-toc-link">Nextcloud Server con MariaDB (para más de 4 o 5 usuarios concurrentes)</a>
+</div>
+<div class="md-toc-link-wrapper" data-level="3">
+  <a href="#nextcloud-server-con-sqlite-más-ligera" class="md-toc-link">Nextcloud Server con SQLite (más ligera)</a>
 </div>
 <div class="md-toc-link-wrapper" data-level="3">
   <a href="#moodle-con-archivo-con-variables-de-entorno-env" class="md-toc-link">Moodle (con archivo con variables de entorno .env)</a>
 </div>
 </details>
-</details>
-<div class="md-toc-link-wrapper" data-level="1">
-  <a href="#ver-logs-de-un-contenedor" class="md-toc-link">Ver logs de un contenedor</a>
-</div>
 </details>
 </div>
 <br>
@@ -155,8 +161,29 @@ code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-fami
 La mejor opción es <strong>crear los volúmenes de datos dentro de la carpeta del proyecto</strong>, para que podamos copiarlos a otro equipo sin problemas. Esto se hace en el archivo <strong>docker-compose.yml</strong>, indicando la ruta donde queremos guardar los datos con "." delante.</p>
 </div>
 <p><img src="images/containers.png" alt="Contenedores"></p>
+<h2 id="ver-logs-de-un-contenedor">Ver logs de un contenedor </h2>
+<p>Si el contendedor no está en marcha al darle al play, podemos ver los logs desde los 3 puntos de la derecha del contenedor.</p>
+<p><img src="images/logs.png" alt="menú logs"></p>
+<p>Veremos en el log que error ha habido si no ha arrancado correctamente.</p>
+<p><img src="images/logs_detalle.png" alt="Logs"></p>
+<h1 id="mover-contenedores-a-otro-equipo">Mover contenedores a otro equipo </h1>
+<p>Si tenemos una carpeta con un proyecto de Docker, podemos moverlo a otro equipo copiando la carpeta completa. En el otro equipo, abrimos Docker Desktop y desde la terminal nos movemos a la carpeta del proyecto y ejecutamos:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">docker-compose</span> up <span class="token parameter variable">-d</span>
+</code></pre><p>Esto será más rápido que volver a descargar las imágenes, ya que las imágenes se descargan en el primer equipo y se copian a la carpeta del proyecto. En el segundo equipo, Docker Desktop detectará que ya tiene las imágenes necesarias y no las volverá a descargar.</p>
+<p>Puede darte un error  de permisos del directorio de datos:</p>
+<blockquote>
+<p>"Su directorio de datos puede ser leído por otros usuarios. Por favor, cambie los permisos a 0770"</p>
+</blockquote>
+<p>Nextcloud comprueba que nextcloud/html/data no sea legible por "otros" (permisos tipo 777/755). Te ha pasado al copiar y pegar la carpeta porque Windows (o el método de copia) le ha puesto permisos demasiado abiertos al restaurarla.</p>
+<p>Para quitar esta restricción de Nextcloud, abrimos el archivo nextcloud\html\config\config.php y añadimos esta línea dentro del array (por ejemplo, justo después de la línea 'datadirectory' =&gt; ...):</p>
+<blockquote>
+<p>'check_data_directory_permissions' =&gt; false,</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Para mayor agilidad en el aula os proporcionare la carpeta del proyecto con la aplicación ya instalada y funcionando, para que solo tengáis que copiarla a vuestro equipo y arrancar los contenedores con docker compose up -d.</p>
+</div>
 <div style="page-break-after:always;"></div>
-<h2 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h2>
+<h1 id="automatizar-instalaciones-con-archivos-de-docker-composeyml">Automatizar instalaciones con archivos de docker-compose.yml </h1>
 <p>En la mayoría de instalaciones necesitamos varios contenedores para ofrecer servicios en diferentes contenedores pero dependientes entre sí. Por ejemplo, tener un servidor apache con PHP y otro servidor con mysql.</p>
 <p>En estos casos, es mucho mejor utilizar <strong>docker compose</strong>. Esta utilidad dispone de un script con extensión <strong>yml</strong> que configura estos servicios.</p>
 <p>Por lo tanto, para instalar cualquier aplicación web  con docker realizaremos los siguientes pasos:</p>
@@ -181,44 +208,73 @@ La mejor opción es <strong>crear los volúmenes de datos dentro de la carpeta d
 <p><img src="images/container_started.png" alt="Contenedor corriendo"></p>
 <p>Para <strong>acceder a la aplicación</strong> podemos ver desde aquí la URL con el puerto que está utilizando. Normalmente será localhost:puerto.</p>
 <p><img src="images/puertos.png" alt="URL y puerto"></p>
+<div class="admonition info">
+<p class="admonition-title">En el primer arranque, el contenedor de Nextcloud copia todo el código (~1 GB descomprimido) desde la imagen a ./nextcloud/html porque has montado esa carpeta. En un PC lento del aula esto puede tardar varios minutos. Señal de que va bien: la carpeta ./nextcloud/html va llenándose de archivos y docker compose logs nextcloud no muestra errores. No es raro que en ese intervalo el navegador no cargue nada.</p>
+</div>
 <div style="page-break-after:always;"></div>
 <h3 id="ejemplos-de-docker-composeyml">Ejemplos de docker-compose.yml </h3>
-<h4 id="nextcloud-server">Nextcloud Server </h4>
-<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
-
-  <span class="token key atrule">db</span><span class="token punctuation">:</span>
-    <span class="token key atrule">image</span><span class="token punctuation">:</span> mariadb<span class="token punctuation">:</span>latest              <span class="token comment"># Para Raspberry 32 bits cambiar "mariadb:latest" por "yobasystems/alpine-mariadb:latest"</span>
-    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
-    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>transaction<span class="token punctuation">-</span>isolation=READ<span class="token punctuation">-</span>COMMITTED <span class="token punctuation">-</span><span class="token punctuation">-</span>log<span class="token punctuation">-</span>bin=binlog <span class="token punctuation">-</span><span class="token punctuation">-</span>binlog<span class="token punctuation">-</span>format=ROW
-    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> ./db<span class="token punctuation">:</span>/var/lib/mysql
-    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=nextcloud
-      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
-      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
-      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
-    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token string">"33306:3306"</span>
+<h4 id="nextcloud-server-con-mariadb-para-más-de-4-o-5-usuarios-concurrentes">Nextcloud Server con MariaDB (para más de 4 o 5 usuarios concurrentes) </h4>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token comment"># docker-compose.yml — Nextcloud PORTABLE con MariaDB</span>
+<span class="token comment"># Para llevarlo a otro equipo: copiar ESTA carpeta entera y ejecutar: docker compose up -d</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
   <span class="token key atrule">nextcloud</span><span class="token punctuation">:</span>
-    <span class="token key atrule">image</span><span class="token punctuation">:</span> nextcloud<span class="token punctuation">:</span>latest
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nextcloud<span class="token punctuation">:</span>29.0.16<span class="token punctuation">-</span>apache   <span class="token comment"># versión EXACTA de la copia maestra (no hacer pull nunca)</span>
     <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> db
     <span class="token key atrule">ports</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> <span class="token string">"8900:80"</span>
-      <span class="token punctuation">-</span> <span class="token string">"8943:443"</span>
-    <span class="token key atrule">links</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> db
     <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> ./nextcloud/config<span class="token punctuation">:</span>/var/www/html/config
-      <span class="token punctuation">-</span> ./nextcloud/data<span class="token punctuation">:</span>/var/www/html/data
-      <span class="token punctuation">-</span> ./nextcloud/custom_apps<span class="token punctuation">:</span>/var/www/html/custom_apps
-      <span class="token punctuation">-</span> ./nextcloud/themes<span class="token punctuation">:</span>/var/www/html/themes
+      <span class="token punctuation">-</span> ./nextcloud/html<span class="token punctuation">:</span>/var/www/html  <span class="token comment"># código y datos de archivos</span>
     <span class="token key atrule">environment</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
       <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
       <span class="token punctuation">-</span> MYSQL_USER=nextcloud
       <span class="token punctuation">-</span> MYSQL_HOST=db
+      <span class="token punctuation">-</span> PHP_MEMORY_LIMIT=512M
+      <span class="token punctuation">-</span> OVERWRITEPROTOCOL=http
+      <span class="token punctuation">-</span> OVERWRITECLIURL=http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">8900</span>
+    <span class="token key atrule">mem_limit</span><span class="token punctuation">:</span> 512m
+
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mariadb<span class="token punctuation">:</span><span class="token number">11.8</span>               <span class="token comment"># versión EXACTA de la copia maestra (no hacer pull nunca)</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">&gt;</span><span class="token punctuation">-</span>
+      <span class="token punctuation">-</span><span class="token punctuation">-</span>transaction<span class="token punctuation">-</span>isolation=READ<span class="token punctuation">-</span>COMMITTED
+      <span class="token punctuation">-</span><span class="token punctuation">-</span>binlog<span class="token punctuation">-</span>format=ROW
+      <span class="token punctuation">-</span><span class="token punctuation">-</span>innodb<span class="token punctuation">-</span>buffer<span class="token punctuation">-</span>pool<span class="token punctuation">-</span>size=64M
+      <span class="token punctuation">-</span><span class="token punctuation">-</span>skip<span class="token punctuation">-</span>name<span class="token punctuation">-</span>resolve
+      <span class="token punctuation">-</span><span class="token punctuation">-</span>performance<span class="token punctuation">-</span>schema=OFF
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./db<span class="token punctuation">:</span>/var/lib/mysql             <span class="token comment"># BD EN CARPETA: imprescindible para la portabilidad</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> MYSQL_ROOT_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_PASSWORD=nextcloud
+      <span class="token punctuation">-</span> MYSQL_DATABASE=nextclouddb
+      <span class="token punctuation">-</span> MYSQL_USER=nextcloud
+    <span class="token key atrule">mem_limit</span><span class="token punctuation">:</span> 256m
 </code></pre><div style="page-break-after:always;"></div>
-<h4 id="moodle-con-archivo-con-variables-de-entorno-env">Moodle (con archivo con variables de entorno .env) </h4>
+<h4 id="nextcloud-server-con-sqlite-más-ligera">Nextcloud Server con SQLite (más ligera) </h4>
+<pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token comment"># docker-compose.yml — Nextcloud PORTABLE con SQLite</span>
+<span class="token comment"># Para llevarlo a otro equipo: copiar ESTA carpeta entera y ejecutar: docker compose up -d</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">nextcloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> nextcloud<span class="token punctuation">:</span>29.0.16<span class="token punctuation">-</span>apache   <span class="token comment"># versión EXACTA de la copia maestra (no hacer pull nunca)</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"8900:80"</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./nextcloud/html<span class="token punctuation">:</span>/var/www/html  <span class="token comment"># TODO viaja aquí: código, datos y BD SQLite</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token comment"># Solo actúan si la carpeta viene vacía (instalación automática):</span>
+      <span class="token punctuation">-</span> NEXTCLOUD_ADMIN_USER=profesor
+      <span class="token punctuation">-</span> NEXTCLOUD_ADMIN_PASSWORD=CambiarEstaClave.2026
+      <span class="token punctuation">-</span> SQLITE_DATABASE=nextcloud
+      <span class="token punctuation">-</span> PHP_MEMORY_LIMIT=512M
+      <span class="token punctuation">-</span> OVERWRITEPROTOCOL=http
+      <span class="token punctuation">-</span> OVERWRITECLIURL=http<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span><span class="token number">8900</span>
+    <span class="token key atrule">mem_limit</span><span class="token punctuation">:</span> 512m
+</code></pre><h4 id="moodle-con-archivo-con-variables-de-entorno-env">Moodle (con archivo con variables de entorno .env) </h4>
 <pre data-role="codeBlock" data-info="yml" class="language-yaml yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
   <span class="token key atrule">mariadb</span><span class="token punctuation">:</span>
     <span class="token key atrule">image</span><span class="token punctuation">:</span> mariadb<span class="token punctuation">:</span><span class="token number">10.11</span>
@@ -284,11 +340,6 @@ MOODLE_ADMIN_USER=admin
 MOODLE_ADMIN_PASS=Admin1234!
 MOODLE_ADMIN_EMAIL=admin@example.com
 </code></pre><div style="page-break-after:always;"></div>
-<h2 id="ver-logs-de-un-contenedor">Ver logs de un contenedor </h2>
-<p>Si el contendedor no está en marcha al darle al play, podemos ver los logs desde los 3 puntos de la derecha del contenedor.</p>
-<p><img src="images/logs.png" alt="menú logs"></p>
-<p>Veremos en el log que error ha habido si no ha arrancado correctamente.</p>
-<p><img src="images/logs_detalle.png" alt="Logs"></p>
 
       </div>
       
